@@ -60,7 +60,7 @@ h1 {
 }
 
 .timeframe-section.expanded .signal-list {
-    max-height: 1000px; /* Animate height to show content */
+    max-height: 5000px; /* ★★★ THIS IS THE CHANGED LINE ★★★ */
     padding-top: 10px; /* Add space when expanded */
 }
 
