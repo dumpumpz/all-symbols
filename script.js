@@ -18,17 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
             title.className = 'timeframe-title';
             title.textContent = `Timeframe: ${tf}`;
 
-            // This is the outer container for the grid animation
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
 
-            // ★★★ THIS IS THE NEW INNER WRAPPER DIV ★★★
-            const signalsListInner = document.createElement('div');
-            signalsListInner.className = 'signal-list-inner';
-            signalsList.appendChild(signalsListInner); // Place the inner div inside the outer one
-
+            // ★★★ THE NEW JAVASCRIPT LOGIC STARTS HERE ★★★
             title.addEventListener('click', () => {
+                // Toggle the 'expanded' class for the +/- icon and grid span
                 timeframeDiv.classList.toggle('expanded');
+
+                // Check if it is now expanded
+                if (timeframeDiv.classList.contains('expanded')) {
+                    // To expand: Set height to the full height of its content
+                    // scrollHeight gives us the true height of all the content inside
+                    signalsList.style.height = signalsList.scrollHeight + 'px';
+                } else {
+                    // To collapse: Set height back to 0
+                    signalsList.style.height = '0px';
+                }
             });
             
             timeframeDiv.appendChild(title);
@@ -50,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     filteredSignals = data[0].sections.filter(signal => new Date(signal.entry_date) >= cutoffDate);
                 }
 
-                // ★★★ APPEND CARDS TO THE INNER DIV, NOT THE OUTER ONE ★★★
                 if (filteredSignals.length > 0) {
                     filteredSignals.forEach(signal => {
                         const card = document.createElement('div');
@@ -63,19 +68,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p><strong>Resistance:</strong> ${signal.resistance}</p>
                             <p><strong>Stoploss:</strong> ${signal.stoploss}</p>
                         `;
-                        signalsListInner.appendChild(card);
+                        signalsList.appendChild(card);
                     });
                 } else {
                     const noSignalMsg = document.createElement('p');
                     noSignalMsg.textContent = `No signals found within the last ${daysToKeep} days.`;
-                    signalsListInner.appendChild(noSignalMsg);
+                    signalsList.appendChild(noSignalMsg);
                 }
 
             } catch (error) {
                 console.error(`Could not load signals for ${tf}:`, error);
                 const errorMsg = document.createElement('p');
                 errorMsg.textContent = `Could not load data for this timeframe.`;
-                signalsListInner.appendChild(errorMsg);
+                signalsList.appendChild(errorMsg);
             }
             
             container.appendChild(timeframeDiv);

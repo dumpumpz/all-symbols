@@ -27,7 +27,7 @@ h1 {
     transition: grid-column 0.4s ease;
 }
 
-/* --- ★★★ NEW & CORRECTED COLLAPSE/EXPAND STYLES ★★★ --- */
+/* --- JS-DRIVEN COLLAPSE/EXPAND STYLES --- */
 
 .timeframe-title {
     margin-top: 0;
@@ -45,19 +45,13 @@ h1 {
     right: 15px;
     font-size: 1.5em;
     font-weight: bold;
-    transition: transform 0.3s ease;
 }
 
 .signal-list {
-    /* We now use a grid layout to control the collapse animation */
-    display: grid;
-    grid-template-rows: 0fr; /* This collapses the content to zero height */
-    transition: grid-template-rows 0.5s ease-in-out;
-}
-
-/* We need an inner wrapper for the content so the animation works correctly */
-.signal-list > .signal-list-inner {
+    height: 0; /* Collapsed by default */
     overflow: hidden;
+    transition: height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
+    padding-top: 0;
 }
 
 /* When the section has the 'expanded' class... */
@@ -66,12 +60,7 @@ h1 {
 }
 
 .timeframe-section.expanded .signal-list {
-    grid-template-rows: 1fr; /* This expands the grid row to fit its content perfectly */
-}
-
-/* Add padding back when expanded */
-.timeframe-section.expanded .signal-list > .signal-list-inner {
-    padding-top: 10px;
+    padding-top: 10px; /* Add space ONLY when expanded */
 }
 
 
