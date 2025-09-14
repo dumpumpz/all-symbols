@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const tf of TIMEFRAMES) {
             const url = `signals_report_${tf}.json`;
             
-            // Main container - no special class needed on creation
             const timeframeDiv = document.createElement('div');
             timeframeDiv.className = 'timeframe-section'; 
 
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
 
-            // On click, we now toggle the 'expanded' class
             title.addEventListener('click', () => {
                 timeframeDiv.classList.toggle('expanded');
             });

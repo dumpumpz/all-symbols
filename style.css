@@ -26,7 +26,7 @@ h1 {
     border: 1px solid #2c2c2c;
 }
 
-/* --- CORRECTED COLLAPSE/EXPAND STYLES --- */
+/* --- COLLAPSE/EXPAND STYLES --- */
 
 .timeframe-title {
     margin-top: 0;
@@ -38,7 +38,6 @@ h1 {
     user-select: none;
 }
 
-/* The +/- indicator */
 .timeframe-title::after {
     content: '+'; /* Default is PLUS (collapsed) */
     position: absolute;
@@ -48,25 +47,24 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-/* Content container for signals */
 .signal-list {
-    max-height: 0; /* THIS IS THE KEY CHANGE: COLLAPSED BY DEFAULT */
+    max-height: 0; /* Collapsed by default */
     overflow: hidden;
     transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
-    padding-top: 0; /* No padding when collapsed */
+    padding-top: 0;
 }
 
-/* When the section is expanded... */
+/* When the section has the 'expanded' class... */
 .timeframe-section.expanded .timeframe-title::after {
     content: '−'; /* Change indicator to MINUS */
 }
 
 .timeframe-section.expanded .signal-list {
-    max-height: 1000px; /* Animate height to a large value to show content */
-    padding-top: 10px; /* Add padding back when expanded */
+    max-height: 1000px; /* Animate height to show content */
+    padding-top: 10px; /* Add space when expanded */
 }
 
-/* --- STYLES FOR THE SIGNAL CARDS (Unchanged) --- */
+/* --- SIGNAL CARD STYLES --- */
 
 .signal-card {
     background-color: #2a2a2a;
