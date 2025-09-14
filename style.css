@@ -24,6 +24,8 @@ h1 {
     border-radius: 8px;
     padding: 15px;
     border: 1px solid #2c2c2c;
+    /* Adding a transition for smoother resizing */
+    transition: grid-column 0.4s ease;
 }
 
 /* --- COLLAPSE/EXPAND STYLES --- */
@@ -60,9 +62,15 @@ h1 {
 }
 
 .timeframe-section.expanded .signal-list {
-    max-height: 5000px; /* ★★★ THIS IS THE CHANGED LINE ★★★ */
+    max-height: 5000px; /* Large value to allow for full expansion */
     padding-top: 10px; /* Add space when expanded */
 }
+
+/* --- ★★★ THIS IS THE NEW RULE THAT FIXES THE LAYOUT ★★★ --- */
+.timeframe-section.expanded {
+    grid-column: 1 / -1; /* Span from the first column line to the last */
+}
+
 
 /* --- SIGNAL CARD STYLES --- */
 
