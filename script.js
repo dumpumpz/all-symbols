@@ -11,25 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const tf of TIMEFRAMES) {
             const url = `signals_report_${tf}.json`;
             
-            // Main container for the whole section
+            // Main container - no special class needed on creation
             const timeframeDiv = document.createElement('div');
-            timeframeDiv.className = 'timeframe-section collapsed'; // Start as collapsed by default
+            timeframeDiv.className = 'timeframe-section'; 
 
-            // The clickable header
             const title = document.createElement('h2');
             title.className = 'timeframe-title';
             title.textContent = `Timeframe: ${tf}`;
 
-            // A new container for the list of signals that will be toggled
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
 
-            // Add the click event listener to the title
+            // On click, we now toggle the 'expanded' class
             title.addEventListener('click', () => {
-                timeframeDiv.classList.toggle('collapsed');
+                timeframeDiv.classList.toggle('expanded');
             });
             
-            // Append the title and the (currently empty) signal list to the main div
             timeframeDiv.appendChild(title);
             timeframeDiv.appendChild(signalsList);
 
@@ -39,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const data = await response.json();
                 
-                // Filtering logic (from previous request)
                 const threeDayTimeframes = ['5m', '15m', '30m', '1h'];
                 let daysToKeep = threeDayTimeframes.includes(tf) ? 3 : 10;
                 const cutoffDate = new Date();
@@ -50,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     filteredSignals = data[0].sections.filter(signal => new Date(signal.entry_date) >= cutoffDate);
                 }
 
-                // Now, add content to the 'signalsList' container
                 if (filteredSignals.length > 0) {
                     filteredSignals.forEach(signal => {
                         const card = document.createElement('div');
@@ -63,22 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p><strong>Resistance:</strong> ${signal.resistance}</p>
                             <p><strong>Stoploss:</strong> ${signal.stoploss}</p>
                         `;
-                        signalsList.appendChild(card); // Append card to the collapsible list
+                        signalsList.appendChild(card);
                     });
                 } else {
                     const noSignalMsg = document.createElement('p');
                     noSignalMsg.textContent = `No signals found within the last ${daysToKeep} days.`;
-                    signalsList.appendChild(noSignalMsg); // Append message to the collapsible list
+                    signalsList.appendChild(noSignalMsg);
                 }
 
             } catch (error) {
                 console.error(`Could not load signals for ${tf}:`, error);
                 const errorMsg = document.createElement('p');
                 errorMsg.textContent = `Could not load data for this timeframe.`;
-                signalsList.appendChild(errorMsg); // Append error to the collapsible list
+                signalsList.appendChild(errorMsg);
             }
             
-            // Finally, add the complete section to the page container
             container.appendChild(timeframeDiv);
         }
     };

@@ -26,21 +26,21 @@ h1 {
     border: 1px solid #2c2c2c;
 }
 
-/* --- NEW & MODIFIED STYLES START HERE --- */
+/* --- CORRECTED COLLAPSE/EXPAND STYLES --- */
 
 .timeframe-title {
     margin-top: 0;
     color: #bb86fc;
     border-bottom: 1px solid #333;
     padding-bottom: 10px;
-    cursor: pointer; /* Makes it look clickable */
-    position: relative; /* Needed for the +/- indicator */
-    user-select: none; /* Prevents text selection on click */
+    cursor: pointer;
+    position: relative;
+    user-select: none;
 }
 
-/* Style for the +/- indicator */
+/* The +/- indicator */
 .timeframe-title::after {
-    content: '−'; /* Default is minus (expanded) */
+    content: '+'; /* Default is PLUS (collapsed) */
     position: absolute;
     right: 15px;
     font-size: 1.5em;
@@ -48,22 +48,22 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-/* Content container for signals, for smooth animation */
+/* Content container for signals */
 .signal-list {
-    max-height: 1000px; /* A large value to allow content to show */
+    max-height: 0; /* THIS IS THE KEY CHANGE: COLLAPSED BY DEFAULT */
     overflow: hidden;
     transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out;
-    padding-top: 10px; /* Add space between header and first card */
+    padding-top: 0; /* No padding when collapsed */
 }
 
-/* When the section is collapsed... */
-.timeframe-section.collapsed .timeframe-title::after {
-    content: '+'; /* Change indicator to plus */
+/* When the section is expanded... */
+.timeframe-section.expanded .timeframe-title::after {
+    content: '−'; /* Change indicator to MINUS */
 }
 
-.timeframe-section.collapsed .signal-list {
-    max-height: 0; /* Animate height to 0 to hide it */
-    padding-top: 0; /* Remove padding when collapsed */
+.timeframe-section.expanded .signal-list {
+    max-height: 1000px; /* Animate height to a large value to show content */
+    padding-top: 10px; /* Add padding back when expanded */
 }
 
 /* --- STYLES FOR THE SIGNAL CARDS (Unchanged) --- */
