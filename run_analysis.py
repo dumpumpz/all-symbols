@@ -431,7 +431,7 @@ def run_analysis_loop():
 
 
 if __name__ == "__main__":
-    SYMBOLS = get_top_volume_usdt_pairs(limit=20)
+    SYMBOLS = get_top_volume_usdt_pairs(limit=50)
     if not SYMBOLS:
         logging.critical("Could not fetch top symbols from Binance. Exiting.")
         sys.exit(1)
