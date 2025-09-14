@@ -20,26 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
-
-            // ★★★ THE NEW JAVASCRIPT LOGIC STARTS HERE ★★★
+            
+            // --- ★★★ THE DEFINITIVE JAVASCRIPT ANIMATION LOGIC ★★★ ---
             title.addEventListener('click', () => {
-                // Toggle the 'expanded' class for the +/- icon and grid span
-                timeframeDiv.classList.toggle('expanded');
+                const isExpanded = timeframeDiv.classList.contains('expanded');
 
-                // Check if it is now expanded
-                if (timeframeDiv.classList.contains('expanded')) {
-                    // To expand: Set height to the full height of its content
-                    // scrollHeight gives us the true height of all the content inside
+                if (!isExpanded) {
+                    // --- EXPAND SEQUENCE ---
+                    // 1. Instantly apply the 'expanded' class to make it full-width
+                    timeframeDiv.classList.add('expanded');
+                    
+                    // 2. Set height to its full, measured scrollHeight to trigger animation
                     signalsList.style.height = signalsList.scrollHeight + 'px';
+
                 } else {
-                    // To collapse: Set height back to 0
+                    // --- COLLAPSE SEQUENCE ---
+                    // 1. Set height back to 0 to start the collapse animation
                     signalsList.style.height = '0px';
+
+                    // 2. IMPORTANT: Listen for when the height animation finishes
+                    signalsList.addEventListener('transitionend', () => {
+                        // 3. ONLY AFTER it's fully collapsed, remove the class to snap it back to its grid cell
+                        timeframeDiv.classList.remove('expanded');
+                    }, { once: true }); // {once: true} automatically removes the listener after it fires once
                 }
             });
             
             timeframeDiv.appendChild(title);
             timeframeDiv.appendChild(signalsList);
 
+            // Fetching and populating logic remains the same...
             try {
                 const response = await fetch(`${url}?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error(`File not found for ${tf}`);
