@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const tf of TIMEFRAMES) {
             const url = `signals_report_${tf}.json`;
             
-            // Create a container for this timeframe
             const timeframeDiv = document.createElement('div');
             timeframeDiv.className = 'timeframe-section';
             const title = document.createElement('h2');
@@ -27,8 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const data = await response.json();
                 
-                if (data && data[0] && data[0].sections && data[0].sections.length > 0) {
-                    data[0].sections.forEach(signal => {
+                // --- NEW LOGIC STARTS HERE ---
+
+                // 1. Determine the number of days to keep signals for this timeframe
+                const threeDayTimeframes = ['5m', '15m', '30m', '1h'];
+                let daysToKeep = 10; // Default to 10 days
+                if (threeDayTimeframes.includes(tf)) {
+                    daysToKeep = 3; // Set to 3 days for specific timeframes
+                }
+
+                // 2. Calculate the cutoff date
+                const now = new Date();
+                const cutoffDate = new Date();
+                cutoffDate.setDate(now.getDate() - daysToKeep);
+
+                // 3. Filter the signals to only include recent ones
+                let filteredSignals = [];
+                if (data && data[0] && data[0].sections) {
+                    filteredSignals = data[0].sections.filter(signal => {
+                        const signalDate = new Date(signal.entry_date); // Convert signal's date string to a Date object
+                        return signalDate >= cutoffDate; // Keep the signal if its date is on or after the cutoff date
+                    });
+                }
+                
+                // --- NEW LOGIC ENDS HERE ---
+
+                // 4. Display the filtered signals
+                if (filteredSignals.length > 0) {
+                    filteredSignals.forEach(signal => {
                         const card = document.createElement('div');
                         card.className = `signal-card ${signal.direction.toLowerCase()}`;
                         
@@ -44,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 } else {
                     const noSignalMsg = document.createElement('p');
-                    noSignalMsg.textContent = 'No active signals found for this timeframe.';
+                    // Updated message to reflect the filtering
+                    noSignalMsg.textContent = `No signals found within the last ${daysToKeep} days.`;
                     timeframeDiv.appendChild(noSignalMsg);
                 }
 
