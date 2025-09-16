@@ -3115,6 +3115,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "21.3900",
+                "resistance": "21.2600",
+                "stoploss": "21.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-11 22:15",
+                "symbol": "ETCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "21.4100",
                 "resistance": "21.3400",
                 "stoploss": "21.1100",
@@ -3374,6 +3388,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-12 02:00",
                 "symbol": "AWEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1197",
+                "resistance": "0.1167",
+                "stoploss": "0.1137",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-12 02:15",
+                "symbol": "PLUMEUSDT"
             },
             {
                 "type": "section",
@@ -6776,6 +6804,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 04:00",
                 "symbol": "UNIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "115826.3700",
+                "resistance": "115306.6200",
+                "stoploss": "114625.8700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 05:00",
+                "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.1830",
+                "resistance": "4.1730",
+                "stoploss": "4.1210",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 05:30",
+                "symbol": "DOTUSDT"
             }
         ],
         "master_section_index": 0
