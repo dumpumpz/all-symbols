@@ -217,6 +217,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "19.8800",
+                "resistance": "18.7300",
+                "stoploss": "15.9700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-16 00:00",
+                "symbol": "ETCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "101.6000",
                 "resistance": "94.1700",
                 "stoploss": "86.0000",
@@ -728,6 +742,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-12 00:00",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "21.9800",
+                "resistance": "21.3700",
+                "stoploss": "20.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-12 00:00",
+                "symbol": "ETCUSDT"
             },
             {
                 "type": "section",
