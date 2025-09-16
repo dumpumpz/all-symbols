@@ -3380,7 +3380,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "22.0700",
                 "resistance": "23.1500",
                 "stoploss": "25.5200",
