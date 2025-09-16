@@ -5082,6 +5082,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 08:30",
                 "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2659",
+                "resistance": "0.2602",
+                "stoploss": "0.2545",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 12:00",
+                "symbol": "CUSDT"
             }
         ],
         "master_section_index": 0
