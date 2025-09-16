@@ -4948,7 +4948,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1595",
                 "resistance": "0.1647",
                 "stoploss": "0.1697",
