@@ -734,6 +734,20 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "3.3567",
+                "resistance": "3.4529",
+                "stoploss": "3.4839",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-29 07:00",
+                "symbol": "SUIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.2129",
                 "resistance": "0.2161",
@@ -4676,6 +4690,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 04:00",
                 "symbol": "AAVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "30.7500",
+                "resistance": "30.3000",
+                "stoploss": "28.2200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 08:00",
+                "symbol": "AVAXUSDT"
             }
         ],
         "master_section_index": 0
