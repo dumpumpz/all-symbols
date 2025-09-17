@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- TAB SWITCHING LOGIC (UNCHANGED) ---
+    // --- BULLETPROOF TAB SWITCHING LOGIC (Correct and Unchanged) ---
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
     const compoundContainer = document.getElementById('compound-container');
+
     signalsBtn.addEventListener('click', () => {
         compoundContainer.style.display = 'none';
         signalsContainer.style.display = 'grid';
         signalsBtn.classList.add('active');
         calcBtn.classList.remove('active');
     });
+
     calcBtn.addEventListener('click', () => {
         signalsContainer.style.display = 'none';
         compoundContainer.style.display = 'block';
@@ -18,14 +20,71 @@ document.addEventListener('DOMContentLoaded', () => {
         signalsBtn.classList.remove('active');
     });
 
-    // --- SIGNAL FETCHING CODE (UNCHANGED) ---
+    // --- SIGNAL FETCHING CODE (Correct and Unchanged) ---
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
-    const fetchAndDisplaySignals = async () => { /* ... your entire function is unchanged ... */ };
+    const fetchAndDisplaySignals = async () => { /* ... your entire function ... */ 
+        lastUpdatedElem.textContent = new Date().toLocaleString();
+        signalsContainer.innerHTML = ''; 
+        for (const tf of TIMEFRAMES) {
+            const url = `signals_report_${tf}.json`;
+            const timeframeDiv = document.createElement('div');
+            timeframeDiv.className = 'timeframe-section';
+            const title = document.createElement('h2');
+            title.className = 'timeframe-title';
+            title.textContent = `Timeframe: ${tf}`;
+            const signalsList = document.createElement('div');
+            signalsList.className = 'signal-list';
+            title.addEventListener('click', () => {
+                const isExpanded = timeframeDiv.classList.contains('expanded');
+                if (!isExpanded) {
+                    timeframeDiv.classList.add('expanded');
+                    signalsList.style.height = signalsList.scrollHeight + 'px';
+                } else {
+                    signalsList.style.height = '0px';
+                    signalsList.addEventListener('transitionend', () => {
+                        timeframeDiv.classList.remove('expanded');
+                    }, { once: true });
+                }
+            });
+            timeframeDiv.appendChild(title);
+            timeframeDiv.appendChild(signalsList);
+            try {
+                const response = await fetch(`${url}?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error(`File not found for ${tf}`);
+                const data = await response.json();
+                const threeDayTimeframes = ['5m', '15m', '30m', '1h'];
+                let daysToKeep = threeDayTimeframes.includes(tf) ? 3 : 10;
+                const cutoffDate = new Date();
+                cutoffDate.setDate(new Date().getDate() - daysToKeep);
+                let filteredSignals = [];
+                if (data && data[0] && data[0].sections) {
+                    filteredSignals = data[0].sections.filter(signal => new Date(signal.entry_date) >= cutoffDate);
+                }
+                if (filteredSignals.length > 0) {
+                    filteredSignals.forEach(signal => {
+                        const card = document.createElement('div');
+                        card.className = `signal-card ${signal.direction.toLowerCase()}`;
+                        card.innerHTML = `<p><strong>Symbol:</strong> ${signal.symbol}</p><p><strong>Direction:</strong> ${signal.direction}</p><p><strong>Date:</strong> ${signal.entry_date}</p><p><strong>Entry:</strong> ${signal.entry}</p><p><strong>Resistance:</strong> ${signal.resistance}</p><p><strong>Stoploss:</strong> ${signal.stoploss}</p>`;
+                        signalsList.appendChild(card);
+                    });
+                } else {
+                    const noSignalMsg = document.createElement('p');
+                    noSignalMsg.textContent = `No signals found within the last ${daysToKeep} days.`;
+                    signalsList.appendChild(noSignalMsg);
+                }
+            } catch (error) {
+                console.error(`Could not load signals for ${tf}:`, error);
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = `Could not load data for this timeframe.`;
+                signalsList.appendChild(errorMsg);
+            }
+            signalsContainer.appendChild(timeframeDiv);
+        }
+    };
     fetchAndDisplaySignals();
 
-
-    // --- COMPOUND CALCULATOR LOGIC (UPDATED) ---
+    // --- COMPOUND CALCULATOR LOGIC (CORRECTED VERSION WITH NUMERIC INPUT) ---
     const startBankrollInput = document.getElementById('start-bankroll');
     const targetBankrollInput = document.getElementById('target-bankroll');
     const tableBody = document.querySelector('#compound-table tbody');
@@ -50,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedState = localStorage.getItem('compoundChallengeState');
         if (savedState) {
             const state = JSON.parse(savedState);
-            startBankrollInput.value = state.start || '5500';
-            targetBankrollInput.value = state.target || '20000';
+            startBankrollInput.value = state.start || '1000';
+            targetBankrollInput.value = state.target || '5500';
             tradeResults = state.results || [];
         }
     };
@@ -142,8 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirm('Are you sure you want to reset all progress?')) {
             localStorage.removeItem('compoundChallengeState');
             tradeResults = [];
-            startBankrollInput.value = '5500';
-            targetBankrollInput.value = '20000';
+            startBankrollInput.value = '1000';
+            targetBankrollInput.value = '5500';
             calculateAndRender();
         }
     };
