@@ -83,3 +83,8 @@ h1 {
 #auth-btn.logout {
     background-color: #e53935; /* Red for logout */
 }
+
+/* --- New style for projected rows --- */
+#compound-table tr.projected td {
+  opacity: 0.6;
+}
