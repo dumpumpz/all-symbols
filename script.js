@@ -1,11 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- EXISTING SIGNAL FETCHING CODE (No changes needed here) ---
+    // --- NEW TAB SWITCHING LOGIC ---
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Get the target content ID from the button's data attribute
+            const targetId = button.dataset.target;
+
+            // Update button active states
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Hide all content and show the target content
+            tabContents.forEach(content => {
+                if (content.id === targetId) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        });
+    });
+    // --- END OF NEW TAB LOGIC ---
+
+
+    // --- EXISTING SIGNAL FETCHING CODE (No changes needed) ---
     const container = document.getElementById('signals-container');
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
 
     const fetchAndDisplaySignals = async () => {
-        // ... your existing signal fetching code remains exactly the same ...
+        // ... all of your existing signal fetching code remains here, untouched ...
         lastUpdatedElem.textContent = new Date().toLocaleString();
         container.innerHTML = ''; 
 
@@ -87,23 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchAndDisplaySignals();
-    // --- END OF EXISTING SIGNAL FETCHING CODE ---
 
 
-    // --- NEW COMPOUND CALCULATOR LOGIC START ---
-
+    // --- COMPOUND CALCULATOR LOGIC (No changes needed) ---
     const startBankrollInput = document.getElementById('start-bankroll');
     const targetBankrollInput = document.getElementById('target-bankroll');
     const tableBody = document.querySelector('#compound-table tbody');
     const resetButton = document.getElementById('reset-calculator');
-
-    const RISK_PERCENT = 0.01; // 1%
-    const RR_RATIO = 1; // 1:1
-
-    // State will hold our results
+    const RISK_PERCENT = 0.01;
+    const RR_RATIO = 1;
     let tradeResults = [];
 
-    // --- State Management Functions (using localStorage) ---
     const saveState = () => {
         const state = {
             start: startBankrollInput.value,
@@ -121,25 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
             targetBankrollInput.value = state.target || '5500';
             tradeResults = state.results || [];
         }
-        // If no saved state, it will use default values from HTML
     };
 
-    // --- Core Calculation and Rendering Function ---
     const calculateAndRender = () => {
-        tableBody.innerHTML = ''; // Clear the table
-
+        tableBody.innerHTML = '';
         let currentBankroll = parseFloat(startBankrollInput.value);
         const targetBankroll = parseFloat(targetBankrollInput.value);
         let level = 1;
         let tradeHasBeenLogged = false;
 
-        while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) { // Safety break at 200 levels
+        while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
             const startOfLevelBankroll = currentBankroll;
             const riskAmount = startOfLevelBankroll * RISK_PERCENT;
             const profitTarget = riskAmount * RR_RATIO;
-
-            const result = tradeResults[level - 1] || 'pending'; // 'win', 'loss', or 'pending'
-
+            const result = tradeResults[level - 1] || 'pending';
             let endOfLevelBankroll = startOfLevelBankroll;
             let rowClass = '';
 
@@ -153,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 tradeHasBeenLogged = true;
             }
 
-            // Create Table Row
             const row = document.createElement('tr');
             if (rowClass) row.className = rowClass;
             row.innerHTML = `
@@ -172,59 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             tableBody.appendChild(row);
 
-            // Disable future dropdowns if a result has been logged
             const selectElement = row.querySelector('select');
             if (tradeHasBeenLogged && result === 'pending') {
                 selectElement.disabled = true;
             }
             
-            // The bankroll for the next level is the result of this one
             currentBankroll = endOfLevelBankroll;
             level++;
         }
 
-        // Add event listeners to the new select dropdowns
         document.querySelectorAll('#compound-table select').forEach(select => {
             select.addEventListener('change', handleResultChange);
         });
         
-        saveState(); // Save state every time we re-render
+        saveState();
     };
 
-    // --- Event Handlers ---
     const handleResultChange = (event) => {
         const level = parseInt(event.target.dataset.level);
         const result = event.target.value;
-        
-        // Update the results array
         tradeResults[level - 1] = result;
-
-        // Clean up future results if a 'pending' is selected
         if(result === 'pending') {
             tradeResults.splice(level - 1);
         }
-
-        calculateAndRender(); // Re-calculate and re-draw everything
+        calculateAndRender();
     };
 
-    const resetCalculator = () => {
-        if (confirm('Are you sure you want to reset all progress?')) {
-            localStorage.removeItem('compoundChallengeState');
-            tradeResults = []; // Clear in-memory state
-            // Reset inputs to default (or whatever you want)
-            startBankrollInput.value = '1000';
-            targetBankrollInput.value = '5500';
-            calculateAndRender();
-        }
-    };
-
-    // --- Initial Setup ---
-    startBankrollInput.addEventListener('change', calculateAndRender);
-    targetBankrollInput.addEventListener('change', calculateAndRender);
-    resetButton.addEventListener('click', resetCalculator);
-
-    loadState(); // Load saved data on page start
-    calculateAndRender(); // Initial render
-
-    // --- NEW COMPOUND CALCULATOR LOGIC END ---
-});
+    const reset
