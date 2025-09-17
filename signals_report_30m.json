@@ -1477,6 +1477,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "1.1720",
+                "resistance": "1.1670",
+                "stoploss": "1.1460",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-07 05:30",
+                "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.3571",
                 "resistance": "0.3582",
                 "stoploss": "0.3595",
@@ -5278,6 +5292,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 12:30",
                 "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3428",
+                "resistance": "0.3451",
+                "stoploss": "0.3472",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 15:00",
+                "symbol": "TRXUSDT"
             }
         ],
         "master_section_index": 0
