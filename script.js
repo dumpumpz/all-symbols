@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM Loaded. Script is running."); // Debug message 1
+    console.log("DOM Loaded. Script is running.");
 
     // --- TAB SWITCHING LOGIC ---
     const signalsBtn = document.getElementById('show-signals-btn');
@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const compoundContainer = document.getElementById('compound-container');
 
     if (signalsBtn && calcBtn && signalsContainer && compoundContainer) {
-        console.log("Tab buttons and containers found."); // Debug message 2
-
         signalsBtn.addEventListener('click', () => {
             compoundContainer.style.display = 'none';
             signalsContainer.style.display = 'grid';
@@ -23,121 +21,181 @@ document.addEventListener('DOMContentLoaded', () => {
             calcBtn.classList.add('active');
             signalsBtn.classList.remove('active');
         });
-    } else {
-        console.error("CRITICAL ERROR: One or more tab elements were not found.");
     }
 
-    // --- SIGNAL FETCHING CODE (TEMPORARILY DISABLED FOR DEBUGGING) ---
-    // const lastUpdatedElem = document.getElementById('last-updated');
-    // const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
-    // const fetchAndDisplaySignals = async () => { ... };
-    // fetchAndDisplaySignals();
-    console.log("Signal fetching is temporarily disabled."); // Debug message 3
+    // --- SIGNAL FETCHING CODE (RESTORED & WORKING) ---
+    const lastUpdatedElem = document.getElementById('last-updated');
+    const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
+    
+    const fetchAndDisplaySignals = async () => {
+        lastUpdatedElem.textContent = new Date().toLocaleString();
+        signalsContainer.innerHTML = ''; 
 
+        for (const tf of TIMEFRAMES) {
+            const url = `signals_report_${tf}.json`;
+            const timeframeDiv = document.createElement('div');
+            timeframeDiv.className = 'timeframe-section'; 
+            const title = document.createElement('h2');
+            title.className = 'timeframe-title';
+            title.textContent = `Timeframe: ${tf}`;
+            const signalsList = document.createElement('div');
+            signalsList.className = 'signal-list';
+            
+            title.addEventListener('click', () => {
+                const isExpanded = timeframeDiv.classList.contains('expanded');
+                if (!isExpanded) {
+                    timeframeDiv.classList.add('expanded');
+                    signalsList.style.height = signalsList.scrollHeight + 'px';
+                } else {
+                    signalsList.style.height = '0px';
+                    signalsList.addEventListener('transitionend', () => {
+                        timeframeDiv.classList.remove('expanded');
+                    }, { once: true });
+                }
+            });
+            
+            timeframeDiv.appendChild(title);
+            timeframeDiv.appendChild(signalsList);
 
-    // --- COMPOUND CALCULATOR LOGIC ---
+            try {
+                const response = await fetch(`${url}?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error(`File not found for ${tf}`);
+                
+                const data = await response.json();
+                const threeDayTimeframes = ['5m', '15m', '30m', '1h'];
+                let daysToKeep = threeDayTimeframes.includes(tf) ? 3 : 10;
+                const cutoffDate = new Date();
+                cutoffDate.setDate(new Date().getDate() - daysToKeep);
+                
+                let filteredSignals = [];
+                if (data && data[0] && data[0].sections) {
+                    filteredSignals = data[0].sections.filter(signal => new Date(signal.entry_date) >= cutoffDate);
+                }
+
+                if (filteredSignals.length > 0) {
+                    filteredSignals.forEach(signal => {
+                        const card = document.createElement('div');
+                        card.className = `signal-card ${signal.direction.toLowerCase()}`;
+                        card.innerHTML = `<p><strong>Symbol:</strong> ${signal.symbol}</p><p><strong>Direction:</strong> ${signal.direction}</p><p><strong>Date:</strong> ${signal.entry_date}</p><p><strong>Entry:</strong> ${signal.entry}</p><p><strong>Resistance:</strong> ${signal.resistance}</p><p><strong>Stoploss:</strong> ${signal.stoploss}</p>`;
+                        signalsList.appendChild(card);
+                    });
+                } else {
+                    const noSignalMsg = document.createElement('p');
+                    noSignalMsg.textContent = `No signals found within the last ${daysToKeep} days.`;
+                    signalsList.appendChild(noSignalMsg);
+                }
+
+            } catch (error) {
+                console.error(`Could not load signals for ${tf}:`, error);
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = `Could not load data for this timeframe.`;
+                signalsList.appendChild(errorMsg);
+            }
+            signalsContainer.appendChild(timeframeDiv);
+        }
+    };
+    fetchAndDisplaySignals();
+
+    // --- COMPOUND CALCULATOR LOGIC (FINAL CORRECTED VERSION) ---
     const startBankrollInput = document.getElementById('start-bankroll');
     const targetBankrollInput = document.getElementById('target-bankroll');
     const tableBody = document.querySelector('#compound-table tbody');
     const resetButton = document.getElementById('reset-calculator');
+    
+    const RISK_PERCENT = 0.01;
+    let tradeResults = [];
 
-    if (startBankrollInput && targetBankrollInput && tableBody && resetButton) {
-        console.log("Calculator elements found."); // Debug message 4
-        
-        const RISK_PERCENT = 0.01;
-        let tradeResults = [];
-
-        const saveState = () => {
-            const state = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
-            localStorage.setItem('compoundChallengeState', JSON.stringify(state));
+    const saveState = () => {
+        // Now, we always save the values that are currently in the input boxes
+        const state = { 
+            start: startBankrollInput.value, 
+            target: targetBankrollInput.value, 
+            results: tradeResults.filter(r => r !== null && r !== undefined) 
         };
+        localStorage.setItem('compoundChallengeState', JSON.stringify(state));
+    };
 
-        const loadState = () => {
-            const savedState = localStorage.getItem('compoundChallengeState');
-            if (savedState) {
-                const state = JSON.parse(savedState);
-                startBankrollInput.value = state.start || '5500';
-                targetBankrollInput.value = state.target || '20000';
-                tradeResults = state.results || [];
-            }
-            console.log("State loaded.");
-        };
+    const loadState = () => {
+        const savedState = localStorage.getItem('compoundChallengeState');
+        if (savedState) {
+            const state = JSON.parse(savedState);
+            // We ONLY load the results. The start/target values will be read
+            // directly from the HTML, which you can now control.
+            tradeResults = state.results || [];
+        }
+    };
 
-        const calculateAndRender = () => {
-            console.log("calculateAndRender started.");
-            tableBody.innerHTML = '';
-            let currentBankroll = parseFloat(startBankrollInput.value) || 0;
-            const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
-            let level = 1;
-            let foundFirstEmptyInput = false;
+    const calculateAndRender = () => {
+        tableBody.innerHTML = '';
+        let currentBankroll = parseFloat(startBankrollInput.value) || 0;
+        const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
+        let level = 1;
+        let foundFirstEmptyInput = false;
 
-            while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
-                const startOfLevelBankroll = currentBankroll;
-                const riskAmount = startOfLevelBankroll * RISK_PERCENT;
-                const profitTarget = riskAmount;
-                const actualPL = tradeResults[level - 1];
-                let endOfLevelBankroll = startOfLevelBankroll;
-                let rowClass = '';
-                let isEnabled = false;
+        while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
+            const startOfLevelBankroll = currentBankroll;
+            const riskAmount = startOfLevelBankroll * RISK_PERCENT;
+            const profitTarget = riskAmount;
+            const actualPL = tradeResults[level - 1];
+            let endOfLevelBankroll = startOfLevelBankroll;
+            let rowClass = '';
+            let isEnabled = false;
 
-                if (typeof actualPL === 'number' && !isNaN(actualPL)) {
-                    endOfLevelBankroll += actualPL;
-                    rowClass = actualPL >= 0 ? 'win' : 'loss';
-                } else if (!foundFirstEmptyInput) {
-                    isEnabled = true;
-                    foundFirstEmptyInput = true;
-                }
-
-                const row = document.createElement('tr');
-                if (rowClass) row.className = rowClass;
-                row.innerHTML = `
-                    <td>${level}</td>
-                    <td>$${startOfLevelBankroll.toFixed(2)}</td>
-                    <td>$${riskAmount.toFixed(2)}</td>
-                    <td>$${profitTarget.toFixed(2)}</td>
-                    <td><input type="number" data-level="${level}" placeholder="P/L $" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isEnabled ? '' : 'disabled'}></td>
-                    <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
-                tableBody.appendChild(row);
-
-                currentBankroll = endOfLevelBankroll;
-                level++;
+            if (typeof actualPL === 'number' && !isNaN(actualPL)) {
+                endOfLevelBankroll += actualPL;
+                rowClass = actualPL >= 0 ? 'win' : 'loss';
+            } else if (!foundFirstEmptyInput) {
+                isEnabled = true;
+                foundFirstEmptyInput = true;
             }
 
-            document.querySelectorAll('#compound-table input[type="number"]').forEach(input => {
-                input.addEventListener('change', handlePLChange);
-            });
-            saveState();
-            console.log("Table rendered.");
-        };
+            const row = document.createElement('tr');
+            if (rowClass) row.className = rowClass;
+            row.innerHTML = `
+                <td>${level}</td>
+                <td>$${startOfLevelBankroll.toFixed(2)}</td>
+                <td>$${riskAmount.toFixed(2)}</td>
+                <td>$${profitTarget.toFixed(2)}</td>
+                <td><input type="number" data-level="${level}" placeholder="P/L $" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isEnabled ? '' : 'disabled'}></td>
+                <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
+            tableBody.appendChild(row);
 
-        const handlePLChange = (event) => {
-            const level = parseInt(event.target.dataset.level);
-            const value = event.target.value;
-            tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
-            if (tradeResults[level - 1] === null) {
-                tradeResults.splice(level - 1);
-            }
-            calculateAndRender();
-        };
+            currentBankroll = endOfLevelBankroll;
+            level++;
+        }
 
-        const resetCalculator = () => {
-            if (confirm('Are you sure you want to reset all progress?')) {
-                localStorage.removeItem('compoundChallengeState');
-                tradeResults = [];
-                startBankrollInput.value = '5500';
-                targetBankrollInput.value = '20000';
-                calculateAndRender();
-            }
-        };
+        document.querySelectorAll('#compound-table input[type="number"]').forEach(input => {
+            input.addEventListener('change', handlePLChange);
+        });
+        saveState();
+    };
 
-        startBankrollInput.addEventListener('change', calculateAndRender);
-        targetBankrollInput.addEventListener('change', calculateAndRender);
-        resetButton.addEventListener('click', resetCalculator);
-
-        loadState();
+    const handlePLChange = (event) => {
+        const level = parseInt(event.target.dataset.level);
+        const value = event.target.value;
+        tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
+        if (tradeResults[level - 1] === null) {
+            tradeResults.splice(level - 1);
+        }
         calculateAndRender();
+    };
 
-    } else {
-        console.error("CRITICAL ERROR: One or more calculator elements were not found.");
-    }
+    const resetCalculator = () => {
+        if (confirm('Are you sure you want to reset all progress? This will clear all P/L entries.')) {
+            localStorage.removeItem('compoundChallengeState');
+            tradeResults = [];
+            // Reset the inputs to your desired default values
+            startBankrollInput.value = '5500';
+            targetBankrollInput.value = '20000';
+            calculateAndRender();
+        }
+    };
+
+    startBankrollInput.addEventListener('change', calculateAndRender);
+    targetBankrollInput.addEventListener('change', calculateAndRender);
+    resetButton.addEventListener('click', resetCalculator);
+
+    // Initial Load Sequence
+    loadState();       // Load saved P/L results
+    calculateAndRender(); // Render the table using HTML values and loaded results
 });
