@@ -10,78 +10,49 @@ document.addEventListener('DOMContentLoaded', () => {
       appId: "1:1038636626553:web:9d8bb7a6a80a9ce4dc9aa8"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.database(); // <-- USING REALTIME DATABASE
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
-    let currentUser = null;
+    const db = firebase.database();
+    
+    // This is our hardcoded "master user" ID. It's just a folder name.
+    const MASTER_USER_ID = "local_pc_main_user"; 
 
     // --- UI Elements ---
-    const authBtn = document.getElementById('auth-btn');
-    const userStatus = document.getElementById('user-status');
     const compoundContainer = document.getElementById('compound-container');
     const startBankrollInput = document.getElementById('start-bankroll');
     const targetBankrollInput = document.getElementById('target-bankroll');
     const tableBody = document.querySelector('#compound-table tbody');
     const resetButton = document.getElementById('reset-calculator');
 
-    // --- AUTHENTICATION LOGIC ---
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            // User is signed in
-            currentUser = user;
-            userStatus.textContent = `Signed in as ${user.displayName}`;
-            authBtn.textContent = 'Sign Out';
-            authBtn.classList.add('logout');
-            loadState(); // Load the user's data
-        } else {
-            // User is signed out
-            currentUser = null;
-            userStatus.textContent = 'Please sign in to save progress';
-            authBtn.textContent = 'Sign in with Google';
-            authBtn.classList.remove('logout');
-            tableBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Please sign in to view your challenge.</td></tr>';
-        }
-    });
+    // --- NO AUTHENTICATION LOGIC IS NEEDED ---
 
-    authBtn.addEventListener('click', () => {
-        if (currentUser) {
-            auth.signOut();
-        } else {
-            auth.signInWithPopup(googleProvider);
-        }
-    });
-
-    // --- COMPOUND CALCULATOR LOGIC (for Realtime Database) ---
+    // --- COMPOUND CALCULATOR LOGIC (using Master User ID) ---
     const RISK_PERCENT = 0.01;
     let tradeResults = [];
 
     const saveState = async () => {
-        if (!currentUser) return;
         const dataToSave = {
             start: startBankrollInput.value,
             target: targetBankrollInput.value,
             results: tradeResults.filter(r => r !== null && r !== undefined)
         };
         try {
-            await db.ref('users/' + currentUser.uid).set(dataToSave);
-            console.log("Progress saved to Realtime Database!");
+            // We always write to the same path: compounding_data/local_pc_main_user
+            await db.ref('compounding_data/' + MASTER_USER_ID).set(dataToSave);
+            console.log("Progress saved for master user!");
         } catch (error) {
             console.error("Error saving data: ", error);
         }
     };
 
     const loadState = async () => {
-        if (!currentUser) return;
-        const snapshot = await db.ref('users/' + currentUser.uid).get();
+        const snapshot = await db.ref('compounding_data/' + MASTER_USER_ID).get();
         if (snapshot.exists()) {
             const data = snapshot.val();
             startBankrollInput.value = data.start || '5500';
             targetBankrollInput.value = data.target || '20000';
             tradeResults = data.results || [];
         } else {
-            // This is a new user, set default values
+            // First time loading, set default values
             startBankrollInput.value = '5500';
             targetBankrollInput.value = '20000';
             tradeResults = [];
@@ -144,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-    targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
+    targetBankrollInput.addEventListener('change', () => { calculateAndรรder(); saveState(); });
 
     resetButton.addEventListener('click', () => {
         if (confirm('Are you sure you want to reset all progress? This will clear all P/L entries.')) {
@@ -156,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Signals and Tabs Code ---
+    // --- Signals and Tabs Code (Unchanged) ---
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
@@ -235,5 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
             signalsContainer.appendChild(timeframeDiv);
         }
     };
-    fetchAndDisplaySignals();
+    
+    // --- Initial Load Sequence ---
+    fetchAndDisplaySignals(); // Load signals
+    loadState(); // Load data for the master user
 });
