@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Signals & Compounding</title>
-    <!-- The ?v=1.3 forces the browser to load the new CSS file -->
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <title>Crypto Tools</title>
+    <!-- The ?v=1.4 forces the browser to load the new CSS file -->
+    <link rel="stylesheet" href="style.css?v=1.4">
 </head>
 <body>
     <header>
@@ -13,9 +13,14 @@
         <p>Last updated: <span id="last-updated">Loading...</span></p>
     </header>
     <main>
-        <!-- NEW COMPOUND CALCULATOR SECTION START -->
-        <div id="compound-calculator" class="timeframe-section expanded">
-            <h2 class="timeframe-title">Bankroll Compound Challenge</h2>
+        <!-- NEW TAB NAVIGATION -->
+        <div class="tab-nav">
+            <button class="tab-button active" data-target="signals-container">Signals</button>
+            <button class="tab-button" data-target="compound-container">Compound Challenge</button>
+        </div>
+
+        <!-- NEW CONTAINER FOR THE CALCULATOR - HIDDEN BY DEFAULT -->
+        <div id="compound-container" class="tab-content hidden">
             <div class="calculator-controls">
                 <div class="control-group">
                     <label for="start-bankroll">Start Bankroll ($):</label>
@@ -45,9 +50,9 @@
                 </table>
             </div>
         </div>
-        <!-- NEW COMPOUND CALCULATOR SECTION END -->
-
-        <div id="signals-container">
+        
+        <!-- ORIGINAL SIGNALS CONTAINER - NOW A TAB CONTENT PANEL -->
+        <div id="signals-container" class="tab-content">
             <!-- Signals will be loaded here by JavaScript -->
         </div>
     </main>
