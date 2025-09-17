@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const savedState = localStorage.getItem('compoundChallengeState');
             if (savedState) {
                 const state = JSON.parse(savedState);
-                startBankrollInput.value = state.start || '1000';
-                targetBankrollInput.value = state.target || '5500';
+                startBankrollInput.value = state.start || '5500';
+                targetBankrollInput.value = state.target || '20000';
                 tradeResults = state.results || [];
             }
             console.log("State loaded.");
