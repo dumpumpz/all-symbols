@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const db = firebase.database();
     const MASTER_USER_ID = "local_pc_main_user";
 
-    // --- NEW: REUSABLE CALCULATOR INITIALIZER ---
+    // --- REUSABLE CALCULATOR INITIALIZER ---
     const initializeCompoundCalculator = (config) => {
         const startBankrollInput = document.getElementById(config.startBankrollId);
         const targetBankrollInput = document.getElementById(config.targetBankrollId);
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             while (bankrollForNextLevel < targetBankroll && bankrollForNextLevel > 0 && level < 200) {
                 const startOfLevelBankroll = bankrollForNextLevel;
-                const riskAmount = startOfLevelBankroll * config.riskPercent; // Use risk from config
+                const riskAmount = startOfLevelBankroll * config.riskPercent;
                 const profitTarget = riskAmount;
                 const actualPL = tradeResults[level - 1];
                 let endOfLevelBankroll;
@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td><input type="number" data-level="${level}" placeholder="${isMasterMode ? 'P/L $' : 'Read-Only'}" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isDisabled ? 'disabled' : ''}></td>
                     <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
                 tableBody.appendChild(row);
-
                 bankrollForNextLevel = endOfLevelBankroll;
                 level++;
             }
@@ -127,8 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 saveState();
             }
         });
-
-        loadState(); // Initial load for this calculator
+        loadState();
     };
 
     // --- INITIALIZE BOTH CALCULATORS ---
@@ -137,19 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
         targetBankrollId: 'target-bankroll-1',
         resetButtonId: 'reset-calculator-1',
         tableId: 'compound-table-1',
-        riskPercent: 0.01, // 1%
-        firebasePath: 'compounding_data_1percent', // Unique path in Firebase
+        riskPercent: 0.01,
+        firebasePath: 'compounding_data_1percent',
         defaultStart: '5500',
         defaultTarget: '20000'
     });
-
     initializeCompoundCalculator({
         startBankrollId: 'start-bankroll-2',
         targetBankrollId: 'target-bankroll-2',
         resetButtonId: 'reset-calculator-2',
         tableId: 'compound-table-2',
-        riskPercent: 0.02, // 2%
-        firebasePath: 'compounding_data_2percent', // Unique path in Firebase
+        riskPercent: 0.02,
+        firebasePath: 'compounding_data_2percent',
         defaultStart: '5500',
         defaultTarget: '20000'
     });
@@ -170,12 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
         activeBtn.classList.add('active');
         activeContent.style.display = (activeContent === signalsContainer) ? 'grid' : 'block';
     };
-
     signalsBtn.addEventListener('click', () => switchTab(signalsBtn, signalsContainer));
     calc1Btn.addEventListener('click', () => switchTab(calc1Btn, calc1Container));
     calc2Btn.addEventListener('click', () => switchTab(calc2Btn, calc2Container));
 
-    // --- SIGNALS CODE (Unchanged) ---
+    // --- SIGNALS CODE ---
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     const fetchAndDisplaySignals = async () => {
