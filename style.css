@@ -78,7 +78,23 @@ h1 {
     padding: 25px;
     border: 1px solid #2c2c2c;
 }
+/* --- Add this new style to the bottom of your CSS file --- */
+#compound-table input[type="number"] {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    padding: 6px;
+    border-radius: 4px;
+    width: 100%;
+    min-width: 90px;
+    box-sizing: border-box; /* Important for padding and width to work well */
+}
 
+#compound-table input[type="number"]:disabled {
+    background-color: #1e1e1e;
+    color: #666;
+    border-color: #333;
+}
 /* The rest of the calculator styles are the same */
 .calculator-controls { display: flex; flex-wrap: wrap; gap: 20px; padding-bottom: 15px; align-items: center; border-bottom: 1px solid #333; margin-bottom: 15px; }
 .control-group { display: flex; flex-direction: column; gap: 5px; }
