@@ -14,14 +14,10 @@ header {
 h1 {
     color: #ffffff;
 }
-
-/* And change it from an ID (#) to a CLASS (.) like this: */
-.compound-container { 
-  display: none; 
-  background-color: #1e1e1e; 
-  border-radius: 8px; 
-  padding: 25px; 
-  border: 1px solid #2c2c2c; 
+#signals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
 }
 .timeframe-section {
     background-color: #1e1e1e;
@@ -45,20 +41,88 @@ h1 {
 .tab-button { padding: 10px 20px; cursor: pointer; background-color: #1e1e1e; border: 1px solid #2c2c2c; color: #e0e0e0; border-radius: 6px; font-size: 1em; transition: background-color 0.2s ease; }
 .tab-button:hover { background-color: #2a2a2a; }
 .tab-button.active { background-color: #bb86fc; color: #121212; font-weight: bold; border-color: #bb86fc; }
-#compound-container { display: none; background-color: #1e1e1e; border-radius: 8px; padding: 25px; border: 1px solid #2c2c2c; }
+
+/* --- CORRECTED CALCULATOR STYLES --- */
+
+/* Changed from #id to .class to apply to both calculators */
+.compound-container { 
+    display: none; 
+    background-color: #1e1e1e; 
+    border-radius: 8px; 
+    padding: 25px; 
+    border: 1px solid #2c2c2c; 
+}
+
 .calculator-controls { display: flex; flex-wrap: wrap; gap: 20px; padding-bottom: 15px; align-items: center; border-bottom: 1px solid #333; margin-bottom: 15px; }
 .control-group { display: flex; flex-direction: column; gap: 5px; }
 .control-group label { font-size: 0.8em; color: #aaa; }
 .control-group input { background-color: #333; border: 1px solid #444; color: #e0e0e0; padding: 8px; border-radius: 4px; width: 120px; }
 #reset-calculator { background-color: #e53935; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 15px; }
 .table-wrapper { overflow-x: auto; }
-#compound-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-#compound-table th, #compound-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #2c2c2c; }
-#compound-table th { color: #bb86fc; font-size: 0.9em; }
-#compound-table tbody tr:hover { background-color: #2a2a2a; }
-#compound-table tr.win { background-color: rgba(67, 160, 71, 0.15); }
-#compound-table tr.loss { background-color: rgba(229, 57, 53, 0.15); }
-#compound-table input[type="number"] { background-color: #333; border: 1px solid #555; color: #e0e0e0; padding: 6px; border-radius: 4px; width: 100%; min-width: 90px; box-sizing: border-box; }
 
-input:disabled, button:disabled { background-color: #222; color: #777; cursor: not-allowed; border-color: #333; }
-#compound-table tr.projected td { opacity: 0.6; }
+/* Changed from #id to .class */
+.compound-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+}
+
+/* Changed from #id to .class */
+.compound-table th, .compound-table td { 
+    padding: 12px 15px; 
+    text-align: left; 
+    border-bottom: 1px solid #2c2c2c; 
+}
+
+/* Changed from #id to .class */
+.compound-table th { 
+    color: #bb86fc; 
+    font-size: 0.9em; 
+}
+
+/* Changed from #id to .class */
+.compound-table tbody tr:hover { 
+    background-color: #2a2a2a; 
+}
+
+/* Changed from #id to .class */
+.compound-table tr.win { 
+    background-color: rgba(67, 160, 71, 0.15); 
+}
+
+/* Changed from #id to .class */
+.compound-table tr.loss { 
+    background-color: rgba(229, 57, 53, 0.15); 
+}
+
+/* Changed from #id to .class */
+.compound-table input[type="number"] { 
+    background-color: #333; 
+    border: 1px solid #555; 
+    color: #e0e0e0; 
+    padding: 6px; 
+    border-radius: 4px; 
+    width: 100%; 
+    min-width: 90px; 
+    box-sizing: border-box; 
+}
+
+/* General disabled styles for the top-level controls */
+input:disabled, button:disabled { 
+    background-color: #222; 
+    color: #777; 
+    cursor: not-allowed; 
+    border-color: #333; 
+}
+
+/* Specific style for disabled inputs WITHIN the table */
+.compound-table input:disabled {
+    background-color: #1e1e1e; /* Match the container background */
+    border-color: #1e1e1e;
+    color: #666;
+}
+
+/* Style for projected rows */
+.compound-table tr.projected td { 
+    opacity: 0.6; 
+}
