@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
     
-    // This is our hardcoded "master user" ID.
     const MASTER_USER_ID = "local_pc_main_user"; 
 
     // --- UI Elements ---
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('#compound-table tbody');
     const resetButton = document.getElementById('reset-calculator');
 
-    // --- NEW: APPLY MASTER MODE TO MAIN CONTROLS ---
     startBankrollInput.disabled = !isMasterMode;
     targetBankrollInput.disabled = !isMasterMode;
     resetButton.disabled = !isMasterMode;
@@ -38,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tradeResults = [];
 
     const saveState = async () => {
-        // NEW: Only save if in master mode
         if (!isMasterMode) return; 
-
         const dataToSave = {
             start: startBankrollInput.value,
             target: targetBankrollInput.value,
@@ -69,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         calculateAndRender();
     };
 
+    // --- THIS IS THE CORRECTED FUNCTION ---
     const calculateAndRender = () => {
         tableBody.innerHTML = '';
         let currentBankroll = parseFloat(startBankrollInput.value) || 0;
@@ -79,21 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
         while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
             const startOfLevelBankroll = currentBankroll;
             const riskAmount = startOfLevelBankroll * RISK_PERCENT;
-            const profitTarget = riskAmount;
+            const profitTarget = riskAmount; // Standard 1R win
             const actualPL = tradeResults[level - 1];
+            
             let endOfLevelBankroll = startOfLevelBankroll;
             let rowClass = '';
             let isEnabledForInput = false;
 
+            // Check if there is a REAL result for this level
             if (typeof actualPL === 'number' && !isNaN(actualPL)) {
+                // This is a historical row. Use the actual P/L.
                 endOfLevelBankroll += actualPL;
                 rowClass = actualPL >= 0 ? 'win' : 'loss';
-            } else if (!foundFirstEmptyInput) {
-                isEnabledForInput = true;
-                foundFirstEmptyInput = true;
+            } else {
+                // This is a future, projected row. Assume a standard win.
+                endOfLevelBankroll += profitTarget;
+                rowClass = 'projected'; // Add the class for styling
+                
+                if (!foundFirstEmptyInput) {
+                    isEnabledForInput = true;
+                    foundFirstEmptyInput = true;
+                }
             }
 
-            // NEW: Determine if the input should be disabled
             const isDisabled = !isMasterMode || !isEnabledForInput;
 
             const row = document.createElement('tr');
@@ -107,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
             tableBody.appendChild(row);
 
+            // CRUCIAL: Update the currentBankroll with the new end value
+            // for the next loop iteration, whether it was real or projected.
             currentBankroll = endOfLevelBankroll;
             level++;
         }
@@ -116,9 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handlePLChange = (event) => {
-        // NEW: Check for master mode before processing changes
         if (!isMasterMode) return; 
-
         const level = parseInt(event.target.dataset.level);
         const value = event.target.value;
         tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
@@ -133,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
 
     resetButton.addEventListener('click', () => {
-        if (!isMasterMode) return; // NEW: Check for master mode
+        if (!isMasterMode) return;
         if (confirm('Are you sure you want to reset all progress? This will clear all P/L entries.')) {
             tradeResults = [];
             startBankrollInput.value = '5500';
@@ -147,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
-
     signalsBtn.addEventListener('click', () => {
         compoundContainer.style.display = 'none';
         signalsContainer.style.display = 'grid';
@@ -160,11 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         calcBtn.classList.add('active');
         signalsBtn.classList.remove('active');
     });
-
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     const fetchAndDisplaySignals = async () => {
-        // ... This entire function is unchanged ...
         lastUpdatedElem.textContent = new Date().toLocaleString();
         signalsContainer.innerHTML = ''; 
         for (const tf of TIMEFRAMES) {
