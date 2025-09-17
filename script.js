@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- NEW: MASTER MODE CHECK ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const isMasterMode = urlParams.get('master') === 'true';
+    console.log("Master mode is:", isMasterMode ? "ON" : "OFF");
+
     // --- START FIREBASE SETUP ---
     const firebaseConfig = {
       apiKey: "AIzaSyCQ4vHqGiv_yRkA0zZaaOU24gxhqBkxnv4",
@@ -13,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
     
-    // This is our hardcoded "master user" ID. It's just a folder name.
+    // This is our hardcoded "master user" ID.
     const MASTER_USER_ID = "local_pc_main_user"; 
 
     // --- UI Elements ---
@@ -23,20 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('#compound-table tbody');
     const resetButton = document.getElementById('reset-calculator');
 
-    // --- NO AUTHENTICATION LOGIC IS NEEDED ---
+    // --- NEW: APPLY MASTER MODE TO MAIN CONTROLS ---
+    startBankrollInput.disabled = !isMasterMode;
+    targetBankrollInput.disabled = !isMasterMode;
+    resetButton.disabled = !isMasterMode;
 
-    // --- COMPOUND CALCULATOR LOGIC (using Master User ID) ---
+    // --- COMPOUND CALCULATOR LOGIC ---
     const RISK_PERCENT = 0.01;
     let tradeResults = [];
 
     const saveState = async () => {
+        // NEW: Only save if in master mode
+        if (!isMasterMode) return; 
+
         const dataToSave = {
             start: startBankrollInput.value,
             target: targetBankrollInput.value,
             results: tradeResults.filter(r => r !== null && r !== undefined)
         };
         try {
-            // We always write to the same path: compounding_data/local_pc_main_user
             await db.ref('compounding_data/' + MASTER_USER_ID).set(dataToSave);
             console.log("Progress saved for master user!");
         } catch (error) {
@@ -52,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             targetBankrollInput.value = data.target || '20000';
             tradeResults = data.results || [];
         } else {
-            // First time loading, set default values
             startBankrollInput.value = '5500';
             targetBankrollInput.value = '20000';
             tradeResults = [];
@@ -74,15 +83,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const actualPL = tradeResults[level - 1];
             let endOfLevelBankroll = startOfLevelBankroll;
             let rowClass = '';
-            let isEnabled = false;
+            let isEnabledForInput = false;
 
             if (typeof actualPL === 'number' && !isNaN(actualPL)) {
                 endOfLevelBankroll += actualPL;
                 rowClass = actualPL >= 0 ? 'win' : 'loss';
             } else if (!foundFirstEmptyInput) {
-                isEnabled = true;
+                isEnabledForInput = true;
                 foundFirstEmptyInput = true;
             }
+
+            // NEW: Determine if the input should be disabled
+            const isDisabled = !isMasterMode || !isEnabledForInput;
 
             const row = document.createElement('tr');
             if (rowClass) row.className = rowClass;
@@ -91,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>$${startOfLevelBankroll.toFixed(2)}</td>
                 <td>$${riskAmount.toFixed(2)}</td>
                 <td>$${profitTarget.toFixed(2)}</td>
-                <td><input type="number" data-level="${level}" placeholder="P/L $" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isEnabled ? '' : 'disabled'}></td>
+                <td><input type="number" data-level="${level}" placeholder="${isMasterMode ? 'P/L $' : 'Read-Only'}" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isDisabled ? 'disabled' : ''}></td>
                 <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
             tableBody.appendChild(row);
 
@@ -104,6 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handlePLChange = (event) => {
+        // NEW: Check for master mode before processing changes
+        if (!isMasterMode) return; 
+
         const level = parseInt(event.target.dataset.level);
         const value = event.target.value;
         tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
@@ -115,9 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-    targetBankrollInput.addEventListener('change', () => { calculateAndรรder(); saveState(); });
+    targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
 
     resetButton.addEventListener('click', () => {
+        if (!isMasterMode) return; // NEW: Check for master mode
         if (confirm('Are you sure you want to reset all progress? This will clear all P/L entries.')) {
             tradeResults = [];
             startBankrollInput.value = '5500';
@@ -148,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     const fetchAndDisplaySignals = async () => {
+        // ... This entire function is unchanged ...
         lastUpdatedElem.textContent = new Date().toLocaleString();
         signalsContainer.innerHTML = ''; 
         for (const tf of TIMEFRAMES) {
@@ -208,6 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // --- Initial Load Sequence ---
-    fetchAndDisplaySignals(); // Load signals
-    loadState(); // Load data for the master user
+    fetchAndDisplaySignals();
+    loadState();
 });
