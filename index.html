@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Tools</title>
-    <link rel="stylesheet" href="style.css?v=RTDB_FINAL">
+    <link rel="stylesheet" href="style.css?v=MASTER_USER_FINAL">
 </head>
 <body>
     <header>
         <h1>Crypto Market Tools</h1>
-        <!-- Auth section for login/logout -->
-        <div id="auth-container">
-            <span id="user-status">Please sign in</span>
-            <button id="auth-btn">Sign in with Google</button>
-        </div>
+        <!-- The login UI has been removed as it's no longer needed -->
         <p>Last updated: <span id="last-updated">Loading...</span></p>
     </header>
     <main>
@@ -63,8 +59,7 @@
 
     <!-- Add Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <!-- Using Realtime Database SDK -->
+    <!-- We only need the database SDK now -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
 
     <!-- Your script tag goes AFTER the Firebase ones -->
