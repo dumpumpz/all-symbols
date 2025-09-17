@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- BULLETPROOF TAB SWITCHING LOGIC (This part is correct) ---
+    // --- TAB SWITCHING LOGIC ---
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         signalsBtn.classList.remove('active');
     });
 
-    // --- YOUR ORIGINAL SIGNAL FETCHING CODE (RESTORED) ---
+    // --- YOUR ORIGINAL SIGNAL FETCHING CODE (FULLY RESTORED) ---
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     
@@ -30,14 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const tf of TIMEFRAMES) {
             const url = `signals_report_${tf}.json`;
-            
             const timeframeDiv = document.createElement('div');
             timeframeDiv.className = 'timeframe-section'; 
-
             const title = document.createElement('h2');
             title.className = 'timeframe-title';
             title.textContent = `Timeframe: ${tf}`;
-
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
             
@@ -62,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!response.ok) throw new Error(`File not found for ${tf}`);
                 
                 const data = await response.json();
-                
                 const threeDayTimeframes = ['5m', '15m', '30m', '1h'];
                 let daysToKeep = threeDayTimeframes.includes(tf) ? 3 : 10;
                 const cutoffDate = new Date();
@@ -77,14 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     filteredSignals.forEach(signal => {
                         const card = document.createElement('div');
                         card.className = `signal-card ${signal.direction.toLowerCase()}`;
-                        card.innerHTML = `
-                            <p><strong>Symbol:</strong> ${signal.symbol}</p>
-                            <p><strong>Direction:</strong> ${signal.direction}</p>
-                            <p><strong>Date:</strong> ${signal.entry_date}</p>
-                            <p><strong>Entry:</strong> ${signal.entry}</p>
-                            <p><strong>Resistance:</strong> ${signal.resistance}</p>
-                            <p><strong>Stoploss:</strong> ${signal.stoploss}</p>
-                        `;
+                        card.innerHTML = `<p><strong>Symbol:</strong> ${signal.symbol}</p><p><strong>Direction:</strong> ${signal.direction}</p><p><strong>Date:</strong> ${signal.entry_date}</p><p><strong>Entry:</strong> ${signal.entry}</p><p><strong>Resistance:</strong> ${signal.resistance}</p><p><strong>Stoploss:</strong> ${signal.stoploss}</p>`;
                         signalsList.appendChild(card);
                     });
                 } else {
@@ -99,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorMsg.textContent = `Could not load data for this timeframe.`;
                 signalsList.appendChild(errorMsg);
             }
-            
             signalsContainer.appendChild(timeframeDiv);
         }
     };
+    // Call the function to load the signals
     fetchAndDisplaySignals();
 
     // --- COMPOUND CALCULATOR LOGIC (WITH CORRECTED INPUT LOGIC) ---
@@ -135,21 +124,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const calculateAndRender = () => {
         tableBody.innerHTML = '';
         let currentBankroll = parseFloat(startBankrollInput.value);
+        if (isNaN(currentBankroll)) currentBankroll = 0; // Prevent errors if input is empty
         const targetBankroll = parseFloat(targetBankrollInput.value);
         let level = 1;
-        let enableInput = true; // This is the new, corrected logic flag
+        let foundFirstEmptyInput = false; // This is the new, corrected logic flag
 
         while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
             const startOfLevelBankroll = currentBankroll;
             const riskAmount = startOfLevelBankroll * RISK_PERCENT;
-            const profitTarget = riskAmount; // 1:1 RR
+            const profitTarget = riskAmount;
             const actualPL = tradeResults[level - 1];
             let endOfLevelBankroll = startOfLevelBankroll;
             let rowClass = '';
 
+            let isEnabled = false;
+            // Check if the current level's P/L has been entered
             if (typeof actualPL === 'number' && !isNaN(actualPL)) {
                 endOfLevelBankroll += actualPL;
                 rowClass = actualPL >= 0 ? 'win' : 'loss';
+            } else if (!foundFirstEmptyInput) {
+                // If the P/L is NOT entered and we haven't found our first empty box yet,
+                // this is the one the user should be able to type in.
+                isEnabled = true;
+                foundFirstEmptyInput = true;
             }
 
             const row = document.createElement('tr');
@@ -162,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-level="${level}" 
                         placeholder="P/L $" 
                         value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}"
-                        ${enableInput ? '' : 'disabled'}
+                        ${isEnabled ? '' : 'disabled'}
                     >
                 </td>`;
 
@@ -174,11 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${resultCellHTML}
                 <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
             tableBody.appendChild(row);
-
-            // If the current level doesn't have a result, disable all future inputs
-            if (!(typeof actualPL === 'number' && !isNaN(actualPL))) {
-                enableInput = false;
-            }
             
             currentBankroll = endOfLevelBankroll;
             level++;
