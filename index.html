@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Tools</title>
-    <!-- Changing version to FINAL_FIX to bust any cache -->
-    <link rel="stylesheet" href="style.css?v=FINAL_FIX">
+    <!-- Update version to bust cache -->
+    <link rel="stylesheet" href="style.css?v=2_PERCENT_CHALLENGE">
 </head>
 <body>
     <header>
@@ -13,24 +13,29 @@
         <p>Last updated: <span id="last-updated">Loading...</span></p>
     </header>
     <main>
+        <!-- Tab Navigation Buttons -->
         <div class="tab-nav">
             <button id="show-signals-btn" class="tab-button active">Signals</button>
-            <button id="show-calc-btn" class="tab-button">Compound Challenge</button>
+            <button id="show-calc-1-btn" class="tab-button">Compound Challenge 1%</button>
+            <!-- NEW: Button for the 2% challenge -->
+            <button id="show-calc-2-btn" class="tab-button">Compound Challenge 2%</button>
         </div>
-        <div id="compound-container">
+
+        <!-- Section 1: The 1% Calculator (Initially Hidden) -->
+        <div id="compound-container-1" class="compound-container">
             <div class="calculator-controls">
                 <div class="control-group">
-                    <label for="start-bankroll">Start Bankroll ($):</label>
-                    <input type="number" id="start-bankroll" value="5500">
+                    <label for="start-bankroll-1">Start Bankroll ($):</label>
+                    <input type="number" id="start-bankroll-1" value="5500">
                 </div>
                 <div class="control-group">
-                    <label for="target-bankroll">Target Bankroll ($):</label>
-                    <input type="number" id="target-bankroll" value="20000">
+                    <label for="target-bankroll-1">Target Bankroll ($):</label>
+                    <input type="number" id="target-bankroll-1" value="20000">
                 </div>
-                <button id="reset-calculator">Reset Progress</button>
+                <button id="reset-calculator-1">Reset Progress</button>
             </div>
             <div class="table-wrapper">
-                <table id="compound-table">
+                <table id="compound-table-1" class="compound-table">
                     <thead>
                         <tr>
                             <th>Level</th>
@@ -45,11 +50,46 @@
                 </table>
             </div>
         </div>
-        <div id="signals-container"></div>
+        
+        <!-- NEW: Section 2: The 2% Calculator (Initially Hidden) -->
+        <div id="compound-container-2" class="compound-container">
+            <div class="calculator-controls">
+                <div class="control-group">
+                    <label for="start-bankroll-2">Start Bankroll ($):</label>
+                    <input type="number" id="start-bankroll-2" value="5500">
+                </div>
+                <div class="control-group">
+                    <label for="target-bankroll-2">Target Bankroll ($):</label>
+                    <input type="number" id="target-bankroll-2" value="20000">
+                </div>
+                <button id="reset-calculator-2">Reset Progress</button>
+            </div>
+            <div class="table-wrapper">
+                <table id="compound-table-2" class="compound-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Start Bankroll</th>
+                            <th>Risk (2%)</th>
+                            <th>Target Profit (1:1RR)</th>
+                            <th>Actual P/L ($)</th>
+                            <th>End Bankroll</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: The Signals Grid (Initially Visible) -->
+        <div id="signals-container">
+            <!-- Signals will be loaded here by JavaScript -->
+        </div>
     </main>
+
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <!-- Changing version to FINAL_FIX to bust any cache -->
-    <script src="script.js?v=FINAL_FIX"></script>
+    <!-- Update version to bust cache -->
+    <script src="script.js?v=2_PERCENT_CHALLENGE"></script>
 </body>
 </html>
