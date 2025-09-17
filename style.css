@@ -57,3 +57,29 @@ h1 {
 #compound-table tr.loss { background-color: rgba(229, 57, 53, 0.15); }
 #compound-table input[type="number"] { background-color: #333; border: 1px solid #555; color: #e0e0e0; padding: 6px; border-radius: 4px; width: 100%; min-width: 90px; box-sizing: border-box; }
 #compound-table input[type="number"]:disabled { background-color: #1e1e1e; color: #666; border-color: #333; }
+
+
+/* --- New Auth Styles --- */
+#auth-container {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#user-status {
+    color: #aaa;
+}
+#auth-btn {
+    background-color: #4285F4; /* Google Blue */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#auth-btn.logout {
+    background-color: #e53935; /* Red for logout */
+}
