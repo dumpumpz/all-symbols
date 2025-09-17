@@ -4389,6 +4389,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "4.2270",
+                "resistance": "4.2200",
+                "stoploss": "4.1870",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-12 14:00",
+                "symbol": "DOTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "116.7700",
                 "resistance": "116.2000",
                 "stoploss": "115.3700",
@@ -4886,6 +4900,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-12 17:30",
                 "symbol": "THEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.5380",
+                "resistance": "2.5210",
+                "stoploss": "2.5090",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-12 17:30",
+                "symbol": "FILUSDT"
             },
             {
                 "type": "section",
