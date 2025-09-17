@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- MASTER MODE CHECK ---
     const urlParams = new URLSearchParams(window.location.search);
     const isMasterMode = urlParams.get('master') === 'true';
-    console.log("Master mode is:", isMasterMode ? "ON" : "OFF");
 
     // --- FIREBASE SETUP ---
     const firebaseConfig = {
@@ -16,144 +15,167 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-    const MASTER_USER_ID = "local_pc_main_user"; 
+    const MASTER_USER_ID = "local_pc_main_user";
 
-    // --- UI Elements ---
-    const startBankrollInput = document.getElementById('start-bankroll');
-    const targetBankrollInput = document.getElementById('target-bankroll');
-    const tableBody = document.querySelector('#compound-table tbody');
-    const resetButton = document.getElementById('reset-calculator');
+    // --- NEW: REUSABLE CALCULATOR INITIALIZER ---
+    const initializeCompoundCalculator = (config) => {
+        const startBankrollInput = document.getElementById(config.startBankrollId);
+        const targetBankrollInput = document.getElementById(config.targetBankrollId);
+        const tableBody = document.querySelector(`#${config.tableId} tbody`);
+        const resetButton = document.getElementById(config.resetButtonId);
+        
+        startBankrollInput.disabled = !isMasterMode;
+        targetBankrollInput.disabled = !isMasterMode;
+        resetButton.disabled = !isMasterMode;
 
-    startBankrollInput.disabled = !isMasterMode;
-    targetBankrollInput.disabled = !isMasterMode;
-    resetButton.disabled = !isMasterMode;
+        let tradeResults = [];
 
-    // --- COMPOUND CALCULATOR LOGIC ---
-    const RISK_PERCENT = 0.01;
-    let tradeResults = [];
-
-    const saveState = async () => {
-        if (!isMasterMode) return; 
-        const dataToSave = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
-        try {
-            await db.ref('compounding_data/' + MASTER_USER_ID).set(dataToSave);
-            console.log("Progress saved for master user!");
-        } catch (error) {
-            console.error("Error saving data: ", error);
-        }
-    };
-
-    const loadState = async () => {
-        const snapshot = await db.ref('compounding_data/' + MASTER_USER_ID).get();
-        if (snapshot.exists()) {
-            const data = snapshot.val();
-            startBankrollInput.value = data.start || '5500';
-            targetBankrollInput.value = data.target || '20000';
-            tradeResults = data.results || [];
-        } else {
-            startBankrollInput.value = '5500';
-            targetBankrollInput.value = '20000';
-            tradeResults = [];
-        }
-        calculateAndRender();
-    };
-
-    // --- THIS IS THE CORRECTED FUNCTION ---
-    const calculateAndRender = () => {
-        tableBody.innerHTML = '';
-        let bankrollForNextLevel = parseFloat(startBankrollInput.value) || 0; // Use a dedicated variable
-        const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
-        let level = 1;
-        let foundFirstEmptyInput = false;
-
-        while (bankrollForNextLevel < targetBankroll && bankrollForNextLevel > 0 && level < 200) {
-            const startOfLevelBankroll = bankrollForNextLevel; // Start with the correct, compounded value
-            const riskAmount = startOfLevelBankroll * RISK_PERCENT;
-            const profitTarget = riskAmount;
-            const actualPL = tradeResults[level - 1];
-            
-            let endOfLevelBankroll;
-            let rowClass = '';
-            let isEnabledForInput = false;
-
-            if (typeof actualPL === 'number' && !isNaN(actualPL)) {
-                // HISTORICAL ROW: Use the actual P/L.
-                endOfLevelBankroll = startOfLevelBankroll + actualPL;
-                rowClass = actualPL >= 0 ? 'win' : 'loss';
-            } else {
-                // FUTURE ROW: Project a standard win.
-                endOfLevelBankroll = startOfLevelBankroll + profitTarget;
-                rowClass = 'projected';
-                if (!foundFirstEmptyInput) {
-                    isEnabledForInput = true;
-                    foundFirstEmptyInput = true;
-                }
+        const saveState = async () => {
+            if (!isMasterMode) return;
+            const dataToSave = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
+            try {
+                await db.ref(config.firebasePath + '/' + MASTER_USER_ID).set(dataToSave);
+            } catch (error) {
+                console.error("Error saving data: ", error);
             }
+        };
 
-            const isDisabled = !isMasterMode || !isEnabledForInput;
-            const row = document.createElement('tr');
-            if (rowClass) row.className = rowClass;
-            row.innerHTML = `
-                <td>${level}</td>
-                <td>$${startOfLevelBankroll.toFixed(2)}</td>
-                <td>$${riskAmount.toFixed(2)}</td>
-                <td>$${profitTarget.toFixed(2)}</td>
-                <td><input type="number" data-level="${level}" placeholder="${isMasterMode ? 'P/L $' : 'Read-Only'}" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isDisabled ? 'disabled' : ''}></td>
-                <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
-            tableBody.appendChild(row);
+        const loadState = async () => {
+            const snapshot = await db.ref(config.firebasePath + '/' + MASTER_USER_ID).get();
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                startBankrollInput.value = data.start || config.defaultStart;
+                targetBankrollInput.value = data.target || config.defaultTarget;
+                tradeResults = data.results || [];
+            } else {
+                startBankrollInput.value = config.defaultStart;
+                targetBankrollInput.value = config.defaultTarget;
+                tradeResults = [];
+            }
+            calculateAndRender();
+        };
 
-            // THIS IS THE CRITICAL FIX: Ensure the variable for the next loop
-            // is updated with the result of the CURRENT loop.
-            bankrollForNextLevel = endOfLevelBankroll;
-            level++;
-        }
-        document.querySelectorAll('#compound-table input[type="number"]').forEach(input => {
-            input.addEventListener('change', handlePLChange);
-        });
-    };
+        const calculateAndRender = () => {
+            tableBody.innerHTML = '';
+            let bankrollForNextLevel = parseFloat(startBankrollInput.value) || 0;
+            const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
+            let level = 1;
+            let foundFirstEmptyInput = false;
 
-    const handlePLChange = (event) => {
-        if (!isMasterMode) return; 
-        const level = parseInt(event.target.dataset.level);
-        const value = event.target.value;
-        tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
-        if (tradeResults[level - 1] === null) {
-            tradeResults.splice(level - 1);
-        }
-        calculateAndRender();
-        saveState();
-    };
-    
-    startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-    targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-    resetButton.addEventListener('click', () => {
-        if (!isMasterMode) return;
-        if (confirm('Are you sure you want to reset all progress?')) {
-            tradeResults = [];
-            startBankrollInput.value = '5500';
-            targetBankrollInput.value = '20000';
+            while (bankrollForNextLevel < targetBankroll && bankrollForNextLevel > 0 && level < 200) {
+                const startOfLevelBankroll = bankrollForNextLevel;
+                const riskAmount = startOfLevelBankroll * config.riskPercent; // Use risk from config
+                const profitTarget = riskAmount;
+                const actualPL = tradeResults[level - 1];
+                let endOfLevelBankroll;
+                let rowClass = '';
+                let isEnabledForInput = false;
+
+                if (typeof actualPL === 'number' && !isNaN(actualPL)) {
+                    endOfLevelBankroll = startOfLevelBankroll + actualPL;
+                    rowClass = actualPL >= 0 ? 'win' : 'loss';
+                } else {
+                    endOfLevelBankroll = startOfLevelBankroll + profitTarget;
+                    rowClass = 'projected';
+                    if (!foundFirstEmptyInput) {
+                        isEnabledForInput = true;
+                        foundFirstEmptyInput = true;
+                    }
+                }
+
+                const isDisabled = !isMasterMode || !isEnabledForInput;
+                const row = document.createElement('tr');
+                if (rowClass) row.className = rowClass;
+                row.innerHTML = `
+                    <td>${level}</td>
+                    <td>$${startOfLevelBankroll.toFixed(2)}</td>
+                    <td>$${riskAmount.toFixed(2)}</td>
+                    <td>$${profitTarget.toFixed(2)}</td>
+                    <td><input type="number" data-level="${level}" placeholder="${isMasterMode ? 'P/L $' : 'Read-Only'}" value="${typeof actualPL === 'number' ? actualPL.toFixed(2) : ''}" ${isDisabled ? 'disabled' : ''}></td>
+                    <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
+                tableBody.appendChild(row);
+
+                bankrollForNextLevel = endOfLevelBankroll;
+                level++;
+            }
+            document.querySelectorAll(`#${config.tableId} input[type="number"]`).forEach(input => {
+                input.addEventListener('change', handlePLChange);
+            });
+        };
+
+        const handlePLChange = (event) => {
+            if (!isMasterMode) return;
+            const level = parseInt(event.target.dataset.level);
+            const value = event.target.value;
+            tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
+            if (tradeResults[level - 1] === null) {
+                tradeResults.splice(level - 1);
+            }
             calculateAndRender();
             saveState();
-        }
+        };
+
+        startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
+        targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
+        resetButton.addEventListener('click', () => {
+            if (!isMasterMode) return;
+            if (confirm('Are you sure you want to reset all progress for this challenge?')) {
+                tradeResults = [];
+                startBankrollInput.value = config.defaultStart;
+                targetBankrollInput.value = config.defaultTarget;
+                calculateAndRender();
+                saveState();
+            }
+        });
+
+        loadState(); // Initial load for this calculator
+    };
+
+    // --- INITIALIZE BOTH CALCULATORS ---
+    initializeCompoundCalculator({
+        startBankrollId: 'start-bankroll-1',
+        targetBankrollId: 'target-bankroll-1',
+        resetButtonId: 'reset-calculator-1',
+        tableId: 'compound-table-1',
+        riskPercent: 0.01, // 1%
+        firebasePath: 'compounding_data_1percent', // Unique path in Firebase
+        defaultStart: '5500',
+        defaultTarget: '20000'
     });
 
-    // --- Signals and Tabs Code (Unchanged) ---
+    initializeCompoundCalculator({
+        startBankrollId: 'start-bankroll-2',
+        targetBankrollId: 'target-bankroll-2',
+        resetButtonId: 'reset-calculator-2',
+        tableId: 'compound-table-2',
+        riskPercent: 0.02, // 2%
+        firebasePath: 'compounding_data_2percent', // Unique path in Firebase
+        defaultStart: '5500',
+        defaultTarget: '20000'
+    });
+
+    // --- TAB SWITCHING LOGIC ---
     const signalsBtn = document.getElementById('show-signals-btn');
-    const calcBtn = document.getElementById('show-calc-btn');
+    const calc1Btn = document.getElementById('show-calc-1-btn');
+    const calc2Btn = document.getElementById('show-calc-2-btn');
     const signalsContainer = document.getElementById('signals-container');
-    const compoundContainer = document.getElementById('compound-container');
-    signalsBtn.addEventListener('click', () => {
-        compoundContainer.style.display = 'none';
-        signalsContainer.style.display = 'grid';
-        signalsBtn.classList.add('active');
-        calcBtn.classList.remove('active');
-    });
-    calcBtn.addEventListener('click', () => {
-        signalsContainer.style.display = 'none';
-        compoundContainer.style.display = 'block';
-        calcBtn.classList.add('active');
-        signalsBtn.classList.remove('active');
-    });
+    const calc1Container = document.getElementById('compound-container-1');
+    const calc2Container = document.getElementById('compound-container-2');
+    const allTabs = [signalsBtn, calc1Btn, calc2Btn];
+    const allContent = [signalsContainer, calc1Container, calc2Container];
+
+    const switchTab = (activeBtn, activeContent) => {
+        allTabs.forEach(btn => btn.classList.remove('active'));
+        allContent.forEach(content => content.style.display = 'none');
+        activeBtn.classList.add('active');
+        activeContent.style.display = (activeContent === signalsContainer) ? 'grid' : 'block';
+    };
+
+    signalsBtn.addEventListener('click', () => switchTab(signalsBtn, signalsContainer));
+    calc1Btn.addEventListener('click', () => switchTab(calc1Btn, calc1Container));
+    calc2Btn.addEventListener('click', () => switchTab(calc2Btn, calc2Container));
+
+    // --- SIGNALS CODE (Unchanged) ---
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     const fetchAndDisplaySignals = async () => {
@@ -216,7 +238,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    // --- Initial Load Sequence ---
     fetchAndDisplaySignals();
-    loadState();
 });
