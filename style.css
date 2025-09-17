@@ -37,7 +37,6 @@ h1 {
 .signal-card p { margin: 5px 0; font-size: 0.9em; }
 .signal-card strong { color: #f0e0e0; }
 
-/* Styles for Tabs & Calculator */
 .tab-nav { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
 .tab-button { padding: 10px 20px; cursor: pointer; background-color: #1e1e1e; border: 1px solid #2c2c2c; color: #e0e0e0; border-radius: 6px; font-size: 1em; transition: background-color 0.2s ease; }
 .tab-button:hover { background-color: #2a2a2a; }
@@ -56,35 +55,6 @@ h1 {
 #compound-table tr.win { background-color: rgba(67, 160, 71, 0.15); }
 #compound-table tr.loss { background-color: rgba(229, 57, 53, 0.15); }
 #compound-table input[type="number"] { background-color: #333; border: 1px solid #555; color: #e0e0e0; padding: 6px; border-radius: 4px; width: 100%; min-width: 90px; box-sizing: border-box; }
-#compound-table input[type="number"]:disabled { background-color: #1e1e1e; color: #666; border-color: #333; }
 
-
-/* --- New Auth Styles --- */
-#auth-container {
-    padding: 10px 0;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-#user-status {
-    color: #aaa;
-}
-#auth-btn {
-    background-color: #4285F4; /* Google Blue */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-#auth-btn.logout {
-    background-color: #e53935; /* Red for logout */
-}
-
-/* --- New style for projected rows --- */
-#compound-table tr.projected td {
-  opacity: 0.6;
-}
+input:disabled, button:disabled { background-color: #222; color: #777; cursor: not-allowed; border-color: #333; }
+#compound-table tr.projected td { opacity: 0.6; }
