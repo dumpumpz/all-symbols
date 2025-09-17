@@ -6006,6 +6006,48 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 08:00",
                 "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 10:00",
+                "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.5627",
+                "resistance": "3.6076",
+                "stoploss": "3.6500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 10:00",
+                "symbol": "SUIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "2.4830",
+                "resistance": "2.5020",
+                "stoploss": "2.6600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 10:00",
+                "symbol": "FILUSDT"
             }
         ],
         "master_section_index": 0
