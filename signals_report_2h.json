@@ -2708,7 +2708,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "113520.1100",
                 "resistance": "113869.8800",
                 "stoploss": "115515.0900",
