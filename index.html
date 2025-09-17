@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Tools</title>
-    <!-- Update version to bust cache -->
-    <link rel="stylesheet" href="style.css?v=2_PERCENT_CHALLENGE">
+    <!-- CRITICAL CHANGE HERE: Added version to force new CSS to load -->
+    <link rel="stylesheet" href="style.css?v=STYLE_FIX_FINAL">
 </head>
 <body>
     <header>
@@ -13,15 +13,13 @@
         <p>Last updated: <span id="last-updated">Loading...</span></p>
     </header>
     <main>
-        <!-- Tab Navigation Buttons -->
         <div class="tab-nav">
             <button id="show-signals-btn" class="tab-button active">Signals</button>
             <button id="show-calc-1-btn" class="tab-button">Compound Challenge 1%</button>
-            <!-- NEW: Button for the 2% challenge -->
             <button id="show-calc-2-btn" class="tab-button">Compound Challenge 2%</button>
         </div>
 
-        <!-- Section 1: The 1% Calculator (Initially Hidden) -->
+        <!-- Section 1: The 1% Calculator -->
         <div id="compound-container-1" class="compound-container">
             <div class="calculator-controls">
                 <div class="control-group">
@@ -51,7 +49,7 @@
             </div>
         </div>
         
-        <!-- NEW: Section 2: The 2% Calculator (Initially Hidden) -->
+        <!-- Section 2: The 2% Calculator -->
         <div id="compound-container-2" class="compound-container">
             <div class="calculator-controls">
                 <div class="control-group">
@@ -81,15 +79,13 @@
             </div>
         </div>
 
-        <!-- Section 3: The Signals Grid (Initially Visible) -->
-        <div id="signals-container">
-            <!-- Signals will be loaded here by JavaScript -->
-        </div>
+        <!-- Section 3: The Signals Grid -->
+        <div id="signals-container"></div>
     </main>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <!-- Update version to bust cache -->
-    <script src="script.js?v=2_PERCENT_CHALLENGE"></script>
+    <!-- CRITICAL CHANGE HERE: Added version to force new JS to load -->
+    <script src="script.js?v=STYLE_FIX_FINAL"></script>
 </body>
 </html>
