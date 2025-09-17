@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- EXISTING SIGNAL FETCHING CODE (No changes needed here) ---
     const container = document.getElementById('signals-container');
     const lastUpdatedElem = document.getElementById('last-updated');
-    
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
 
     const fetchAndDisplaySignals = async () => {
+        // ... your existing signal fetching code remains exactly the same ...
         lastUpdatedElem.textContent = new Date().toLocaleString();
         container.innerHTML = ''; 
 
@@ -21,35 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const signalsList = document.createElement('div');
             signalsList.className = 'signal-list';
             
-            // --- ★★★ THE DEFINITIVE JAVASCRIPT ANIMATION LOGIC ★★★ ---
             title.addEventListener('click', () => {
                 const isExpanded = timeframeDiv.classList.contains('expanded');
 
                 if (!isExpanded) {
-                    // --- EXPAND SEQUENCE ---
-                    // 1. Instantly apply the 'expanded' class to make it full-width
                     timeframeDiv.classList.add('expanded');
-                    
-                    // 2. Set height to its full, measured scrollHeight to trigger animation
                     signalsList.style.height = signalsList.scrollHeight + 'px';
-
                 } else {
-                    // --- COLLAPSE SEQUENCE ---
-                    // 1. Set height back to 0 to start the collapse animation
                     signalsList.style.height = '0px';
-
-                    // 2. IMPORTANT: Listen for when the height animation finishes
                     signalsList.addEventListener('transitionend', () => {
-                        // 3. ONLY AFTER it's fully collapsed, remove the class to snap it back to its grid cell
                         timeframeDiv.classList.remove('expanded');
-                    }, { once: true }); // {once: true} automatically removes the listener after it fires once
+                    }, { once: true });
                 }
             });
             
             timeframeDiv.appendChild(title);
             timeframeDiv.appendChild(signalsList);
 
-            // Fetching and populating logic remains the same...
             try {
                 const response = await fetch(`${url}?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error(`File not found for ${tf}`);
@@ -98,4 +87,144 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchAndDisplaySignals();
+    // --- END OF EXISTING SIGNAL FETCHING CODE ---
+
+
+    // --- NEW COMPOUND CALCULATOR LOGIC START ---
+
+    const startBankrollInput = document.getElementById('start-bankroll');
+    const targetBankrollInput = document.getElementById('target-bankroll');
+    const tableBody = document.querySelector('#compound-table tbody');
+    const resetButton = document.getElementById('reset-calculator');
+
+    const RISK_PERCENT = 0.01; // 1%
+    const RR_RATIO = 1; // 1:1
+
+    // State will hold our results
+    let tradeResults = [];
+
+    // --- State Management Functions (using localStorage) ---
+    const saveState = () => {
+        const state = {
+            start: startBankrollInput.value,
+            target: targetBankrollInput.value,
+            results: tradeResults
+        };
+        localStorage.setItem('compoundChallengeState', JSON.stringify(state));
+    };
+
+    const loadState = () => {
+        const savedState = localStorage.getItem('compoundChallengeState');
+        if (savedState) {
+            const state = JSON.parse(savedState);
+            startBankrollInput.value = state.start || '1000';
+            targetBankrollInput.value = state.target || '5500';
+            tradeResults = state.results || [];
+        }
+        // If no saved state, it will use default values from HTML
+    };
+
+    // --- Core Calculation and Rendering Function ---
+    const calculateAndRender = () => {
+        tableBody.innerHTML = ''; // Clear the table
+
+        let currentBankroll = parseFloat(startBankrollInput.value);
+        const targetBankroll = parseFloat(targetBankrollInput.value);
+        let level = 1;
+        let tradeHasBeenLogged = false;
+
+        while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) { // Safety break at 200 levels
+            const startOfLevelBankroll = currentBankroll;
+            const riskAmount = startOfLevelBankroll * RISK_PERCENT;
+            const profitTarget = riskAmount * RR_RATIO;
+
+            const result = tradeResults[level - 1] || 'pending'; // 'win', 'loss', or 'pending'
+
+            let endOfLevelBankroll = startOfLevelBankroll;
+            let rowClass = '';
+
+            if (result === 'win') {
+                endOfLevelBankroll += profitTarget;
+                rowClass = 'win';
+                tradeHasBeenLogged = true;
+            } else if (result === 'loss') {
+                endOfLevelBankroll -= riskAmount;
+                rowClass = 'loss';
+                tradeHasBeenLogged = true;
+            }
+
+            // Create Table Row
+            const row = document.createElement('tr');
+            if (rowClass) row.className = rowClass;
+            row.innerHTML = `
+                <td>${level}</td>
+                <td>$${startOfLevelBankroll.toFixed(2)}</td>
+                <td>$${riskAmount.toFixed(2)}</td>
+                <td>$${profitTarget.toFixed(2)}</td>
+                <td>
+                    <select data-level="${level}">
+                        <option value="pending" ${result === 'pending' ? 'selected' : ''}>Pending</option>
+                        <option value="win" ${result === 'win' ? 'selected' : ''}>Win</option>
+                        <option value="loss" ${result === 'loss' ? 'selected' : ''}>Loss</option>
+                    </select>
+                </td>
+                <td>$${endOfLevelBankroll.toFixed(2)}</td>
+            `;
+            tableBody.appendChild(row);
+
+            // Disable future dropdowns if a result has been logged
+            const selectElement = row.querySelector('select');
+            if (tradeHasBeenLogged && result === 'pending') {
+                selectElement.disabled = true;
+            }
+            
+            // The bankroll for the next level is the result of this one
+            currentBankroll = endOfLevelBankroll;
+            level++;
+        }
+
+        // Add event listeners to the new select dropdowns
+        document.querySelectorAll('#compound-table select').forEach(select => {
+            select.addEventListener('change', handleResultChange);
+        });
+        
+        saveState(); // Save state every time we re-render
+    };
+
+    // --- Event Handlers ---
+    const handleResultChange = (event) => {
+        const level = parseInt(event.target.dataset.level);
+        const result = event.target.value;
+        
+        // Update the results array
+        tradeResults[level - 1] = result;
+
+        // Clean up future results if a 'pending' is selected
+        if(result === 'pending') {
+            tradeResults.splice(level - 1);
+        }
+
+        calculateAndRender(); // Re-calculate and re-draw everything
+    };
+
+    const resetCalculator = () => {
+        if (confirm('Are you sure you want to reset all progress?')) {
+            localStorage.removeItem('compoundChallengeState');
+            tradeResults = []; // Clear in-memory state
+            // Reset inputs to default (or whatever you want)
+            startBankrollInput.value = '1000';
+            targetBankrollInput.value = '5500';
+            calculateAndRender();
+        }
+    };
+
+    // --- Initial Setup ---
+    startBankrollInput.addEventListener('change', calculateAndRender);
+    targetBankrollInput.addEventListener('change', calculateAndRender);
+    resetButton.addEventListener('click', resetCalculator);
+
+    loadState(); // Load saved data on page start
+    calculateAndRender(); // Initial render
+
+    // --- NEW COMPOUND CALCULATOR LOGIC END ---
 });
