@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirm('Are you sure you want to reset all progress?')) {
                 localStorage.removeItem('compoundChallengeState');
                 tradeResults = [];
-                startBankrollInput.value = '1000';
-                targetBankrollInput.value = '5500';
+                startBankrollInput.value = '5500';
+                targetBankrollInput.value = '20000';
                 calculateAndRender();
             }
         };
