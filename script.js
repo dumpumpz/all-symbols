@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- START FIREBASE SETUP ---
-
-    // Your specific Firebase configuration is now included
     const firebaseConfig = {
       apiKey: "AIzaSyCQ4vHqGiv_yRkA0zZaaOU24gxhqBkxnv4",
       authDomain: "journal-a003f.firebaseapp.com",
@@ -15,10 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
-    const db = firebase.firestore(); // We are using Firestore, the modern database
+    const db = firebase.database(); // <-- USING REALTIME DATABASE
     const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-    let currentUser = null; // Variable to hold the current user's data
+    let currentUser = null;
 
     // --- UI Elements ---
     const authBtn = document.getElementById('auth-btn');
@@ -37,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             userStatus.textContent = `Signed in as ${user.displayName}`;
             authBtn.textContent = 'Sign Out';
             authBtn.classList.add('logout');
-            loadState(); // Load the user's data from Firestore
+            loadState(); // Load the user's data
         } else {
             // User is signed out
             currentUser = null;
@@ -56,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- COMPOUND CALCULATOR LOGIC (UPDATED FOR FIREBASE) ---
+    // --- COMPOUND CALCULATOR LOGIC (for Realtime Database) ---
     const RISK_PERCENT = 0.01;
     let tradeResults = [];
 
@@ -68,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             results: tradeResults.filter(r => r !== null && r !== undefined)
         };
         try {
-            await db.collection('users').doc(currentUser.uid).set(dataToSave);
-            console.log("Progress saved to Firestore!");
+            await db.ref('users/' + currentUser.uid).set(dataToSave);
+            console.log("Progress saved to Realtime Database!");
         } catch (error) {
             console.error("Error saving data: ", error);
         }
@@ -77,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loadState = async () => {
         if (!currentUser) return;
-        const userDocRef = db.collection('users').doc(currentUser.uid);
-        const doc = await userDocRef.get();
-        if (doc.exists) {
-            const data = doc.data();
+        const snapshot = await db.ref('users/' + currentUser.uid).get();
+        if (snapshot.exists()) {
+            const data = snapshot.val();
             startBankrollInput.value = data.start || '5500';
             targetBankrollInput.value = data.target || '20000';
             tradeResults = data.results || [];
         } else {
+            // This is a new user, set default values
             startBankrollInput.value = '5500';
             targetBankrollInput.value = '20000';
             tradeResults = [];
@@ -159,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- UNCHANGED CODE (Signals, Tabs) ---
+    // --- Signals and Tabs Code ---
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
