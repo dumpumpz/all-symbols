@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isMasterMode) return;
             const dataToSave = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
             try {
+                // This path now correctly matches your Firebase Rules
                 await db.ref(config.firebasePath + '/' + MASTER_USER_ID).set(dataToSave);
+                console.log(`Data saved to: ${config.firebasePath}/${MASTER_USER_ID}`);
             } catch (error) {
                 console.error("Error saving data: ", error);
             }
@@ -136,17 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButtonId: 'reset-calculator-1',
         tableId: 'compound-table-1',
         riskPercent: 0.01,
-        firebasePath: 'compounding_data_1percent',
+        // ▼▼▼ THIS LINE HAS CHANGED ▼▼▼
+        firebasePath: 'compounding_data/1_percent', // This path is now allowed by your rules
         defaultStart: '5500',
         defaultTarget: '20000'
     });
+
     initializeCompoundCalculator({
         startBankrollId: 'start-bankroll-2',
         targetBankrollId: 'target-bankroll-2',
         resetButtonId: 'reset-calculator-2',
         tableId: 'compound-table-2',
         riskPercent: 0.02,
-        firebasePath: 'compounding_data_2percent',
+        // ▼▼▼ THIS LINE HAS CHANGED ▼▼▼
+        firebasePath: 'compounding_data/2_percent', // This path is now allowed by your rules
         defaultStart: '5500',
         defaultTarget: '20000'
     });
@@ -171,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calc1Btn.addEventListener('click', () => switchTab(calc1Btn, calc1Container));
     calc2Btn.addEventListener('click', () => switchTab(calc2Btn, calc2Container));
 
-    // --- SIGNALS CODE ---
+    // --- SIGNALS CODE (Unchanged) ---
     const lastUpdatedElem = document.getElementById('last-updated');
     const TIMEFRAMES = ['5m', '15m', '30m', '1h', '2h', '4h', '1d'];
     const fetchAndDisplaySignals = async () => {
@@ -233,6 +238,5 @@ document.addEventListener('DOMContentLoaded', () => {
             signalsContainer.appendChild(timeframeDiv);
         }
     };
-    
     fetchAndDisplaySignals();
 });
