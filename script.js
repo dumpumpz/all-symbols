@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- NEW: MASTER MODE CHECK ---
+    // --- MASTER MODE CHECK ---
     const urlParams = new URLSearchParams(window.location.search);
     const isMasterMode = urlParams.get('master') === 'true';
     console.log("Master mode is:", isMasterMode ? "ON" : "OFF");
 
-    // --- START FIREBASE SETUP ---
+    // --- FIREBASE SETUP ---
     const firebaseConfig = {
       apiKey: "AIzaSyCQ4vHqGiv_yRkA0zZaaOU24gxhqBkxnv4",
       authDomain: "journal-a003f.firebaseapp.com",
@@ -14,14 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
       messagingSenderId: "1038636626553",
       appId: "1:1038636626553:web:9d8bb7a6a80a9ce4dc9aa8"
     };
-
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-    
     const MASTER_USER_ID = "local_pc_main_user"; 
 
     // --- UI Elements ---
-    const compoundContainer = document.getElementById('compound-container');
     const startBankrollInput = document.getElementById('start-bankroll');
     const targetBankrollInput = document.getElementById('target-bankroll');
     const tableBody = document.querySelector('#compound-table tbody');
@@ -37,11 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const saveState = async () => {
         if (!isMasterMode) return; 
-        const dataToSave = {
-            start: startBankrollInput.value,
-            target: targetBankrollInput.value,
-            results: tradeResults.filter(r => r !== null && r !== undefined)
-        };
+        const dataToSave = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
         try {
             await db.ref('compounding_data/' + MASTER_USER_ID).set(dataToSave);
             console.log("Progress saved for master user!");
@@ -68,31 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- THIS IS THE CORRECTED FUNCTION ---
     const calculateAndRender = () => {
         tableBody.innerHTML = '';
-        let currentBankroll = parseFloat(startBankrollInput.value) || 0;
+        let bankrollForNextLevel = parseFloat(startBankrollInput.value) || 0; // Use a dedicated variable
         const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
         let level = 1;
         let foundFirstEmptyInput = false;
 
-        while (currentBankroll < targetBankroll && currentBankroll > 0 && level < 200) {
-            const startOfLevelBankroll = currentBankroll;
+        while (bankrollForNextLevel < targetBankroll && bankrollForNextLevel > 0 && level < 200) {
+            const startOfLevelBankroll = bankrollForNextLevel; // Start with the correct, compounded value
             const riskAmount = startOfLevelBankroll * RISK_PERCENT;
-            const profitTarget = riskAmount; // Standard 1R win
+            const profitTarget = riskAmount;
             const actualPL = tradeResults[level - 1];
             
-            let endOfLevelBankroll = startOfLevelBankroll;
+            let endOfLevelBankroll;
             let rowClass = '';
             let isEnabledForInput = false;
 
-            // Check if there is a REAL result for this level
             if (typeof actualPL === 'number' && !isNaN(actualPL)) {
-                // This is a historical row. Use the actual P/L.
-                endOfLevelBankroll += actualPL;
+                // HISTORICAL ROW: Use the actual P/L.
+                endOfLevelBankroll = startOfLevelBankroll + actualPL;
                 rowClass = actualPL >= 0 ? 'win' : 'loss';
             } else {
-                // This is a future, projected row. Assume a standard win.
-                endOfLevelBankroll += profitTarget;
-                rowClass = 'projected'; // Add the class for styling
-                
+                // FUTURE ROW: Project a standard win.
+                endOfLevelBankroll = startOfLevelBankroll + profitTarget;
+                rowClass = 'projected';
                 if (!foundFirstEmptyInput) {
                     isEnabledForInput = true;
                     foundFirstEmptyInput = true;
@@ -100,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const isDisabled = !isMasterMode || !isEnabledForInput;
-
             const row = document.createElement('tr');
             if (rowClass) row.className = rowClass;
             row.innerHTML = `
@@ -112,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>$${endOfLevelBankroll.toFixed(2)}</td>`;
             tableBody.appendChild(row);
 
-            // CRUCIAL: Update the currentBankroll with the new end value
-            // for the next loop iteration, whether it was real or projected.
-            currentBankroll = endOfLevelBankroll;
+            // THIS IS THE CRITICAL FIX: Ensure the variable for the next loop
+            // is updated with the result of the CURRENT loop.
+            bankrollForNextLevel = endOfLevelBankroll;
             level++;
         }
         document.querySelectorAll('#compound-table input[type="number"]').forEach(input => {
@@ -136,10 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
     targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-
     resetButton.addEventListener('click', () => {
         if (!isMasterMode) return;
-        if (confirm('Are you sure you want to reset all progress? This will clear all P/L entries.')) {
+        if (confirm('Are you sure you want to reset all progress?')) {
             tradeResults = [];
             startBankrollInput.value = '5500';
             targetBankrollInput.value = '20000';
@@ -152,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const signalsBtn = document.getElementById('show-signals-btn');
     const calcBtn = document.getElementById('show-calc-btn');
     const signalsContainer = document.getElementById('signals-container');
+    const compoundContainer = document.getElementById('compound-container');
     signalsBtn.addEventListener('click', () => {
         compoundContainer.style.display = 'none';
         signalsContainer.style.display = 'grid';
