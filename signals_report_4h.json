@@ -1392,7 +1392,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0746",
                 "resistance": "0.0773",
                 "stoploss": "0.0863",
@@ -2638,7 +2638,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1117",
                 "resistance": "0.1186",
                 "stoploss": "0.1284",
@@ -6692,6 +6692,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-18 12:00",
                 "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3372",
+                "resistance": "0.3226",
+                "stoploss": "0.3108",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 12:00",
+                "symbol": "SEIUSDT"
             }
         ],
         "master_section_index": 0
