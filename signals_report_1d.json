@@ -398,7 +398,7 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "373.0000",
                 "resistance": "390.3000",
                 "stoploss": "446.5000",
@@ -1008,6 +1008,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-14 00:00",
                 "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.8960",
+                "resistance": "2.7880",
+                "stoploss": "2.3490",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 00:00",
+                "symbol": "NEARUSDT"
             }
         ],
         "master_section_index": 0
