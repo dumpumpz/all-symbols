@@ -6930,6 +6930,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-18 04:00",
                 "symbol": "LDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.1199",
+                "resistance": "3.0495",
+                "stoploss": "2.9944",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 09:00",
+                "symbol": "XRPUSDT"
             }
         ],
         "master_section_index": 0
