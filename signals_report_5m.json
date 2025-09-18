@@ -15854,7 +15854,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0667",
                 "resistance": "0.0668",
                 "stoploss": "0.0675",
@@ -15868,7 +15868,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3697.2100",
                 "resistance": "3698.7900",
                 "stoploss": "3700.1600",
@@ -15918,6 +15918,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 21:05",
                 "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3427",
+                "resistance": "0.3422",
+                "stoploss": "0.3416",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 21:05",
+                "symbol": "TRXUSDT"
             },
             {
                 "type": "section",
@@ -16030,6 +16044,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 21:55",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0671",
+                "resistance": "0.0670",
+                "stoploss": "0.0667",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 22:00",
+                "symbol": "KMNOUSDT"
             },
             {
                 "type": "section",
@@ -16506,6 +16534,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 00:40",
                 "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.4990",
+                "resistance": "1.5060",
+                "stoploss": "1.5140",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 00:55",
+                "symbol": "ETHFIUSDT"
             },
             {
                 "type": "section",
