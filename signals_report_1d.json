@@ -301,6 +301,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "452.0000",
+                "resistance": "436.9000",
+                "stoploss": "353.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-22 00:00",
+                "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.7150",
                 "resistance": "0.7660",
                 "stoploss": "0.8620",
@@ -378,6 +392,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-30 00:00",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "373.0000",
+                "resistance": "390.3000",
+                "stoploss": "446.5000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-30 00:00",
+                "symbol": "TAOUSDT"
             },
             {
                 "type": "section",
