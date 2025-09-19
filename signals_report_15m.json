@@ -7902,6 +7902,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2624",
+                "resistance": "1.3128",
+                "stoploss": "1.3570",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-14 20:30",
+                "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "1.2516",
                 "resistance": "1.3484",
@@ -13412,6 +13426,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-19 11:30",
                 "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.2698",
+                "resistance": "1.2522",
+                "stoploss": "1.2255",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 13:15",
+                "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1802",
+                "resistance": "0.1770",
+                "stoploss": "0.1724",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 13:15",
+                "symbol": "BIOUSDT"
             }
         ],
         "master_section_index": 0
