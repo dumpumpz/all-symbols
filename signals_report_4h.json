@@ -664,7 +664,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1436",
                 "resistance": "0.1459",
                 "stoploss": "0.1491",
@@ -700,6 +700,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-01 20:00",
                 "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "6.5900",
+                "resistance": "6.9250",
+                "stoploss": "7.3200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-01 20:00",
+                "symbol": "UNIUSDT"
             },
             {
                 "type": "section",
