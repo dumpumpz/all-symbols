@@ -7902,7 +7902,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.2624",
                 "resistance": "1.3128",
                 "stoploss": "1.3570",
