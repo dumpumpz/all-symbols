@@ -7574,6 +7574,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-19 05:00",
                 "symbol": "FDUSDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3883",
+                "resistance": "0.3822",
+                "stoploss": "0.3744",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 11:00",
+                "symbol": "LAUSDT"
             }
         ],
         "master_section_index": 0
