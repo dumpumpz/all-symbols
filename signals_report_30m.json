@@ -8770,7 +8770,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
                 "stoploss": "0.0000",
@@ -8784,7 +8784,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
                 "stoploss": "0.0000",
@@ -8792,6 +8792,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-20 09:30",
                 "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2405",
+                "resistance": "0.2420",
+                "stoploss": "0.2450",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-20 10:00",
+                "symbol": "HBARUSDT"
             }
         ],
         "master_section_index": 0
