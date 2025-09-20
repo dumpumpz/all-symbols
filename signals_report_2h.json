@@ -4444,6 +4444,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "3.5100",
+                "resistance": "3.7100",
+                "stoploss": "3.9700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-25 06:00",
+                "symbol": "OMNIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "9.1000",
                 "resistance": "9.0050",
@@ -7804,6 +7818,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "3.3700",
+                "resistance": "3.4800",
+                "stoploss": "3.6800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-15 08:00",
+                "symbol": "OMNIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "20.3100",
                 "resistance": "20.6200",
@@ -7980,6 +8008,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 02:00",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.5100",
+                "resistance": "3.5600",
+                "stoploss": "3.8500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 04:00",
+                "symbol": "OMNIUSDT"
             },
             {
                 "type": "section",
@@ -8414,6 +8456,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-18 18:00",
                 "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.8800",
+                "resistance": "3.5400",
+                "stoploss": "3.4000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 18:00",
+                "symbol": "OMNIUSDT"
             },
             {
                 "type": "section",
