@@ -9016,6 +9016,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-20 10:00",
                 "symbol": "PENGUUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "116017.8900",
+                "resistance": "115730.4100",
+                "stoploss": "115100.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-20 14:00",
+                "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.5360",
+                "resistance": "1.4980",
+                "stoploss": "1.4630",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-20 14:00",
+                "symbol": "ETHFIUSDT"
             }
         ],
         "master_section_index": 0

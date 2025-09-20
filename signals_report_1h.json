@@ -1911,6 +1911,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0242",
+                "resistance": "0.0240",
+                "stoploss": "0.0239",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-30 23:00",
+                "symbol": "BROCCOLI714USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0243",
                 "resistance": "0.0242",
                 "stoploss": "0.0239",
@@ -2492,6 +2506,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-31 23:00",
                 "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3104",
+                "resistance": "0.3173",
+                "stoploss": "0.3210",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-31 23:00",
+                "symbol": "SUSDT"
             },
             {
                 "type": "section",
