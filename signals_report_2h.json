@@ -8812,7 +8812,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0344",
                 "resistance": "0.0352",
                 "stoploss": "0.0374",
