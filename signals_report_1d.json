@@ -356,7 +356,7 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.4400",
                 "resistance": "2.7200",
                 "stoploss": "3.4600",
@@ -1232,6 +1232,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-20 00:00",
                 "symbol": "SUNUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.8660",
+                "resistance": "2.6600",
+                "stoploss": "2.4540",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-20 00:00",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
