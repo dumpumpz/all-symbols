@@ -9793,6 +9793,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.2156",
+                "resistance": "0.2103",
+                "stoploss": "0.2061",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-15 09:30",
+                "symbol": "WLFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.2195",
                 "resistance": "0.2139",
                 "stoploss": "0.2061",
@@ -10416,6 +10430,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 05:00",
                 "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "924.6100",
+                "resistance": "923.4200",
+                "stoploss": "916.8700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 05:00",
+                "symbol": "BNBUSDT"
             },
             {
                 "type": "section",
@@ -13642,7 +13670,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.9051",
                 "resistance": "1.9130",
                 "stoploss": "1.9440",
@@ -13992,7 +14020,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.9196",
                 "resistance": "1.9366",
                 "stoploss": "1.9499",
@@ -14854,6 +14882,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-20 12:15",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2024",
+                "resistance": "0.1987",
+                "stoploss": "0.1948",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-20 12:30",
+                "symbol": "BBUSDT"
             }
         ],
         "master_section_index": 0
