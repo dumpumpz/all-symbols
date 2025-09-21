@@ -9506,6 +9506,48 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 02:00",
                 "symbol": "WUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.6680",
+                "resistance": "4.6450",
+                "stoploss": "4.5940",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:00",
+                "symbol": "APTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0405",
+                "resistance": "0.0437",
+                "stoploss": "0.0552",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:00",
+                "symbol": "TSTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "114.8600",
+                "resistance": "114.4200",
+                "stoploss": "113.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:00",
+                "symbol": "LTCUSDT"
             }
         ],
         "master_section_index": 0
