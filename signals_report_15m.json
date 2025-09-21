@@ -11696,7 +11696,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0931",
                 "resistance": "0.0934",
                 "stoploss": "0.0943",
@@ -17388,6 +17388,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 12:30",
                 "symbol": "APTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1680",
+                "resistance": "1.1889",
+                "stoploss": "1.2116",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 12:45",
+                "symbol": "SOMIUSDT"
             }
         ],
         "master_section_index": 0

@@ -4570,7 +4570,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0337",
                 "resistance": "0.0340",
                 "stoploss": "0.0347",
