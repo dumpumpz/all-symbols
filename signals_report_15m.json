@@ -10282,7 +10282,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3160",
                 "resistance": "0.3173",
                 "stoploss": "0.3199",
@@ -10556,6 +10556,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 05:00",
                 "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.4570",
+                "resistance": "2.4510",
+                "stoploss": "2.4370",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 05:00",
+                "symbol": "CAKEUSDT"
             },
             {
                 "type": "section",
@@ -10948,6 +10962,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-16 07:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0274",
+                "resistance": "0.0276",
+                "stoploss": "0.0286",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 07:00",
+                "symbol": "LINEAUSDT"
             },
             {
                 "type": "section",
@@ -14020,7 +14048,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "7.1100",
                 "resistance": "7.1350",
                 "stoploss": "7.3420",
