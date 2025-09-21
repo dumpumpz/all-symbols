@@ -32074,6 +32074,62 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 06:10",
                 "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0316",
+                "resistance": "0.0310",
+                "stoploss": "0.0305",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:25",
+                "symbol": "LINEAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2147",
+                "resistance": "0.2124",
+                "stoploss": "0.2104",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:40",
+                "symbol": "BBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.6689",
+                "resistance": "0.6732",
+                "stoploss": "0.6778",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 06:55",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 07:00",
+                "symbol": "BONKUSDT"
             }
         ],
         "master_section_index": 0
