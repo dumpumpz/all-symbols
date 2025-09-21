@@ -5158,7 +5158,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "4.1950",
                 "resistance": "4.2030",
                 "stoploss": "4.2510",
@@ -6586,7 +6586,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1351",
                 "resistance": "0.1362",
                 "stoploss": "0.1387",
@@ -9646,6 +9646,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 08:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.8922",
+                "resistance": "0.8964",
+                "stoploss": "0.9026",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 08:30",
+                "symbol": "ADAUSDT"
             }
         ],
         "master_section_index": 0
