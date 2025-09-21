@@ -552,7 +552,7 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0936",
                 "resistance": "0.1005",
                 "stoploss": "0.1363",
@@ -734,7 +734,7 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0068",
                 "resistance": "0.0073",
                 "stoploss": "0.0085",
@@ -1316,6 +1316,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-20 00:00",
                 "symbol": "QIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.5062",
+                "resistance": "0.3786",
+                "stoploss": "0.3157",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 00:00",
+                "symbol": "THEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "11.5010",
+                "resistance": "8.8490",
+                "stoploss": "6.9470",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 00:00",
+                "symbol": "DEXEUSDT"
             }
         ],
         "master_section_index": 0
