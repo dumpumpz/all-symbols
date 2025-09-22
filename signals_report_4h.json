@@ -8470,6 +8470,48 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 00:00",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "2.8735",
+                "resistance": "2.9642",
+                "stoploss": "3.1120",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 04:00",
+                "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.8450",
+                "resistance": "0.8754",
+                "stoploss": "0.9386",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 04:00",
+                "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "4.3260",
+                "resistance": "4.5550",
+                "stoploss": "4.7430",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 04:00",
+                "symbol": "APTUSDT"
             }
         ],
         "master_section_index": 0
