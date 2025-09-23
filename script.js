@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const startBankrollInput = document.getElementById(config.startBankrollId);
         const targetBankrollInput = document.getElementById(config.targetBankrollId);
         const tableBody = document.querySelector(`#${config.tableId} tbody`);
+        // ▼▼▼ Get references to new summary elements ▼▼▼
+        const summaryTextElem = document.getElementById(config.summaryTextId);
+        const progressBarElem = document.getElementById(config.progressBarId);
         
         startBankrollInput.disabled = !isMasterMode;
         targetBankrollInput.disabled = !isMasterMode;
-        // Reset button references are removed
 
         let tradeResults = [];
 
@@ -57,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const calculateAndRender = () => {
             tableBody.innerHTML = '';
-            let bankrollForNextLevel = parseFloat(startBankrollInput.value) || 0;
+            const startBankroll = parseFloat(startBankrollInput.value) || 0;
             const targetBankroll = parseFloat(targetBankrollInput.value) || 0;
+            let bankrollForNextLevel = startBankroll;
+            let currentBankroll = startBankroll; // This will track the actual current bankroll
+            
             let level = 1;
             let foundFirstEmptyInput = false;
 
@@ -69,17 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const actualPL = tradeResults[level - 1];
                 let endOfLevelBankroll;
                 let rowClass = '';
-                let isEnabledForInput = false; // Default to not enabled
+                let isEnabledForInput = false;
 
                 if (typeof actualPL === 'number' && !isNaN(actualPL)) {
                     endOfLevelBankroll = startOfLevelBankroll + actualPL;
                     rowClass = actualPL >= 0 ? 'win' : 'loss';
-                    isEnabledForInput = true; // <<< CHANGE: Enable input for completed rows
+                    isEnabledForInput = true; 
+                    currentBankroll = endOfLevelBankroll; // Update current bankroll after a completed trade
                 } else {
                     endOfLevelBankroll = startOfLevelBankroll + profitTarget;
                     rowClass = 'projected';
                     if (!foundFirstEmptyInput) {
-                        isEnabledForInput = true; // Enable input for the first projected row
+                        isEnabledForInput = true;
                         foundFirstEmptyInput = true;
                     }
                 }
@@ -98,6 +104,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 bankrollForNextLevel = endOfLevelBankroll;
                 level++;
             }
+            
+            // ▼▼▼ NEW SUMMARY CALCULATION LOGIC ▼▼▼
+            const tradesCompleted = tradeResults.filter(r => typeof r === 'number').length;
+            const totalProjectedLevels = level - 1; // Total levels shown in the table
+            const tradesLeft = totalProjectedLevels - tradesCompleted;
+
+            let progressPercent = 0;
+            if (targetBankroll > startBankroll) {
+                progressPercent = ((currentBankroll - startBankroll) / (targetBankroll - startBankroll)) * 100;
+            }
+            progressPercent = Math.max(0, Math.min(100, progressPercent)); // Clamp between 0 and 100
+
+            summaryTextElem.textContent = `Trades: ${tradesCompleted} / ${totalProjectedLevels} (${tradesLeft} left) | Progress: ${progressPercent.toFixed(1)}%`;
+            progressBarElem.style.width = `${progressPercent}%`;
+            // ▲▲▲ END OF NEW SUMMARY LOGIC ▲▲▲
+
             document.querySelectorAll(`#${config.tableId} input[type="number"]`).forEach(input => {
                 input.addEventListener('change', handlePLChange);
             });
@@ -108,25 +130,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const level = parseInt(event.target.dataset.level);
             const value = event.target.value;
             tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
-            // This logic will now correctly handle editing existing entries or clearing them
-            // If an entry in the middle is cleared, subsequent entries are kept
             calculateAndRender();
             saveState();
         };
 
         startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
         targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-        
-        // Reset button event listener is removed.
 
         loadState();
     };
 
     // --- INITIALIZE BOTH CALCULATORS ---
+    // ▼▼▼ Added new IDs to the configuration objects ▼▼▼
     initializeCompoundCalculator({
         startBankrollId: 'start-bankroll-1',
         targetBankrollId: 'target-bankroll-1',
         tableId: 'compound-table-1',
+        summaryTextId: 'summary-text-1',
+        progressBarId: 'progress-bar-1',
         riskPercent: 0.01,
         firebasePath: 'compounding_data/1_percent',
         defaultStart: '5500',
@@ -137,13 +158,15 @@ document.addEventListener('DOMContentLoaded', () => {
         startBankrollId: 'start-bankroll-2',
         targetBankrollId: 'target-bankroll-2',
         tableId: 'compound-table-2',
+        summaryTextId: 'summary-text-2',
+        progressBarId: 'progress-bar-2',
         riskPercent: 0.02,
         firebasePath: 'compounding_data/2_percent',
         defaultStart: '5500',
         defaultTarget: '20000'
     });
 
-    // --- TAB SWITCHING LOGIC ---
+    // --- TAB SWITCHING LOGIC (Unchanged) ---
     const signalsBtn = document.getElementById('show-signals-btn');
     const calc1Btn = document.getElementById('show-calc-1-btn');
     const calc2Btn = document.getElementById('show-calc-2-btn');
