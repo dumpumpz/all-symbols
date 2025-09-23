@@ -2191,6 +2191,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.4641",
+                "resistance": "0.4502",
+                "stoploss": "0.4404",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-14 00:00",
+                "symbol": "XLMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.2732",
                 "resistance": "0.2680",
                 "stoploss": "0.2440",
@@ -2464,6 +2478,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-14 12:00",
                 "symbol": "VANAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1172",
+                "resistance": "0.1294",
+                "stoploss": "0.1353",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-14 12:00",
+                "symbol": "BBUSDT"
             },
             {
                 "type": "section",
@@ -10212,7 +10240,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3837",
                 "resistance": "0.3902",
                 "stoploss": "0.4002",
@@ -10374,6 +10402,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 02:00",
                 "symbol": "CRVUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1855",
+                "resistance": "1.2472",
+                "stoploss": "1.3310",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 02:00",
+                "symbol": "LDOUSDT"
             },
             {
                 "type": "section",

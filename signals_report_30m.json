@@ -10800,7 +10800,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3829",
                 "resistance": "0.3883",
                 "stoploss": "0.3905",
@@ -11004,6 +11004,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 00:00",
                 "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2384",
+                "resistance": "1.2585",
+                "stoploss": "1.3053",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 00:00",
+                "symbol": "LDOUSDT"
             },
             {
                 "type": "section",

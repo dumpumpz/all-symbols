@@ -9890,7 +9890,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3829",
                 "resistance": "0.3851",
                 "stoploss": "0.3933",
@@ -10108,6 +10108,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 05:00",
                 "symbol": "PENGUUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1320",
+                "resistance": "1.1752",
+                "stoploss": "1.3087",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 06:00",
+                "symbol": "LDOUSDT"
             },
             {
                 "type": "section",
