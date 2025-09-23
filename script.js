@@ -22,11 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const startBankrollInput = document.getElementById(config.startBankrollId);
         const targetBankrollInput = document.getElementById(config.targetBankrollId);
         const tableBody = document.querySelector(`#${config.tableId} tbody`);
-        const resetButton = document.getElementById(config.resetButtonId);
         
         startBankrollInput.disabled = !isMasterMode;
         targetBankrollInput.disabled = !isMasterMode;
-        resetButton.disabled = !isMasterMode;
+        // Reset button references are removed
 
         let tradeResults = [];
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isMasterMode) return;
             const dataToSave = { start: startBankrollInput.value, target: targetBankrollInput.value, results: tradeResults.filter(r => r !== null && r !== undefined) };
             try {
-                // This path now correctly matches your Firebase Rules
                 await db.ref(config.firebasePath + '/' + MASTER_USER_ID).set(dataToSave);
                 console.log(`Data saved to: ${config.firebasePath}/${MASTER_USER_ID}`);
             } catch (error) {
@@ -71,16 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const actualPL = tradeResults[level - 1];
                 let endOfLevelBankroll;
                 let rowClass = '';
-                let isEnabledForInput = false;
+                let isEnabledForInput = false; // Default to not enabled
 
                 if (typeof actualPL === 'number' && !isNaN(actualPL)) {
                     endOfLevelBankroll = startOfLevelBankroll + actualPL;
                     rowClass = actualPL >= 0 ? 'win' : 'loss';
+                    isEnabledForInput = true; // <<< CHANGE: Enable input for completed rows
                 } else {
                     endOfLevelBankroll = startOfLevelBankroll + profitTarget;
                     rowClass = 'projected';
                     if (!foundFirstEmptyInput) {
-                        isEnabledForInput = true;
+                        isEnabledForInput = true; // Enable input for the first projected row
                         foundFirstEmptyInput = true;
                     }
                 }
@@ -109,25 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const level = parseInt(event.target.dataset.level);
             const value = event.target.value;
             tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
-            if (tradeResults[level - 1] === null) {
-                tradeResults.splice(level - 1);
-            }
+            // This logic will now correctly handle editing existing entries or clearing them
+            // If an entry in the middle is cleared, subsequent entries are kept
             calculateAndRender();
             saveState();
         };
 
         startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
         targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
-        resetButton.addEventListener('click', () => {
-            if (!isMasterMode) return;
-            if (confirm('Are you sure you want to reset all progress for this challenge?')) {
-                tradeResults = [];
-                startBankrollInput.value = config.defaultStart;
-                targetBankrollInput.value = config.defaultTarget;
-                calculateAndRender();
-                saveState();
-            }
-        });
+        
+        // Reset button event listener is removed.
+
         loadState();
     };
 
@@ -135,11 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCompoundCalculator({
         startBankrollId: 'start-bankroll-1',
         targetBankrollId: 'target-bankroll-1',
-        resetButtonId: 'reset-calculator-1',
         tableId: 'compound-table-1',
         riskPercent: 0.01,
-        // ▼▼▼ THIS LINE HAS CHANGED ▼▼▼
-        firebasePath: 'compounding_data/1_percent', // This path is now allowed by your rules
+        firebasePath: 'compounding_data/1_percent',
         defaultStart: '5500',
         defaultTarget: '20000'
     });
@@ -147,11 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCompoundCalculator({
         startBankrollId: 'start-bankroll-2',
         targetBankrollId: 'target-bankroll-2',
-        resetButtonId: 'reset-calculator-2',
         tableId: 'compound-table-2',
         riskPercent: 0.02,
-        // ▼▼▼ THIS LINE HAS CHANGED ▼▼▼
-        firebasePath: 'compounding_data/2_percent', // This path is now allowed by your rules
+        firebasePath: 'compounding_data/2_percent',
         defaultStart: '5500',
         defaultTarget: '20000'
     });
