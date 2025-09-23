@@ -49,7 +49,6 @@ h1 {
 .control-group { display: flex; flex-direction: column; gap: 5px; }
 .control-group label { font-size: 0.8em; color: #aaa; }
 .control-group input { background-color: #333; border: 1px solid #444; color: #e0e0e0; padding: 8px; border-radius: 4px; width: 120px; }
-/* Removed .calculator-controls button styling as it's no longer needed */
 
 /* --- Table Styles (Using .compound-table class) --- */
 .table-wrapper { overflow-x: auto; }
@@ -65,5 +64,31 @@ h1 {
 .compound-table input[type="number"] { background-color: #333; border: 1px solid #555; color: #e0e0e0; padding: 6px; border-radius: 4px; width: 100%; min-width: 90px; box-sizing: border-box; }
 
 /* --- Disabled/Read-Only Styles (Restored to original look) --- */
-.calculator-controls input:disabled, .calculator-controls button:disabled { background-color: #222; color: #777; cursor: not-allowed; border-color: #333; }
+.calculator-controls input:disabled { background-color: #222; color: #777; cursor: not-allowed; border-color: #333; }
 .compound-table input:disabled { background-color: #1e1e1e; border-color: #2c2c2c; color: #666; cursor: not-allowed; }
+
+/* ▼▼▼ NEW PROGRESS BAR STYLES ▼▼▼ */
+.progress-summary {
+    width: 100%;
+    margin-bottom: 25px;
+}
+.progress-summary p {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 0.95em;
+    color: #c0c0c0;
+}
+.progress-bar-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 8px;
+    height: 16px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Default width */
+    background-color: #bb86fc;
+    border-radius: 8px;
+    transition: width 0.5s ease-in-out;
+}
