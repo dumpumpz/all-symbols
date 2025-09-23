@@ -49,7 +49,7 @@ h1 {
 .control-group { display: flex; flex-direction: column; gap: 5px; }
 .control-group label { font-size: 0.8em; color: #aaa; }
 .control-group input { background-color: #333; border: 1px solid #444; color: #e0e0e0; padding: 8px; border-radius: 4px; width: 120px; }
-.calculator-controls button { background-color: #e53935; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-top: 15px; }
+/* Removed .calculator-controls button styling as it's no longer needed */
 
 /* --- Table Styles (Using .compound-table class) --- */
 .table-wrapper { overflow-x: auto; }
