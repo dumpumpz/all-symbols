@@ -6572,7 +6572,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.0771",
                 "resistance": "1.0927",
                 "stoploss": "1.0981",
@@ -6776,6 +6776,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-13 21:00",
                 "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.2300",
+                "resistance": "3.2200",
+                "stoploss": "3.1980",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-13 21:00",
+                "symbol": "TONUSDT"
             },
             {
                 "type": "section",
