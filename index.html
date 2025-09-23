@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Tools</title>
-    <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- CRITICAL CHANGE: Version updated -->
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
     <header>
@@ -21,6 +21,13 @@
 
         <!-- Section 1: The 1% Calculator -->
         <div id="compound-container-1" class="compound-container">
+            <!-- ▼▼▼ NEW PROGRESS SUMMARY ADDED HERE ▼▼▼ -->
+            <div class="progress-summary">
+                <p id="summary-text-1">Loading summary...</p>
+                <div class="progress-bar-container">
+                    <div id="progress-bar-1" class="progress-bar-fill"></div>
+                </div>
+            </div>
             <div class="calculator-controls">
                 <div class="control-group">
                     <label for="start-bankroll-1">Start Bankroll ($):</label>
@@ -30,7 +37,6 @@
                     <label for="target-bankroll-1">Target Bankroll ($):</label>
                     <input type="number" id="target-bankroll-1" value="20000">
                 </div>
-                <!-- Reset Button Removed -->
             </div>
             <div class="table-wrapper">
                 <table id="compound-table-1" class="compound-table">
@@ -51,6 +57,13 @@
         
         <!-- Section 2: The 2% Calculator -->
         <div id="compound-container-2" class="compound-container">
+             <!-- ▼▼▼ NEW PROGRESS SUMMARY ADDED HERE ▼▼▼ -->
+            <div class="progress-summary">
+                <p id="summary-text-2">Loading summary...</p>
+                <div class="progress-bar-container">
+                    <div id="progress-bar-2" class="progress-bar-fill"></div>
+                </div>
+            </div>
             <div class="calculator-controls">
                 <div class="control-group">
                     <label for="start-bankroll-2">Start Bankroll ($):</label>
@@ -60,7 +73,6 @@
                     <label for="target-bankroll-2">Target Bankroll ($):</label>
                     <input type="number" id="target-bankroll-2" value="20000">
                 </div>
-                 <!-- Reset Button Removed -->
             </div>
             <div class="table-wrapper">
                 <table id="compound-table-2" class="compound-table">
@@ -86,7 +98,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     
-    <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <script src="script.js?v=1.1"></script>
+    <!-- CRITICAL CHANGE: Version updated -->
+    <script src="script.js?v=1.2"></script>
 </body>
 </html>
