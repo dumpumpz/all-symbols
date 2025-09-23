@@ -1784,7 +1784,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.2492",
                 "resistance": "0.2585",
                 "stoploss": "0.2875",
@@ -2380,6 +2380,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-09 16:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.3600",
+                "resistance": "2.3010",
+                "stoploss": "2.2330",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-09 16:00",
+                "symbol": "CAKEUSDT"
             },
             {
                 "type": "section",

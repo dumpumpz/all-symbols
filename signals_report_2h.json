@@ -3030,7 +3030,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "185.5500",
                 "resistance": "190.9500",
                 "stoploss": "195.0000",
