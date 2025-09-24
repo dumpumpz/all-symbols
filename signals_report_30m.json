@@ -7580,7 +7580,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "115531.8800",
                 "resistance": "115863.3300",
                 "stoploss": "116165.1900",
