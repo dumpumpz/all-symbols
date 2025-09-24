@@ -12460,6 +12460,48 @@
                 "candle_num": "",
                 "entry_date": "2025-09-24 03:00",
                 "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0059",
+                "resistance": "0.0056",
+                "stoploss": "0.0054",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 06:30",
+                "symbol": "PUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.5810",
+                "resistance": "1.5190",
+                "stoploss": "1.4910",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 06:30",
+                "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2237",
+                "resistance": "0.2223",
+                "stoploss": "0.2185",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 06:30",
+                "symbol": "HBARUSDT"
             }
         ],
         "master_section_index": 0
