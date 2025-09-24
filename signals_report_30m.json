@@ -9037,6 +9037,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "30.7500",
+                "resistance": "30.3000",
+                "stoploss": "28.4300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-16 08:00",
+                "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "1.5010",
                 "resistance": "1.4680",
                 "stoploss": "1.4040",
@@ -12600,6 +12614,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-24 09:00",
                 "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.0370",
+                "resistance": "2.9990",
+                "stoploss": "2.9320",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 09:30",
+                "symbol": "NEARUSDT"
             }
         ],
         "master_section_index": 0
