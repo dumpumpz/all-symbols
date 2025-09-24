@@ -203,6 +203,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0187",
+                "resistance": "0.0181",
+                "stoploss": "0.0172",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-12 00:00",
+                "symbol": "SUNUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "4.1014",
                 "resistance": "3.5597",
                 "stoploss": "2.9186",
@@ -826,6 +840,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-02 00:00",
                 "symbol": "IMXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0674",
+                "resistance": "0.0695",
+                "stoploss": "0.0813",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-02 00:00",
+                "symbol": "SIGNUSDT"
             },
             {
                 "type": "section",
