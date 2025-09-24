@@ -10780,6 +10780,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-24 06:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.8730",
+                "resistance": "2.8431",
+                "stoploss": "2.8188",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 07:00",
+                "symbol": "XRPUSDT"
             }
         ],
         "master_section_index": 0
