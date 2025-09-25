@@ -18458,7 +18458,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.6679",
                 "resistance": "0.6703",
                 "stoploss": "0.6749",
@@ -20944,6 +20944,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 15:45",
                 "symbol": "PUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "115471.6800",
+                "resistance": "115603.4400",
+                "stoploss": "115747.2300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 16:00",
+                "symbol": "BTCUSDT"
             },
             {
                 "type": "section",
@@ -24394,7 +24408,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.5470",
                 "resistance": "1.5830",
                 "stoploss": "1.6160",

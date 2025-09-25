@@ -8406,6 +8406,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.0500",
+                "resistance": "1.0617",
+                "stoploss": "1.0766",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-15 07:30",
+                "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "4.4500",
                 "resistance": "4.5080",
@@ -13972,6 +13986,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-25 08:30",
                 "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "102.1700",
+                "resistance": "105.3600",
+                "stoploss": "107.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-25 12:00",
+                "symbol": "LTCUSDT"
             }
         ],
         "master_section_index": 0
