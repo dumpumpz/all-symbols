@@ -4963,6 +4963,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0503",
+                "resistance": "0.0498",
+                "stoploss": "0.0493",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-04 18:00",
+                "symbol": "AWEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.3340",
                 "resistance": "0.3371",
                 "stoploss": "0.3415",
@@ -5908,6 +5922,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-06 05:00",
                 "symbol": "XLMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4902",
+                "resistance": "0.4951",
+                "stoploss": "0.5003",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-06 05:00",
+                "symbol": "ARBUSDT"
             },
             {
                 "type": "section",
@@ -7322,6 +7350,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-09 04:00",
                 "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4660",
+                "resistance": "0.4630",
+                "stoploss": "0.4507",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-09 06:00",
+                "symbol": "SFPUSDT"
             },
             {
                 "type": "section",
