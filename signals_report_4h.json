@@ -10696,6 +10696,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-26 04:00",
                 "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 12:00",
+                "symbol": "1000SATSUSDT"
             }
         ],
         "master_section_index": 0
