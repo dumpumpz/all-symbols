@@ -6592,6 +6592,20 @@
                 "stoploss": "0.0000",
                 "target": "",
                 "candle_num": "",
+                "entry_date": "2025-09-07 04:00",
+                "symbol": "1000SATSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
                 "entry_date": "2025-09-07 05:00",
                 "symbol": "PEPEUSDT"
             },
