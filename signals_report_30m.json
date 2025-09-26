@@ -14378,6 +14378,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-26 02:30",
                 "symbol": "USD1USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "299.5000",
+                "resistance": "302.1000",
+                "stoploss": "306.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 06:30",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
