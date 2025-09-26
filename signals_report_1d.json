@@ -1764,6 +1764,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-25 00:00",
                 "symbol": "WIFUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.3100",
+                "resistance": "1.9890",
+                "stoploss": "1.8690",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 00:00",
+                "symbol": "ZROUSDT"
             }
         ],
         "master_section_index": 0
