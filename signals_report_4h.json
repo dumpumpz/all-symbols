@@ -2560,6 +2560,20 @@
                 "stoploss": "0.0000",
                 "target": "",
                 "candle_num": "",
+                "entry_date": "2025-07-09 08:00",
+                "symbol": "1000SATSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
                 "entry_date": "2025-07-09 12:00",
                 "symbol": "1000SATSUSDT"
             },
@@ -3380,6 +3394,20 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0325",
+                "resistance": "0.0335",
+                "stoploss": "0.0377",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-12 08:00",
+                "symbol": "SPKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0614",
                 "resistance": "0.0589",
@@ -3556,6 +3584,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-16 16:00",
                 "symbol": "DEXEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0359",
+                "resistance": "0.0341",
+                "stoploss": "0.0300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-18 08:00",
+                "symbol": "SPKUSDT"
             },
             {
                 "type": "section",
@@ -4466,6 +4508,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-29 16:00",
                 "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1013",
+                "resistance": "0.0936",
+                "stoploss": "0.0776",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-30 00:00",
+                "symbol": "SPKUSDT"
             },
             {
                 "type": "section",
@@ -5600,6 +5656,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-14 12:00",
                 "symbol": "DEXEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0855",
+                "resistance": "0.0922",
+                "stoploss": "0.1279",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-14 12:00",
+                "symbol": "SPKUSDT"
             },
             {
                 "type": "section",
@@ -10262,6 +10332,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 00:00",
                 "symbol": "ZROUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0548",
+                "resistance": "0.0583",
+                "stoploss": "0.0768",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 00:00",
+                "symbol": "SPKUSDT"
             },
             {
                 "type": "section",
