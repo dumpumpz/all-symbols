@@ -20894,7 +20894,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3178",
                 "resistance": "0.3193",
                 "stoploss": "0.3212",
@@ -21070,6 +21070,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 09:00",
                 "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.4910",
+                "resistance": "1.5060",
+                "stoploss": "1.5270",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 09:00",
+                "symbol": "WLDUSDT"
             },
             {
                 "type": "section",
@@ -25578,6 +25592,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-26 04:30",
                 "symbol": "AAVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "20.3100",
+                "resistance": "20.4200",
+                "stoploss": "20.6500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 05:45",
+                "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.8780",
+                "resistance": "0.8814",
+                "stoploss": "0.8885",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 05:45",
+                "symbol": "ONDOUSDT"
             }
         ],
         "master_section_index": 0
