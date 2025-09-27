@@ -25556,7 +25556,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1015",
                 "resistance": "0.1043",
                 "stoploss": "0.1066",
@@ -27118,6 +27118,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-27 10:30",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1078",
+                "resistance": "0.1059",
+                "stoploss": "0.1045",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-27 11:00",
+                "symbol": "WUSDT"
             }
         ],
         "master_section_index": 0
