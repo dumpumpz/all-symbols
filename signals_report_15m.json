@@ -24156,6 +24156,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4341",
+                "resistance": "0.4391",
+                "stoploss": "0.4785",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 03:15",
+                "symbol": "THEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "2.9080",
                 "resistance": "2.9460",
@@ -25256,6 +25270,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-24 21:45",
                 "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4354",
+                "resistance": "0.4386",
+                "stoploss": "0.4460",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 21:45",
+                "symbol": "THEUSDT"
             },
             {
                 "type": "section",
