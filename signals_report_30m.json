@@ -9694,7 +9694,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.9530",
                 "resistance": "1.9580",
                 "stoploss": "1.9680",
@@ -9708,7 +9708,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.6981",
                 "resistance": "0.7026",
                 "stoploss": "0.7099",
@@ -11578,6 +11578,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-18 08:00",
                 "symbol": "TSTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "24.3700",
+                "resistance": "23.7500",
+                "stoploss": "23.2900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 09:00",
+                "symbol": "LINKUSDT"
             },
             {
                 "type": "section",
