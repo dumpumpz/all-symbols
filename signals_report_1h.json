@@ -12508,7 +12508,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "201.8000",
                 "resistance": "202.8300",
                 "stoploss": "205.5200",
