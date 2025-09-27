@@ -5159,6 +5159,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "9.5470",
+                "resistance": "8.9450",
+                "stoploss": "8.6200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-22 16:00",
+                "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
                 "stoploss": "0.0000",
@@ -5376,6 +5390,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-22 20:00",
                 "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2580",
+                "resistance": "0.2553",
+                "stoploss": "0.2384",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-22 20:00",
+                "symbol": "HBARUSDT"
             },
             {
                 "type": "section",
@@ -5992,6 +6020,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-25 14:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "8.8130",
+                "resistance": "9.1190",
+                "stoploss": "10.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-25 14:00",
+                "symbol": "ORDIUSDT"
             },
             {
                 "type": "section",
@@ -6992,6 +7034,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "8.6260",
+                "resistance": "8.6950",
+                "stoploss": "9.1390",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-29 08:00",
+                "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.1987",
                 "resistance": "0.2004",
@@ -7378,6 +7434,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-01 00:00",
                 "symbol": "SFPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "8.6050",
+                "resistance": "8.7280",
+                "stoploss": "8.9380",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-01 00:00",
+                "symbol": "ORDIUSDT"
             },
             {
                 "type": "section",
@@ -7833,6 +7903,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "8.9430",
+                "resistance": "8.8600",
+                "stoploss": "8.3660",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-03 22:00",
+                "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "3.6713",
                 "resistance": "3.5870",
                 "stoploss": "2.9740",
@@ -8260,6 +8344,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-04 14:00",
                 "symbol": "BBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "8.5420",
+                "resistance": "8.6650",
+                "stoploss": "8.8300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-04 16:00",
+                "symbol": "ORDIUSDT"
             },
             {
                 "type": "section",
@@ -10521,6 +10619,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "10.4120",
+                "resistance": "10.1280",
+                "stoploss": "9.4050",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 22:00",
+                "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "4618.9500",
                 "resistance": "4541.9200",
                 "stoploss": "4466.0000",
@@ -11760,6 +11872,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-22 02:00",
                 "symbol": "1000SATSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "9.3480",
+                "resistance": "9.5640",
+                "stoploss": "10.2640",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 02:00",
+                "symbol": "ORDIUSDT"
             },
             {
                 "type": "section",
