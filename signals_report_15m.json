@@ -25823,6 +25823,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "16.9510",
+                "resistance": "16.6200",
+                "stoploss": "16.5320",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 11:30",
+                "symbol": "OGUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "3776.5300",
                 "resistance": "3774.1900",
                 "stoploss": "3767.3000",
@@ -29358,6 +29372,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 11:00",
                 "symbol": "AEVOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.0183",
+                "resistance": "1.0552",
+                "stoploss": "1.1181",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 11:30",
+                "symbol": "BARDUSDT"
             }
         ],
         "master_section_index": 0
