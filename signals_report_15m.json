@@ -28650,7 +28650,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.2870",
                 "resistance": "2.3150",
                 "stoploss": "2.3650",
@@ -28812,6 +28812,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 03:30",
                 "symbol": "ZROUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.9995",
+                "resistance": "0.9992",
+                "stoploss": "0.9991",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 05:30",
+                "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4011.6000",
+                "resistance": "4010.7400",
+                "stoploss": "3995.7500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 05:30",
+                "symbol": "ETHUSDT"
             }
         ],
         "master_section_index": 0
