@@ -14888,7 +14888,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1547",
                 "resistance": "1.1681",
                 "stoploss": "1.2925",
@@ -16366,6 +16366,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 06:00",
                 "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2158",
+                "resistance": "0.2084",
+                "stoploss": "0.2042",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 10:00",
+                "symbol": "WLFIUSDT"
             }
         ],
         "master_section_index": 0
