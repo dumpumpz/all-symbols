@@ -29400,6 +29400,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 12:00",
                 "symbol": "USDEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.5230",
+                "resistance": "1.5450",
+                "stoploss": "1.5860",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 12:30",
+                "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1626",
+                "resistance": "0.1645",
+                "stoploss": "0.1662",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 12:30",
+                "symbol": "OMUSDT"
             }
         ],
         "master_section_index": 0
