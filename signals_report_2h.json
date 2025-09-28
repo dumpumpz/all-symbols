@@ -10282,6 +10282,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.7980",
+                "resistance": "1.8230",
+                "stoploss": "1.8570",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-15 10:00",
+                "symbol": "SANTOSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "20.3100",
                 "resistance": "20.6200",
@@ -10696,6 +10710,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 22:00",
                 "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.8700",
+                "resistance": "1.8360",
+                "stoploss": "1.7910",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 22:00",
+                "symbol": "SANTOSUSDT"
             },
             {
                 "type": "section",
@@ -12060,6 +12088,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.7860",
+                "resistance": "1.8480",
+                "stoploss": "1.8970",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-22 06:00",
+                "symbol": "SANTOSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "4.1890",
                 "resistance": "4.3820",
@@ -12320,6 +12362,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-26 12:00",
                 "symbol": "SPKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.0210",
+                "resistance": "1.8610",
+                "stoploss": "1.7000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-26 18:00",
+                "symbol": "SANTOSUSDT"
             },
             {
                 "type": "section",
