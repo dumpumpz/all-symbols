@@ -25052,7 +25052,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1002.5600",
                 "resistance": "1011.4200",
                 "stoploss": "1024.3600",
@@ -30170,6 +30170,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 00:45",
                 "symbol": "LINEAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1171",
+                "resistance": "0.1179",
+                "stoploss": "0.1233",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 01:45",
+                "symbol": "AEVOUSDT"
             }
         ],
         "master_section_index": 0
