@@ -17632,7 +17632,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.2838",
                 "resistance": "1.3848",
                 "stoploss": "1.4982",
