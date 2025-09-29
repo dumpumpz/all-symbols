@@ -63007,6 +63007,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "28.6600",
+                "resistance": "28.5600",
+                "stoploss": "28.5000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-27 19:20",
+                "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "2.7160",
                 "resistance": "2.7110",
                 "stoploss": "2.6990",
@@ -64106,6 +64120,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 01:05",
                 "symbol": "CRVUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5744",
+                "resistance": "0.5759",
+                "stoploss": "0.5779",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 01:05",
+                "symbol": "ENAUSDT"
             },
             {
                 "type": "section",
@@ -67438,6 +67466,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 11:35",
                 "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.0006",
+                "resistance": "1.0007",
+                "stoploss": "1.0008",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 12:00",
+                "symbol": "USDEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4117.4100",
+                "resistance": "4113.1100",
+                "stoploss": "4095.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 12:20",
+                "symbol": "ETHUSDT"
             }
         ],
         "master_section_index": 0
