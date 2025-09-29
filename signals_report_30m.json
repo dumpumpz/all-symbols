@@ -17660,7 +17660,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0272",
                 "resistance": "0.0279",
                 "stoploss": "0.0283",
@@ -17668,6 +17668,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 12:30",
                 "symbol": "LINEAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5237",
+                "resistance": "0.5495",
+                "stoploss": "0.5543",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 13:00",
+                "symbol": "ZKCUSDT"
             }
         ],
         "master_section_index": 0
