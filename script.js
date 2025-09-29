@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const startBankrollInput = document.getElementById(config.startBankrollId);
         const targetBankrollInput = document.getElementById(config.targetBankrollId);
         const tableBody = document.querySelector(`#${config.tableId} tbody`);
+        const legendContainer = document.getElementById(config.legendId); // Get legend container
         
         startBankrollInput.disabled = !isMasterMode;
         targetBankrollInput.disabled = !isMasterMode;
-        // Reset button references are removed
 
         let tradeResults = [];
 
@@ -69,17 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const actualPL = tradeResults[level - 1];
                 let endOfLevelBankroll;
                 let rowClass = '';
-                let isEnabledForInput = false; // Default to not enabled
+                let isEnabledForInput = false; 
 
                 if (typeof actualPL === 'number' && !isNaN(actualPL)) {
                     endOfLevelBankroll = startOfLevelBankroll + actualPL;
                     rowClass = actualPL >= 0 ? 'win' : 'loss';
-                    isEnabledForInput = true; // <<< CHANGE: Enable input for completed rows
+                    isEnabledForInput = true;
                 } else {
                     endOfLevelBankroll = startOfLevelBankroll + profitTarget;
                     rowClass = 'projected';
                     if (!foundFirstEmptyInput) {
-                        isEnabledForInput = true; // Enable input for the first projected row
+                        isEnabledForInput = true;
                         foundFirstEmptyInput = true;
                     }
                 }
@@ -98,6 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 bankrollForNextLevel = endOfLevelBankroll;
                 level++;
             }
+            
+            // --- NEW: Calculate and Render Legend ---
+            const winningTradesNeeded = level - 1;
+            if (winningTradesNeeded > 0 && winningTradesNeeded < 200) {
+                const trades50 = Math.ceil(winningTradesNeeded / 0.50);
+                const trades60 = Math.ceil(winningTradesNeeded / 0.60);
+                const trades70 = Math.ceil(winningTradesNeeded / 0.70);
+                
+                legendContainer.innerHTML = `
+                    <span>Trades at 50% WR<strong>~${trades50}</strong></span>
+                    <span>Trades at 60% WR<strong>~${trades60}</strong></span>
+                    <span>Trades at 70% WR<strong>~${trades70}</strong></span>
+                `;
+            } else {
+                legendContainer.innerHTML = '<span>Enter a valid start and target bankroll to see projections.</span>'; // Clear or show message
+            }
+
             document.querySelectorAll(`#${config.tableId} input[type="number"]`).forEach(input => {
                 input.addEventListener('change', handlePLChange);
             });
@@ -108,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const level = parseInt(event.target.dataset.level);
             const value = event.target.value;
             tradeResults[level - 1] = (value === '') ? null : parseFloat(value);
-            // This logic will now correctly handle editing existing entries or clearing them
-            // If an entry in the middle is cleared, subsequent entries are kept
             calculateAndRender();
             saveState();
         };
@@ -117,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         startBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
         targetBankrollInput.addEventListener('change', () => { calculateAndRender(); saveState(); });
         
-        // Reset button event listener is removed.
-
         loadState();
     };
 
@@ -127,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startBankrollId: 'start-bankroll-1',
         targetBankrollId: 'target-bankroll-1',
         tableId: 'compound-table-1',
+        legendId: 'legend-1', // Added legend ID
         riskPercent: 0.01,
         firebasePath: 'compounding_data/1_percent',
         defaultStart: '5500',
@@ -137,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startBankrollId: 'start-bankroll-2',
         targetBankrollId: 'target-bankroll-2',
         tableId: 'compound-table-2',
+        legendId: 'legend-2', // Added legend ID
         riskPercent: 0.02,
         firebasePath: 'compounding_data/2_percent',
         defaultStart: '5500',
