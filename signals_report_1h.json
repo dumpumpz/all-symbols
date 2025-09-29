@@ -10478,6 +10478,20 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3280",
+                "resistance": "0.3413",
+                "stoploss": "0.3495",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 14:00",
+                "symbol": "COWUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "1.1185",
                 "resistance": "1.1388",
@@ -10808,6 +10822,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 22:00",
                 "symbol": "SNXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3435",
+                "resistance": "0.3369",
+                "stoploss": "0.3309",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 22:00",
+                "symbol": "COWUSDT"
             },
             {
                 "type": "section",
@@ -11438,6 +11466,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-19 15:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3372",
+                "resistance": "0.3416",
+                "stoploss": "0.3474",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 15:00",
+                "symbol": "COWUSDT"
             },
             {
                 "type": "section",
@@ -13222,6 +13264,20 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2716",
+                "resistance": "0.2734",
+                "stoploss": "0.2767",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-27 07:00",
+                "symbol": "COWUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0283",
                 "resistance": "0.0284",
@@ -13516,7 +13572,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "264.9000",
                 "resistance": "268.7300",
                 "stoploss": "271.4000",
@@ -13628,7 +13684,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3350",
                 "resistance": "0.3360",
                 "stoploss": "0.3378",
@@ -13776,6 +13832,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 22:00",
                 "symbol": "AAVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3091",
+                "resistance": "0.2904",
+                "stoploss": "0.2807",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 00:00",
+                "symbol": "COWUSDT"
             }
         ],
         "master_section_index": 0
