@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Tools</title>
     <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
     <header>
@@ -30,8 +30,9 @@
                     <label for="target-bankroll-1">Target Bankroll ($):</label>
                     <input type="number" id="target-bankroll-1" value="20000">
                 </div>
-                <!-- Reset Button Removed -->
             </div>
+            <!-- NEW: Legend will be populated here by JavaScript -->
+            <div id="legend-1" class="compound-legend"></div>
             <div class="table-wrapper">
                 <table id="compound-table-1" class="compound-table">
                     <thead>
@@ -60,8 +61,9 @@
                     <label for="target-bankroll-2">Target Bankroll ($):</label>
                     <input type="number" id="target-bankroll-2" value="20000">
                 </div>
-                 <!-- Reset Button Removed -->
             </div>
+            <!-- NEW: Legend will be populated here by JavaScript -->
+            <div id="legend-2" class="compound-legend"></div>
             <div class="table-wrapper">
                 <table id="compound-table-2" class="compound-table">
                     <thead>
@@ -87,6 +89,6 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     
     <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <script src="script.js?v=1.1"></script>
+    <script src="script.js?v=1.2"></script>
 </body>
 </html>
