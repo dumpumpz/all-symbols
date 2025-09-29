@@ -14560,6 +14560,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 10:00",
                 "symbol": "SNXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4168",
+                "resistance": "0.4217",
+                "stoploss": "0.4324",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 10:00",
+                "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2720",
+                "resistance": "1.2890",
+                "stoploss": "1.3480",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 12:00",
+                "symbol": "WLDUSDT"
             }
         ],
         "master_section_index": 0
