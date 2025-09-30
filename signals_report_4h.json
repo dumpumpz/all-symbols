@@ -11528,7 +11528,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.1198",
                 "resistance": "0.1277",
                 "stoploss": "0.1399",
@@ -11914,6 +11914,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 12:00",
                 "symbol": "STRKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.4050",
+                "resistance": "4.3060",
+                "stoploss": "4.1930",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 20:00",
+                "symbol": "APTUSDT"
             }
         ],
         "master_section_index": 0
