@@ -8042,7 +8042,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.5787",
                 "resistance": "0.5933",
                 "stoploss": "0.6032",
@@ -8512,6 +8512,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-10 15:00",
                 "symbol": "SPKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "116.3800",
+                "resistance": "113.9900",
+                "stoploss": "111.8700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-10 16:00",
+                "symbol": "LTCUSDT"
             },
             {
                 "type": "section",
