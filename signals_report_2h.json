@@ -4682,6 +4682,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1321",
+                "resistance": "0.1350",
+                "stoploss": "0.1402",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-21 12:00",
+                "symbol": "STRKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0556",
                 "resistance": "0.0569",
@@ -12326,6 +12340,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1289",
+                "resistance": "0.1300",
+                "stoploss": "0.1368",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 18:00",
+                "symbol": "STRKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "17.2200",
                 "resistance": "17.5600",
@@ -13580,6 +13608,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 08:00",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1387",
+                "resistance": "0.1329",
+                "stoploss": "0.1288",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 12:00",
+                "symbol": "STRKUSDT"
             }
         ],
         "master_section_index": 0
