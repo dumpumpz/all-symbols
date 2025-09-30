@@ -13496,6 +13496,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 12:00",
                 "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.0769",
+                "resistance": "1.1300",
+                "stoploss": "1.4800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 16:00",
+                "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.6460",
+                "resistance": "1.7430",
+                "stoploss": "1.8690",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 16:00",
+                "symbol": "EIGENUSDT"
             }
         ],
         "master_section_index": 0
