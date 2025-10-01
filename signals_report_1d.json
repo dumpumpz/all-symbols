@@ -664,6 +664,20 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.6870",
+                "resistance": "0.7300",
+                "stoploss": "0.8370",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-30 00:00",
+                "symbol": "FETUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.2327",
                 "resistance": "0.2611",
@@ -1162,6 +1176,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-13 00:00",
                 "symbol": "APTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.7510",
+                "resistance": "0.7080",
+                "stoploss": "0.6020",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-13 00:00",
+                "symbol": "FETUSDT"
             },
             {
                 "type": "section",
