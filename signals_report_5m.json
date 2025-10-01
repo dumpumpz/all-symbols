@@ -70791,6 +70791,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "7.2840",
+                "resistance": "7.2470",
+                "stoploss": "7.1370",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 20:00",
+                "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "1.3000",
                 "resistance": "1.2890",
                 "stoploss": "1.2760",
@@ -71022,6 +71036,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 22:25",
                 "symbol": "MITOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "7.1750",
+                "resistance": "7.2020",
+                "stoploss": "7.2940",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 22:25",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
@@ -71512,6 +71540,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 02:00",
                 "symbol": "XPLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "7.4150",
+                "resistance": "7.2270",
+                "stoploss": "7.1950",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 02:25",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
@@ -72834,6 +72876,20 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "7.3680",
+                "resistance": "7.4210",
+                "stoploss": "7.6700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 15:45",
+                "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "4.2620",
                 "resistance": "4.2460",
@@ -72940,6 +72996,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 18:05",
                 "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "7.7920",
+                "resistance": "7.5710",
+                "stoploss": "7.3710",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 18:10",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
@@ -73885,6 +73955,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "7.9890",
+                "resistance": "7.8110",
+                "stoploss": "7.7010",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 01:55",
+                "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "7.6710",
                 "resistance": "7.6500",
                 "stoploss": "7.6070",
@@ -74228,6 +74312,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 04:20",
                 "symbol": "LDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "8.0180",
+                "resistance": "7.8460",
+                "stoploss": "7.7520",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 04:20",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
