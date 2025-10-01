@@ -28342,7 +28342,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3742.5900",
                 "resistance": "3749.8700",
                 "stoploss": "3756.8200",
