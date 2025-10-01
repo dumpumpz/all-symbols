@@ -68298,7 +68298,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.2991",
                 "resistance": "1.3132",
                 "stoploss": "1.3377",
@@ -68340,7 +68340,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0280",
                 "resistance": "0.0282",
                 "stoploss": "0.0285",
@@ -68438,7 +68438,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.7610",
                 "resistance": "1.7730",
                 "stoploss": "1.7860",
@@ -68886,7 +68886,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "4105.1800",
                 "resistance": "4114.1800",
                 "stoploss": "4123.0700",
@@ -68936,6 +68936,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 11:15",
                 "symbol": "ZKCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3832.1100",
+                "resistance": "3823.8200",
+                "stoploss": "3819.4400",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 11:15",
+                "symbol": "PAXGUSDT"
             },
             {
                 "type": "section",
@@ -72982,6 +72996,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 01:55",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "7.6710",
+                "resistance": "7.6500",
+                "stoploss": "7.6070",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 02:15",
+                "symbol": "UNIUSDT"
             }
         ],
         "master_section_index": 0
