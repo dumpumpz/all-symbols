@@ -14546,6 +14546,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 22:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.3510",
+                "resistance": "1.3180",
+                "stoploss": "1.2450",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 02:00",
+                "symbol": "WLDUSDT"
             }
         ],
         "master_section_index": 0
