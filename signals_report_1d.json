@@ -2050,7 +2050,7 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "536.5000",
                 "resistance": "583.6000",
                 "stoploss": "617.2000",
