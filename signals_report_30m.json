@@ -17128,6 +17128,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0451",
+                "resistance": "0.0471",
+                "stoploss": "0.0507",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-25 12:00",
+                "symbol": "C98USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0032",
                 "resistance": "0.0032",
@@ -18375,6 +18389,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0475",
+                "resistance": "0.0463",
+                "stoploss": "0.0457",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 14:00",
+                "symbol": "C98USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0052",
                 "resistance": "0.0051",
                 "stoploss": "0.0050",
@@ -19110,6 +19138,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 11:00",
                 "symbol": "AVNTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0464",
+                "resistance": "0.0469",
+                "stoploss": "0.0477",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 11:00",
+                "symbol": "C98USDT"
             },
             {
                 "type": "section",
@@ -20244,6 +20286,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 13:00",
                 "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0482",
+                "resistance": "0.0476",
+                "stoploss": "0.0464",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 14:30",
+                "symbol": "C98USDT"
             },
             {
                 "type": "section",
