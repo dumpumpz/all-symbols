@@ -14300,6 +14300,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "3.8380",
+                "resistance": "3.9160",
+                "stoploss": "4.0300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 14:00",
+                "symbol": "DOTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.2094",
                 "resistance": "0.2120",
@@ -14518,6 +14532,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 16:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.1110",
+                "resistance": "3.9340",
+                "stoploss": "3.8080",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 18:00",
+                "symbol": "DOTUSDT"
             },
             {
                 "type": "section",
