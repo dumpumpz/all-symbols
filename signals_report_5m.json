@@ -73114,7 +73114,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.8777",
                 "resistance": "0.8802",
                 "stoploss": "0.8838",
@@ -77888,7 +77888,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1731",
                 "resistance": "1.1735",
                 "stoploss": "1.1742",
@@ -77902,7 +77902,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "30.1600",
                 "resistance": "31.0600",
                 "stoploss": "33.0000",
@@ -77910,6 +77910,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 03:55",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.9174",
+                "resistance": "0.9333",
+                "stoploss": "0.9686",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 04:00",
+                "symbol": "XPLUSDT"
             }
         ],
         "master_section_index": 0
