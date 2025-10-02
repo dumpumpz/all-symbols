@@ -14560,6 +14560,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 02:00",
                 "symbol": "WLDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4430",
+                "resistance": "0.4324",
+                "stoploss": "0.4090",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 02:00",
+                "symbol": "ARBUSDT"
             }
         ],
         "master_section_index": 0
