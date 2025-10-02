@@ -20286,6 +20286,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 01:30",
                 "symbol": "WLDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.1755",
+                "resistance": "1.1750",
+                "stoploss": "1.1721",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 08:30",
+                "symbol": "EURUSDT"
             }
         ],
         "master_section_index": 0
