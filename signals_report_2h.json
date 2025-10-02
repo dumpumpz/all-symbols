@@ -14616,6 +14616,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 02:00",
                 "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1043.5100",
+                "resistance": "1034.5000",
+                "stoploss": "985.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 10:00",
+                "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.6113",
+                "resistance": "0.6037",
+                "stoploss": "0.5558",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 10:00",
+                "symbol": "ENAUSDT"
             }
         ],
         "master_section_index": 0
