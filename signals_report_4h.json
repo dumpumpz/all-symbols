@@ -12642,6 +12642,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 08:00",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.5610",
+                "resistance": "1.5310",
+                "stoploss": "1.4030",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 12:00",
+                "symbol": "ETHFIUSDT"
             }
         ],
         "master_section_index": 0
