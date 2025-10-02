@@ -2142,6 +2142,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 00:00",
                 "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.8790",
+                "resistance": "4.6340",
+                "stoploss": "3.8980",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 00:00",
+                "symbol": "APTUSDT"
             }
         ],
         "master_section_index": 0
