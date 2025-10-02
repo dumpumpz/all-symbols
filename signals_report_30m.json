@@ -16708,6 +16708,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "552.6000",
+                "resistance": "556.3000",
+                "stoploss": "563.7000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-25 01:30",
+                "symbol": "BCHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "1.7190",
                 "resistance": "1.7390",
@@ -18052,6 +18066,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "536.0000",
+                "resistance": "540.5000",
+                "stoploss": "548.9000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 03:30",
+                "symbol": "BCHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.9995",
                 "resistance": "0.9993",
@@ -18480,6 +18508,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 17:00",
                 "symbol": "BERAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "548.2000",
+                "resistance": "546.2000",
+                "stoploss": "539.5000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 17:00",
+                "symbol": "BCHUSDT"
             },
             {
                 "type": "section",
@@ -19740,6 +19782,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 20:30",
                 "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "561.1000",
+                "resistance": "557.3000",
+                "stoploss": "549.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 20:30",
+                "symbol": "BCHUSDT"
             },
             {
                 "type": "section",
