@@ -77595,6 +77595,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "1.4780",
+                "resistance": "1.4470",
+                "stoploss": "1.4380",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 15:20",
+                "symbol": "EIGENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "1.4970",
                 "resistance": "1.4550",
                 "stoploss": "1.4380",
@@ -81738,7 +81752,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "120017.9800",
                 "resistance": "120173.7700",
                 "stoploss": "120407.3000",
@@ -81746,6 +81760,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 04:35",
                 "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2170",
+                "resistance": "1.2417",
+                "stoploss": "1.2867",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 05:25",
+                "symbol": "FORMUSDT"
             }
         ],
         "master_section_index": 0
