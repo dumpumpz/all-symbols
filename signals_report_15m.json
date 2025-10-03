@@ -38948,6 +38948,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 09:15",
                 "symbol": "WLFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0072",
+                "resistance": "0.0071",
+                "stoploss": "0.0069",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 10:00",
+                "symbol": "PUMPUSDT"
             }
         ],
         "master_section_index": 0
