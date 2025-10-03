@@ -38458,6 +38458,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 03:15",
                 "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0694",
+                "resistance": "0.0639",
+                "stoploss": "0.0600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 03:45",
+                "symbol": "C98USDT"
             }
         ],
         "master_section_index": 0
