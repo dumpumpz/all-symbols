@@ -33467,6 +33467,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "2.7050",
+                "resistance": "2.6980",
+                "stoploss": "2.6800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 13:45",
+                "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "978.6200",
                 "resistance": "972.5600",
                 "stoploss": "967.1000",
@@ -33586,6 +33600,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 15:45",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3592",
+                "resistance": "0.3578",
+                "stoploss": "0.3565",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 15:45",
+                "symbol": "XLMUSDT"
             },
             {
                 "type": "section",
@@ -38590,7 +38618,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "22.4800",
                 "resistance": "22.5700",
                 "stoploss": "22.9100",
@@ -38598,6 +38626,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 05:30",
                 "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3475",
+                "resistance": "0.3462",
+                "stoploss": "0.3374",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 06:30",
+                "symbol": "ZKCUSDT"
             }
         ],
         "master_section_index": 0
