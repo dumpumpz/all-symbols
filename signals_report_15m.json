@@ -32458,7 +32458,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.3608",
                 "resistance": "0.3613",
                 "stoploss": "0.3628",
@@ -33663,6 +33663,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.5799",
+                "resistance": "0.5756",
+                "stoploss": "0.5690",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 16:45",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "105.2000",
                 "resistance": "104.6300",
                 "stoploss": "103.6900",
@@ -34202,6 +34216,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 22:45",
                 "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.6290",
+                "resistance": "2.6160",
+                "stoploss": "2.5750",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 23:15",
+                "symbol": "CAKEUSDT"
             },
             {
                 "type": "section",
@@ -38416,6 +38444,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 01:45",
                 "symbol": "PENGUUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.0345",
+                "resistance": "3.0221",
+                "stoploss": "3.0050",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 03:15",
+                "symbol": "XRPUSDT"
             }
         ],
         "master_section_index": 0
