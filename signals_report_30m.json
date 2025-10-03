@@ -19340,6 +19340,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5250",
+                "resistance": "0.5350",
+                "stoploss": "0.5528",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 10:30",
+                "symbol": "OPENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "1.2838",
                 "resistance": "1.3848",
@@ -20825,6 +20839,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.4562",
+                "resistance": "0.4448",
+                "stoploss": "0.4237",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 20:00",
+                "symbol": "OPENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "30.5800",
                 "resistance": "30.8100",
                 "stoploss": "31.2500",
@@ -20874,6 +20902,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 08:30",
                 "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "34.4100",
+                "resistance": "33.2600",
+                "stoploss": "31.3000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 09:00",
+                "symbol": "DASHUSDT"
             }
         ],
         "master_section_index": 0
