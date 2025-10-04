@@ -16597,6 +16597,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.2427",
+                "resistance": "0.2400",
+                "stoploss": "0.2367",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-24 11:00",
+                "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0032",
                 "resistance": "0.0032",
                 "stoploss": "0.0032",
@@ -22246,6 +22260,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 03:00",
                 "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "286.3100",
+                "resistance": "287.2200",
+                "stoploss": "302.1900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 04:00",
+                "symbol": "AAVEUSDT"
             }
         ],
         "master_section_index": 0
