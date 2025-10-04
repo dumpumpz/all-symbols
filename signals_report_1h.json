@@ -17374,6 +17374,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 02:00",
                 "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0282",
+                "resistance": "0.0270",
+                "stoploss": "0.0261",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 04:00",
+                "symbol": "LINEAUSDT"
             }
         ],
         "master_section_index": 0
