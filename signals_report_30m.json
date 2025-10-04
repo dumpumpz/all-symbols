@@ -17842,7 +17842,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.2944",
                 "resistance": "3.3492",
                 "stoploss": "3.3984",
@@ -22694,6 +22694,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 12:00",
                 "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.7980",
+                "resistance": "1.7590",
+                "stoploss": "1.7280",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 13:00",
+                "symbol": "ETHFIUSDT"
             }
         ],
         "master_section_index": 0
