@@ -8126,7 +8126,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.2141",
                 "resistance": "0.2197",
                 "stoploss": "0.2256",
@@ -15442,6 +15442,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-03 14:00",
                 "symbol": "EIGENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2780",
+                "resistance": "1.2940",
+                "stoploss": "1.3270",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 10:00",
+                "symbol": "WLDUSDT"
             }
         ],
         "master_section_index": 0

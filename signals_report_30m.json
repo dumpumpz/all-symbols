@@ -22526,6 +22526,48 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 09:30",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.4956",
+                "resistance": "3.5224",
+                "stoploss": "3.6195",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 10:30",
+                "symbol": "SUIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5939",
+                "resistance": "0.6069",
+                "stoploss": "0.6351",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 10:30",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3955",
+                "resistance": "0.3992",
+                "stoploss": "0.4136",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 10:30",
+                "symbol": "XLMUSDT"
             }
         ],
         "master_section_index": 0
