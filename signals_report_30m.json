@@ -22372,6 +22372,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 04:00",
                 "symbol": "TRXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 06:00",
+                "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2248",
+                "resistance": "0.2236",
+                "stoploss": "0.2217",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 06:00",
+                "symbol": "HBARUSDT"
             }
         ],
         "master_section_index": 0
