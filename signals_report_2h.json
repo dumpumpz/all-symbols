@@ -7735,6 +7735,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.3347",
+                "resistance": "0.3274",
+                "stoploss": "0.3184",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-28 22:00",
+                "symbol": "CELOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0591",
                 "resistance": "0.0571",
                 "stoploss": "0.0531",
@@ -8148,6 +8162,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-29 08:00",
                 "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3130",
+                "resistance": "0.3248",
+                "stoploss": "0.3342",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-29 08:00",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",
@@ -9142,6 +9170,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-03 12:00",
                 "symbol": "KMNOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "325.0800",
+                "resistance": "320.5400",
+                "stoploss": "307.4300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-03 12:00",
+                "symbol": "AAVEUSDT"
             },
             {
                 "type": "section",
@@ -11683,6 +11725,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.3280",
+                "resistance": "0.3229",
+                "stoploss": "0.3044",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-13 10:00",
+                "symbol": "CELOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "2.0610",
                 "resistance": "2.0270",
                 "stoploss": "1.9540",
@@ -12460,6 +12516,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-17 22:00",
                 "symbol": "C98USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3179",
+                "resistance": "0.3125",
+                "stoploss": "0.3040",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 22:00",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",
@@ -13272,6 +13342,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-19 10:00",
                 "symbol": "FLOKIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3098",
+                "resistance": "0.3156",
+                "stoploss": "0.3225",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 10:00",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",
@@ -15232,6 +15316,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 14:00",
                 "symbol": "C98USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2595",
+                "resistance": "0.2534",
+                "stoploss": "0.2411",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 14:00",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",

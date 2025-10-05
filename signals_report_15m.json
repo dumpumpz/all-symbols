@@ -39276,7 +39276,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1718",
                 "resistance": "1.1732",
                 "stoploss": "1.1751",
@@ -41656,6 +41656,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3345",
+                "resistance": "0.3364",
+                "stoploss": "0.3401",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 20:45",
+                "symbol": "CELOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.7758",
                 "resistance": "0.7764",
@@ -41748,6 +41762,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 00:45",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3506",
+                "resistance": "0.3358",
+                "stoploss": "0.3321",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 00:45",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",
@@ -42322,6 +42350,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 12:45",
                 "symbol": "XPLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2209",
+                "resistance": "0.2205",
+                "stoploss": "0.2200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 13:30",
+                "symbol": "HBARUSDT"
             }
         ],
         "master_section_index": 0
