@@ -23296,6 +23296,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 05:00",
                 "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.1110",
+                "resistance": "2.9850",
+                "stoploss": "2.9510",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 06:00",
+                "symbol": "NEARUSDT"
             }
         ],
         "master_section_index": 0
