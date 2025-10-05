@@ -13006,6 +13006,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 12:00",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1170",
+                "resistance": "0.0927",
+                "stoploss": "0.0832",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:00",
+                "symbol": "TUTUSDT"
             }
         ],
         "master_section_index": 0
