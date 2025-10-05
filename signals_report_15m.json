@@ -35104,6 +35104,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "4116.3400",
+                "resistance": "4125.4900",
+                "stoploss": "4141.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 10:45",
+                "symbol": "ETHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0930",
                 "resistance": "0.0942",
@@ -35406,6 +35420,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 14:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2830",
+                "resistance": "0.2807",
+                "stoploss": "0.2761",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 14:00",
+                "symbol": "SEIUSDT"
             },
             {
                 "type": "section",
@@ -40796,6 +40824,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 13:15",
                 "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.8280",
+                "resistance": "1.7880",
+                "stoploss": "1.7520",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 14:15",
+                "symbol": "ETHFIUSDT"
             }
         ],
         "master_section_index": 0

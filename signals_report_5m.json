@@ -82564,7 +82564,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0070",
                 "resistance": "0.0071",
                 "stoploss": "0.0073",
@@ -82879,6 +82879,20 @@
                 "target": "",
                 "candle_num": "",
                 "entry_date": "2025-10-03 00:15",
+                "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "135.0600",
+                "resistance": "132.9900",
+                "stoploss": "128.8900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 00:20",
                 "symbol": "ZECUSDT"
             },
             {
@@ -83404,7 +83418,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "8.3070",
                 "resistance": "8.3250",
                 "stoploss": "8.3710",
@@ -87352,7 +87366,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "4.2220",
                 "resistance": "4.2260",
                 "stoploss": "4.2450",
@@ -87360,6 +87374,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 13:55",
                 "symbol": "DOTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.8230",
+                "resistance": "1.7960",
+                "stoploss": "1.7730",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 14:15",
+                "symbol": "ETHFIUSDT"
             }
         ],
         "master_section_index": 0
