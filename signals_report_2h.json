@@ -15596,6 +15596,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 06:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4601.2500",
+                "resistance": "4544.4400",
+                "stoploss": "4435.7000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 06:00",
+                "symbol": "ETHUSDT"
             }
         ],
         "master_section_index": 0

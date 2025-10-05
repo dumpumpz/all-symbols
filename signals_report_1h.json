@@ -17962,6 +17962,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 07:00",
                 "symbol": "WIFUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4545",
+                "resistance": "0.4458",
+                "stoploss": "0.4327",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 08:00",
+                "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4084",
+                "resistance": "0.4041",
+                "stoploss": "0.3942",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 08:00",
+                "symbol": "XLMUSDT"
             }
         ],
         "master_section_index": 0
