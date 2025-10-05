@@ -17492,7 +17492,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.7710",
                 "resistance": "2.7870",
                 "stoploss": "2.8100",
@@ -23100,6 +23100,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 02:30",
                 "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2571",
+                "resistance": "0.2561",
+                "stoploss": "0.2517",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 03:00",
+                "symbol": "DOGEUSDT"
             }
         ],
         "master_section_index": 0

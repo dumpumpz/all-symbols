@@ -17766,6 +17766,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 22:00",
                 "symbol": "SUIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2588",
+                "resistance": "0.2557",
+                "stoploss": "0.2492",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 03:00",
+                "symbol": "DOGEUSDT"
             }
         ],
         "master_section_index": 0
