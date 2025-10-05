@@ -23156,6 +23156,62 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 04:00",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4575.3800",
+                "resistance": "4517.9300",
+                "stoploss": "4469.6700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:30",
+                "symbol": "ETHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "233.9200",
+                "resistance": "230.3700",
+                "stoploss": "227.9300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:30",
+                "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.6217",
+                "resistance": "0.6127",
+                "stoploss": "0.6050",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:30",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "290.9600",
+                "resistance": "287.7300",
+                "stoploss": "285.8300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:30",
+                "symbol": "AAVEUSDT"
             }
         ],
         "master_section_index": 0
