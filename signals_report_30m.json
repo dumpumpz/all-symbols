@@ -19592,7 +19592,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0221",
                 "resistance": "0.0223",
                 "stoploss": "0.0228",
@@ -21384,7 +21384,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0219",
                 "resistance": "0.0224",
                 "stoploss": "0.0226",
@@ -24654,6 +24654,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 07:30",
                 "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2215",
+                "resistance": "0.2204",
+                "stoploss": "0.2161",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 08:30",
+                "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0921",
+                "resistance": "0.0915",
+                "stoploss": "0.0887",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 09:00",
+                "symbol": "HEMIUSDT"
             }
         ],
         "master_section_index": 0
