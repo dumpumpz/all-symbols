@@ -24570,6 +24570,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 06:30",
                 "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1685",
+                "resistance": "1.1730",
+                "stoploss": "1.1744",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 07:30",
+                "symbol": "EURUSDT"
             }
         ],
         "master_section_index": 0

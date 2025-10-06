@@ -11276,7 +11276,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.2880",
                 "resistance": "1.3143",
                 "stoploss": "1.5537",
@@ -12754,6 +12754,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-19 03:00",
                 "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2157",
+                "resistance": "0.2181",
+                "stoploss": "0.2259",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-19 03:00",
+                "symbol": "WLFIUSDT"
             },
             {
                 "type": "section",
@@ -18900,6 +18914,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 07:00",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1685",
+                "resistance": "1.1723",
+                "stoploss": "1.1751",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 07:00",
+                "symbol": "EURUSDT"
             }
         ],
         "master_section_index": 0
