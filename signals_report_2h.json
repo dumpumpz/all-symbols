@@ -7413,6 +7413,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "2.5370",
+                "resistance": "2.4970",
+                "stoploss": "2.4240",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-26 18:00",
+                "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.1125",
                 "resistance": "0.1078",
                 "stoploss": "0.0994",
@@ -7672,6 +7686,20 @@
                 "candle_num": "",
                 "entry_date": "2025-08-28 10:00",
                 "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.3290",
+                "resistance": "0.3254",
+                "stoploss": "0.3117",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-28 12:00",
+                "symbol": "CELOUSDT"
             },
             {
                 "type": "section",
