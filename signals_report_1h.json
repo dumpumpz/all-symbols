@@ -12928,7 +12928,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1730",
                 "resistance": "1.1755",
                 "stoploss": "1.1770",
@@ -19054,6 +19054,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 10:00",
                 "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2598",
+                "resistance": "0.2553",
+                "stoploss": "0.2506",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 11:00",
+                "symbol": "DOGEUSDT"
             }
         ],
         "master_section_index": 0
