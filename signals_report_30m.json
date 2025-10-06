@@ -24556,6 +24556,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 06:30",
                 "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2573",
+                "resistance": "0.2556",
+                "stoploss": "0.2518",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 06:30",
+                "symbol": "DOGEUSDT"
             }
         ],
         "master_section_index": 0

@@ -11276,6 +11276,20 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.2880",
+                "resistance": "1.3143",
+                "stoploss": "1.5537",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-17 00:00",
+                "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0337",
                 "resistance": "0.0340",
@@ -18872,6 +18886,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 05:00",
                 "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.7300",
+                "resistance": "3.6260",
+                "stoploss": "3.2510",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 07:00",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
