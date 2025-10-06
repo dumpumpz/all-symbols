@@ -18906,6 +18906,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2501",
+                "resistance": "0.2512",
+                "stoploss": "0.2525",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-27 07:30",
+                "symbol": "CELOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "2.6950",
                 "resistance": "2.7170",
@@ -24710,6 +24724,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 09:30",
                 "symbol": "SOMIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.9550",
+                "resistance": "1.9130",
+                "stoploss": "1.8720",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 09:30",
+                "symbol": "EIGENUSDT"
             },
             {
                 "type": "section",
