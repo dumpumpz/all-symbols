@@ -19068,6 +19068,48 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 11:00",
                 "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.8554",
+                "resistance": "0.8433",
+                "stoploss": "0.8269",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 12:00",
+                "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0937",
+                "resistance": "0.0874",
+                "stoploss": "0.0844",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 12:00",
+                "symbol": "TUTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4457",
+                "resistance": "0.4365",
+                "stoploss": "0.4296",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 12:00",
+                "symbol": "ARBUSDT"
             }
         ],
         "master_section_index": 0
