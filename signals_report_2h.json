@@ -7916,7 +7916,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.9421",
                 "resistance": "2.9696",
                 "stoploss": "3.0133",
@@ -15778,6 +15778,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 10:00",
                 "symbol": "BIOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1062",
+                "resistance": "0.1042",
+                "stoploss": "0.1013",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 10:00",
+                "symbol": "WUSDT"
             },
             {
                 "type": "section",
