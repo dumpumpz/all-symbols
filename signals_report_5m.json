@@ -98664,7 +98664,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "346.5000",
                 "resistance": "347.1000",
                 "stoploss": "348.8000",
@@ -98686,6 +98686,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 10:55",
                 "symbol": "SUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1385",
+                "resistance": "0.1355",
+                "stoploss": "0.1328",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 11:10",
+                "symbol": "STOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.1982",
+                "resistance": "1.1729",
+                "stoploss": "1.1200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 11:20",
+                "symbol": "FORMUSDT"
             }
         ],
         "master_section_index": 0
