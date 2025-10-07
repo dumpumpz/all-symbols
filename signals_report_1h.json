@@ -12494,6 +12494,20 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.9340",
+                "resistance": "1.9450",
+                "stoploss": "1.9780",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 07:00",
+                "symbol": "ALPINEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.8119",
                 "resistance": "0.7899",
@@ -12726,6 +12740,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-18 21:00",
                 "symbol": "TUTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.9770",
+                "resistance": "1.9630",
+                "stoploss": "1.9310",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 21:00",
+                "symbol": "ALPINEUSDT"
             },
             {
                 "type": "section",

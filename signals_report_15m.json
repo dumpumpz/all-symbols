@@ -39682,6 +39682,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "1.1731",
+                "resistance": "1.1738",
+                "stoploss": "1.1743",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 03:30",
+                "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "582.6000",
                 "resistance": "585.6000",
@@ -39746,6 +39760,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 07:00",
                 "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0001",
+                "resistance": "0.0001",
+                "stoploss": "0.0001",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 08:00",
+                "symbol": "FLOKIUSDT"
             },
             {
                 "type": "section",
@@ -40116,7 +40144,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0001",
                 "resistance": "0.0001",
                 "stoploss": "0.0001",
@@ -45234,6 +45262,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 05:30",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "231.7200",
+                "resistance": "233.1500",
+                "stoploss": "235.2100",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 06:15",
+                "symbol": "SOLUSDT"
             }
         ],
         "master_section_index": 0

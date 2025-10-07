@@ -18864,7 +18864,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.5758",
                 "resistance": "0.5790",
                 "stoploss": "0.5893",
@@ -21398,7 +21398,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1798",
                 "resistance": "1.2445",
                 "stoploss": "1.3768",
@@ -25704,6 +25704,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 05:30",
                 "symbol": "EIGENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.6594",
+                "resistance": "3.6296",
+                "stoploss": "3.6062",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 05:30",
+                "symbol": "SUIUSDT"
             }
         ],
         "master_section_index": 0
