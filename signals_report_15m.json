@@ -47662,7 +47662,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.8163",
                 "resistance": "0.8196",
                 "stoploss": "0.8273",
@@ -47676,7 +47676,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.4407",
                 "resistance": "3.4546",
                 "stoploss": "3.4994",
@@ -47690,7 +47690,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.9230",
                 "resistance": "2.9420",
                 "stoploss": "2.9630",
@@ -47754,6 +47754,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 14:00",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2800",
+                "resistance": "0.2940",
+                "stoploss": "0.3026",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 14:15",
+                "symbol": "SUSDT"
             }
         ],
         "master_section_index": 0

@@ -16898,6 +16898,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 12:00",
                 "symbol": "PENGUUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2540",
+                "resistance": "0.2521",
+                "stoploss": "0.2438",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 14:00",
+                "symbol": "DOGEUSDT"
             }
         ],
         "master_section_index": 0
