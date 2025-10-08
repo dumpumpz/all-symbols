@@ -19676,7 +19676,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0051",
                 "resistance": "0.0051",
                 "stoploss": "0.0053",
@@ -20118,6 +20118,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-28 06:00",
                 "symbol": "PUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "200.5700",
+                "resistance": "201.6300",
+                "stoploss": "204.8900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-28 06:00",
+                "symbol": "SOLUSDT"
             },
             {
                 "type": "section",
@@ -27236,6 +27250,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2893",
+                "resistance": "0.2921",
+                "stoploss": "0.2960",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 15:00",
+                "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0881",
                 "resistance": "0.0902",
@@ -27356,6 +27384,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 03:00",
                 "symbol": "DOTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.8900",
+                "resistance": "1.9440",
+                "stoploss": "1.9940",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 05:00",
+                "symbol": "EIGENUSDT"
             }
         ],
         "master_section_index": 0
