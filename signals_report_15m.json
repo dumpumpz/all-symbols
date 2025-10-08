@@ -43154,7 +43154,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.7970",
                 "resistance": "0.8019",
                 "stoploss": "0.8141",
@@ -44512,7 +44512,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.7805",
                 "resistance": "0.7899",
                 "stoploss": "0.8083",
@@ -46074,6 +46074,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 12:45",
                 "symbol": "OPENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "29.2900",
+                "resistance": "30.0300",
+                "stoploss": "30.3000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 13:30",
+                "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "123580.2200",
+                "resistance": "124340.0000",
+                "stoploss": "124590.3800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 13:45",
+                "symbol": "BTCUSDT"
             }
         ],
         "master_section_index": 0
