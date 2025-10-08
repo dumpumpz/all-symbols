@@ -16870,6 +16870,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 10:00",
                 "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "5.1610",
+                "resistance": "5.2710",
+                "stoploss": "5.4570",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 12:00",
+                "symbol": "APTUSDT"
             }
         ],
         "master_section_index": 0
