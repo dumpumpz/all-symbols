@@ -96858,7 +96858,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0342",
                 "resistance": "0.0344",
                 "stoploss": "0.0351",
@@ -97608,6 +97608,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 01:00",
                 "symbol": "TRXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "23.6100",
+                "resistance": "23.5000",
+                "stoploss": "23.3400",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 01:00",
+                "symbol": "LINKUSDT"
             },
             {
                 "type": "section",
