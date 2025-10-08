@@ -43700,7 +43700,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0326",
                 "resistance": "0.0329",
                 "stoploss": "0.0350",
@@ -47404,6 +47404,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 21:00",
                 "symbol": "EIGENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1344",
+                "resistance": "0.1360",
+                "stoploss": "0.1415",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 21:45",
+                "symbol": "STOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1465",
+                "resistance": "0.1381",
+                "stoploss": "0.1337",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 00:00",
+                "symbol": "STOUSDT"
             },
             {
                 "type": "section",
