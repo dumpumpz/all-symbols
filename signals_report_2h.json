@@ -16856,6 +16856,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 02:00",
                 "symbol": "DOTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "122906.3300",
+                "resistance": "122292.6200",
+                "stoploss": "120574.9400",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 10:00",
+                "symbol": "BTCUSDT"
             }
         ],
         "master_section_index": 0
