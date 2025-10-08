@@ -20376,7 +20376,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.4322",
                 "resistance": "1.5042",
                 "stoploss": "1.5796",
@@ -21854,6 +21854,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-29 12:30",
                 "symbol": "XPLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0011",
+                "resistance": "0.0011",
+                "stoploss": "0.0011",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 12:30",
+                "symbol": "1000CHEEMSUSDT"
             },
             {
                 "type": "section",
@@ -23667,6 +23681,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0011",
+                "resistance": "0.0011",
+                "stoploss": "0.0011",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 09:00",
+                "symbol": "1000CHEEMSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "3885.1600",
                 "resistance": "3880.2100",
                 "stoploss": "3865.0000",
@@ -25249,6 +25277,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0012",
+                "resistance": "0.0012",
+                "stoploss": "0.0012",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:00",
+                "symbol": "1000CHEEMSUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "4575.3800",
                 "resistance": "4517.9300",
                 "stoploss": "4469.6700",
@@ -25746,6 +25788,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 10:30",
                 "symbol": "INJUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0012",
+                "resistance": "0.0012",
+                "stoploss": "0.0012",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 10:30",
+                "symbol": "1000CHEEMSUSDT"
             },
             {
                 "type": "section",
@@ -27076,6 +27132,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-07 10:00",
                 "symbol": "APTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0012",
+                "resistance": "0.0012",
+                "stoploss": "0.0011",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-07 11:30",
+                "symbol": "1000CHEEMSUSDT"
             },
             {
                 "type": "section",
