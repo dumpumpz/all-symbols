@@ -42287,6 +42287,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.2607",
+                "resistance": "0.2592",
+                "stoploss": "0.2545",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 15:45",
+                "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0319",
                 "resistance": "0.0316",
                 "stoploss": "0.0310",
@@ -42888,7 +42902,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.0301",
                 "resistance": "3.0373",
                 "stoploss": "3.0556",
@@ -43722,6 +43736,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-04 15:15",
                 "symbol": "BROCCOLI714USDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.8550",
+                "resistance": "1.8720",
+                "stoploss": "1.9140",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 15:15",
+                "symbol": "EIGENUSDT"
             },
             {
                 "type": "section",
@@ -44800,6 +44828,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 07:45",
                 "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2256",
+                "resistance": "0.2253",
+                "stoploss": "0.2217",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 08:00",
+                "symbol": "HBARUSDT"
             },
             {
                 "type": "section",
