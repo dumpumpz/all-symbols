@@ -44204,6 +44204,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3443",
+                "resistance": "0.3482",
+                "stoploss": "0.3609",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-04 15:00",
+                "symbol": "EDENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "3.5066",
                 "resistance": "3.5325",
@@ -44968,6 +44982,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-05 04:45",
                 "symbol": "THEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.6219",
+                "resistance": "0.6088",
+                "stoploss": "0.6030",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 04:45",
+                "symbol": "ENAUSDT"
             },
             {
                 "type": "section",
@@ -49518,6 +49546,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-09 12:30",
                 "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4070.7300",
+                "resistance": "4059.6000",
+                "stoploss": "4030.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-09 13:00",
+                "symbol": "PAXGUSDT"
             }
         ],
         "master_section_index": 0
