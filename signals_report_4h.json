@@ -3927,6 +3927,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.0502",
+                "resistance": "0.0453",
+                "stoploss": "0.0430",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-21 20:00",
+                "symbol": "MUBARAKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "1.1748",
                 "resistance": "1.1709",
                 "stoploss": "1.1672",
@@ -3962,6 +3976,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-23 16:00",
                 "symbol": "KAITOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0423",
+                "resistance": "0.0446",
+                "stoploss": "0.0486",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-23 20:00",
+                "symbol": "MUBARAKUSDT"
             },
             {
                 "type": "section",
