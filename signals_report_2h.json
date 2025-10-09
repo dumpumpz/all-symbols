@@ -10437,6 +10437,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "112954.3200",
+                "resistance": "111517.0700",
+                "stoploss": "108103.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-05 06:00",
+                "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.3251",
                 "resistance": "0.3078",
                 "stoploss": "0.2935",
@@ -17276,6 +17290,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-09 08:00",
                 "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2693",
+                "resistance": "0.2725",
+                "stoploss": "0.2995",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-09 10:00",
+                "symbol": "SUSDT"
             }
         ],
         "master_section_index": 0
