@@ -2632,6 +2632,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 00:00",
                 "symbol": "LISTAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "11.9440",
+                "resistance": "8.8000",
+                "stoploss": "7.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 00:00",
+                "symbol": "ZENUSDT"
             }
         ],
         "master_section_index": 0
