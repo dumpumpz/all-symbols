@@ -43616,7 +43616,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0012",
                 "resistance": "0.0012",
                 "stoploss": "0.0012",
@@ -45058,7 +45058,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0012",
                 "resistance": "0.0012",
                 "stoploss": "0.0012",
@@ -47950,6 +47950,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 15:45",
                 "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.2060",
+                "resistance": "1.1930",
+                "stoploss": "1.1740",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 16:45",
+                "symbol": "WLDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.8930",
+                "resistance": "1.9190",
+                "stoploss": "1.9800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-08 20:45",
+                "symbol": "EIGENUSDT"
             }
         ],
         "master_section_index": 0
