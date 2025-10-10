@@ -22386,6 +22386,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 11:00",
                 "symbol": "FDUSDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.2860",
+                "resistance": "1.2250",
+                "stoploss": "1.1760",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 12:00",
+                "symbol": "WLDUSDT"
             }
         ],
         "master_section_index": 0
