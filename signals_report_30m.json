@@ -22518,7 +22518,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.9240",
                 "resistance": "3.9370",
                 "stoploss": "4.0230",
@@ -22974,6 +22974,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-30 14:30",
                 "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "21.0400",
+                "resistance": "21.4000",
+                "stoploss": "21.5200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-30 15:00",
+                "symbol": "LINKUSDT"
             },
             {
                 "type": "section",
@@ -28902,7 +28916,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "327.4000",
                 "resistance": "330.5000",
                 "stoploss": "340.8000",
@@ -29316,6 +29330,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 03:30",
                 "symbol": "WLDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "2.9630",
+                "resistance": "2.9420",
+                "stoploss": "2.8720",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 03:30",
+                "symbol": "NEARUSDT"
             }
         ],
         "master_section_index": 0
