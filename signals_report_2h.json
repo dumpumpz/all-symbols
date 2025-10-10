@@ -17752,6 +17752,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 00:00",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "356.3000",
+                "resistance": "349.4000",
+                "stoploss": "343.5000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 06:00",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
