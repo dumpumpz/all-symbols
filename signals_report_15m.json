@@ -45646,6 +45646,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0277",
+                "resistance": "0.0280",
+                "stoploss": "0.0285",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 09:30",
+                "symbol": "LINEAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0277",
                 "resistance": "0.0279",
@@ -45751,6 +45765,20 @@
                 "target": "",
                 "candle_num": "",
                 "entry_date": "2025-10-05 12:45",
+                "symbol": "XPLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.8944",
+                "resistance": "0.8773",
+                "stoploss": "0.8547",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 13:00",
                 "symbol": "XPLUSDT"
             },
             {
