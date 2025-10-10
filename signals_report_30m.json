@@ -22462,6 +22462,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3133",
+                "resistance": "0.3152",
+                "stoploss": "0.3190",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-29 23:30",
+                "symbol": "ALICEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "2.7590",
                 "resistance": "2.7760",
@@ -22784,7 +22798,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.2308",
                 "resistance": "0.2325",
                 "stoploss": "0.2365",
@@ -29372,6 +29386,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 03:30",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.4879",
+                "resistance": "1.5261",
+                "stoploss": "1.5522",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 05:00",
+                "symbol": "TWTUSDT"
             }
         ],
         "master_section_index": 0
