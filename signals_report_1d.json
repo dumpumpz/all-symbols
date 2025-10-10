@@ -776,6 +776,20 @@
                 "timeframe_name": "1day",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3751",
+                "resistance": "0.4252",
+                "stoploss": "0.4770",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-31 00:00",
+                "symbol": "ALICEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
@@ -2646,6 +2660,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-08 00:00",
                 "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "128.2400",
+                "resistance": "120.8300",
+                "stoploss": "100.2500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 00:00",
+                "symbol": "LTCUSDT"
             }
         ],
         "master_section_index": 0
