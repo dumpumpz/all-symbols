@@ -9050,6 +9050,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "543.3000",
+                "resistance": "546.5000",
+                "stoploss": "553.1000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-08-31 16:00",
+                "symbol": "BCHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "867.2000",
                 "resistance": "864.0000",
@@ -9212,6 +9226,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-01 06:00",
                 "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "9.2000",
+                "resistance": "8.3900",
+                "stoploss": "8.2300",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-01 06:00",
+                "symbol": "TRUMPUSDT"
             },
             {
                 "type": "section",
@@ -10136,6 +10164,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-04 04:00",
                 "symbol": "PIVXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "20.4000",
+                "resistance": "20.7700",
+                "stoploss": "21.0700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-04 04:00",
+                "symbol": "ETCUSDT"
             },
             {
                 "type": "section",
@@ -12292,6 +12334,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-11 02:00",
                 "symbol": "TUTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "21.2200",
+                "resistance": "20.8000",
+                "stoploss": "20.2900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-11 02:00",
+                "symbol": "ETCUSDT"
             },
             {
                 "type": "section",
@@ -17590,7 +17646,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1100",
                 "resistance": "1.1810",
                 "stoploss": "1.2920",
