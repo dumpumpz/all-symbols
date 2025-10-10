@@ -4976,7 +4976,7 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.0000",
                 "resistance": "1.0135",
                 "stoploss": "1.0838",
@@ -12425,6 +12425,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "21.1300",
+                "resistance": "20.5800",
+                "stoploss": "20.1600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-18 16:00",
+                "symbol": "ETCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0758",
                 "resistance": "0.0681",
                 "stoploss": "0.0662",
@@ -12628,6 +12642,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-21 08:00",
                 "symbol": "FETUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "19.8700",
+                "resistance": "20.3300",
+                "stoploss": "21.1600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-21 08:00",
+                "symbol": "ETCUSDT"
             },
             {
                 "type": "section",
@@ -13762,6 +13790,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-01 16:00",
                 "symbol": "LISTAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "19.4100",
+                "resistance": "18.5900",
+                "stoploss": "18.2200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 16:00",
+                "symbol": "ETCUSDT"
             },
             {
                 "type": "section",
