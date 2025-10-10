@@ -22400,6 +22400,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 12:00",
                 "symbol": "WLDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.2790",
+                "resistance": "4.2030",
+                "stoploss": "4.1060",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 13:00",
+                "symbol": "DOTUSDT"
             }
         ],
         "master_section_index": 0
