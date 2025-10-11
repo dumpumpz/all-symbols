@@ -113924,7 +113924,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.1364",
                 "resistance": "1.1385",
                 "stoploss": "1.1489",
@@ -113932,6 +113932,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 09:10",
                 "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "98.3700",
+                "resistance": "99.1100",
+                "stoploss": "100.6900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 09:50",
+                "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4279",
+                "resistance": "0.4320",
+                "stoploss": "0.4398",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 09:55",
+                "symbol": "ENAUSDT"
             }
         ],
         "master_section_index": 0
