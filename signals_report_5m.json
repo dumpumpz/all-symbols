@@ -114050,7 +114050,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1.6760",
                 "resistance": "1.6950",
                 "stoploss": "1.7200",
@@ -114064,7 +114064,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "194.8000",
                 "resistance": "195.6000",
                 "stoploss": "197.9000",
@@ -114072,6 +114072,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 10:45",
                 "symbol": "BNSOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "183.0100",
+                "resistance": "184.0200",
+                "stoploss": "186.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 11:00",
+                "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4584",
+                "resistance": "0.4646",
+                "stoploss": "0.4952",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 11:10",
+                "symbol": "XPLUSDT"
             }
         ],
         "master_section_index": 0
