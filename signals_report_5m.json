@@ -114316,7 +114316,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.2160",
                 "resistance": "0.2182",
                 "stoploss": "0.2213",
@@ -114324,6 +114324,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 13:30",
                 "symbol": "SEIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "2.3950",
+                "resistance": "2.4310",
+                "stoploss": "2.4520",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 13:30",
+                "symbol": "NEARUSDT"
             }
         ],
         "master_section_index": 0
