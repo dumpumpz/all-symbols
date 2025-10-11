@@ -23044,6 +23044,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 21:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "319.2000",
+                "resistance": "306.4000",
+                "stoploss": "275.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 07:00",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
