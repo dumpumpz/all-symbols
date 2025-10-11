@@ -23058,6 +23058,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 07:00",
                 "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "13.3810",
+                "resistance": "11.5610",
+                "stoploss": "9.7820",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 08:00",
+                "symbol": "ZENUSDT"
             }
         ],
         "master_section_index": 0
