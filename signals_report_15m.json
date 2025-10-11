@@ -46416,7 +46416,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "5.4620",
                 "resistance": "5.4740",
                 "stoploss": "5.5290",
@@ -46466,6 +46466,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 00:00",
                 "symbol": "FETUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "5.4110",
+                "resistance": "5.4700",
+                "stoploss": "5.5290",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 00:00",
+                "symbol": "APTUSDT"
             },
             {
                 "type": "section",
