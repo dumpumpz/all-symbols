@@ -23610,6 +23610,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2131",
+                "resistance": "0.2141",
+                "stoploss": "0.2160",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-01 03:00",
+                "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.2106",
                 "resistance": "0.2139",
@@ -24808,6 +24822,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-02 13:00",
                 "symbol": "MIRAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1880",
+                "resistance": "0.1995",
+                "stoploss": "0.2122",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-02 13:00",
+                "symbol": "FFUSDT"
             },
             {
                 "type": "section",
@@ -31276,6 +31304,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 21:00",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "284.6300",
+                "resistance": "249.0000",
+                "stoploss": "147.5500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 08:30",
+                "symbol": "ZECUSDT"
             }
         ],
         "master_section_index": 0
