@@ -110173,6 +110173,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.5020",
+                "resistance": "0.4940",
+                "stoploss": "0.4890",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 01:00",
+                "symbol": "FETUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.5524",
                 "resistance": "0.5501",
                 "stoploss": "0.5438",
@@ -114330,7 +114344,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.3950",
                 "resistance": "2.4310",
                 "stoploss": "2.4520",
@@ -114338,6 +114352,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 13:30",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1136.6300",
+                "resistance": "1129.4100",
+                "stoploss": "1118.4000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 14:15",
+                "symbol": "BNBUSDT"
             }
         ],
         "master_section_index": 0
