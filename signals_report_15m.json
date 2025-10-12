@@ -48712,7 +48712,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "343.0000",
                 "resistance": "348.6000",
                 "stoploss": "353.5000",
@@ -53934,7 +53934,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.7081",
                 "resistance": "0.7183",
                 "stoploss": "0.8062",
@@ -53956,6 +53956,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 09:45",
                 "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.0380",
+                "resistance": "2.9140",
+                "stoploss": "2.8000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 10:15",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
