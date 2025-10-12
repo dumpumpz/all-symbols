@@ -15134,6 +15134,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 20:00",
                 "symbol": "OPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1257.5000",
+                "resistance": "1182.7600",
+                "stoploss": "1084.4700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 12:00",
+                "symbol": "BNBUSDT"
             }
         ],
         "master_section_index": 0
