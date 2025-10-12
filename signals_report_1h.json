@@ -23646,6 +23646,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 16:00",
                 "symbol": "PROVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "50.8200",
+                "resistance": "43.6800",
+                "stoploss": "36.0200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 07:00",
+                "symbol": "DASHUSDT"
             }
         ],
         "master_section_index": 0
