@@ -113448,7 +113448,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "225.3100",
                 "resistance": "233.1400",
                 "stoploss": "238.9600",
@@ -116956,6 +116956,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 10:35",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0039",
+                "resistance": "0.0038",
+                "stoploss": "0.0037",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 11:05",
+                "symbol": "PUMPUSDT"
             }
         ],
         "master_section_index": 0

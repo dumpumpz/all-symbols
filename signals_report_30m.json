@@ -32130,6 +32130,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 06:30",
                 "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1185",
+                "resistance": "0.1134",
+                "stoploss": "0.1084",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 11:00",
+                "symbol": "FFUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "269.2800",
+                "resistance": "272.9400",
+                "stoploss": "293.2200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 11:00",
+                "symbol": "ZECUSDT"
             }
         ],
         "master_section_index": 0
