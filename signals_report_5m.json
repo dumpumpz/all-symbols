@@ -116578,6 +116578,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 07:05",
                 "symbol": "PEPEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0037",
+                "resistance": "0.0038",
+                "stoploss": "0.0038",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 07:30",
+                "symbol": "PUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "292.3900",
+                "resistance": "286.3300",
+                "stoploss": "276.9000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 07:40",
+                "symbol": "ZECUSDT"
             }
         ],
         "master_section_index": 0
