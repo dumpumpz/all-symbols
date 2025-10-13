@@ -55538,6 +55538,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 09:00",
                 "symbol": "FDUSDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1.3260",
+                "resistance": "1.3530",
+                "stoploss": "1.3850",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 11:00",
+                "symbol": "EIGENUSDT"
             }
         ],
         "master_section_index": 0
