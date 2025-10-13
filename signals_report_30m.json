@@ -33124,6 +33124,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 06:30",
                 "symbol": "FETUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "19.6200",
+                "resistance": "19.0000",
+                "stoploss": "16.6000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 07:00",
+                "symbol": "LINKUSDT"
             }
         ],
         "master_section_index": 0
