@@ -116332,7 +116332,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "37.1900",
                 "resistance": "38.7700",
                 "stoploss": "39.4200",
@@ -116500,7 +116500,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "1132.6500",
                 "resistance": "1136.6900",
                 "stoploss": "1147.6400",
@@ -117026,6 +117026,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 03:35",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4909",
+                "resistance": "0.4883",
+                "stoploss": "0.4755",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 03:35",
+                "symbol": "CRVUSDT"
             },
             {
                 "type": "section",
@@ -120722,6 +120736,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 12:30",
                 "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 13:30",
+                "symbol": "BONKUSDT"
             }
         ],
         "master_section_index": 0
