@@ -23870,6 +23870,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 03:00",
                 "symbol": "EIGENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1347.9000",
+                "resistance": "1320.0000",
+                "stoploss": "1255.8600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 07:00",
+                "symbol": "BNBUSDT"
             }
         ],
         "master_section_index": 0
