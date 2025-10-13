@@ -51736,6 +51736,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "237.1000",
+                "resistance": "238.0000",
+                "stoploss": "240.4000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-09 08:30",
+                "symbol": "BNSOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0880",
                 "resistance": "0.0895",
@@ -54572,6 +54586,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 15:00",
                 "symbol": "ETHFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "202.8000",
+                "resistance": "198.4000",
+                "stoploss": "195.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 15:00",
+                "symbol": "BNSOLUSDT"
             },
             {
                 "type": "section",
