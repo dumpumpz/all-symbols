@@ -25500,6 +25500,20 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "30.5800",
+                "resistance": "30.7300",
+                "stoploss": "31.0200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-03 05:30",
+                "symbol": "AVAXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "1.1733",
                 "resistance": "1.1719",
@@ -26760,7 +26774,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.6045",
                 "resistance": "0.6125",
                 "stoploss": "0.6220",
@@ -33292,6 +33306,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 11:00",
                 "symbol": "ZECUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "12.5490",
+                "resistance": "13.4740",
+                "stoploss": "16.3000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 12:30",
+                "symbol": "ZENUSDT"
             }
         ],
         "master_section_index": 0
