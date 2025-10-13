@@ -2898,6 +2898,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 00:00",
                 "symbol": "TONUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1day",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "406.8000",
+                "resistance": "364.2000",
+                "stoploss": "300.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 00:00",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
