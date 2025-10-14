@@ -26228,7 +26228,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "32.5200",
                 "resistance": "33.4700",
                 "stoploss": "35.9900",
@@ -33376,6 +33376,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 12:30",
                 "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0299",
+                "resistance": "0.0316",
+                "stoploss": "0.0331",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:30",
+                "symbol": "TUTUSDT"
             }
         ],
         "master_section_index": 0

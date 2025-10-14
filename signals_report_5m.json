@@ -116486,7 +116486,7 @@
                 "timeframe_name": "5min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "110644.4000",
                 "resistance": "111007.9300",
                 "stoploss": "111244.7000",
@@ -116788,6 +116788,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 00:50",
                 "symbol": "ETCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "276.8100",
+                "resistance": "281.6400",
+                "stoploss": "290.4000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 00:55",
+                "symbol": "ZECUSDT"
             },
             {
                 "type": "section",
@@ -117460,6 +117474,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 05:45",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1150.9300",
+                "resistance": "1142.0000",
+                "stoploss": "1121.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 05:50",
+                "symbol": "BNBUSDT"
             },
             {
                 "type": "section",
@@ -120848,6 +120876,76 @@
                 "candle_num": "",
                 "entry_date": "2025-10-13 13:50",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.9983",
+                "resistance": "1.0209",
+                "stoploss": "1.0800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:45",
+                "symbol": "FORMUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "113969.2000",
+                "resistance": "114457.3000",
+                "stoploss": "115400.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:50",
+                "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4228",
+                "resistance": "0.4330",
+                "stoploss": "0.4418",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:50",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.3630",
+                "resistance": "3.4250",
+                "stoploss": "3.4970",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:50",
+                "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "5min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3203",
+                "resistance": "0.3211",
+                "stoploss": "0.3222",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 14:50",
+                "symbol": "TRXUSDT"
             }
         ],
         "master_section_index": 0
