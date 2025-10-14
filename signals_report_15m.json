@@ -52660,6 +52660,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.9999",
+                "resistance": "1.0001",
+                "stoploss": "1.0003",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-09 16:15",
+                "symbol": "USDEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.9993",
                 "resistance": "0.9996",
@@ -52724,6 +52738,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-09 19:15",
                 "symbol": "RDNTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "339.6000",
+                "resistance": "336.2000",
+                "stoploss": "331.7000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-09 20:30",
+                "symbol": "TAOUSDT"
             },
             {
                 "type": "section",
@@ -53242,6 +53270,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 11:45",
                 "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.1770",
+                "resistance": "4.1610",
+                "stoploss": "4.1280",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 11:45",
+                "symbol": "DOTUSDT"
             },
             {
                 "type": "section",
@@ -56119,6 +56161,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "257.7200",
+                "resistance": "250.3900",
+                "stoploss": "246.4900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-13 17:45",
+                "symbol": "AAVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.2150",
                 "resistance": "0.2119",
                 "stoploss": "0.2052",
@@ -56560,6 +56616,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-14 04:45",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.9970",
+                "resistance": "0.9972",
+                "stoploss": "0.9975",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 05:30",
+                "symbol": "FDUSDUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.4366",
+                "resistance": "0.4510",
+                "stoploss": "0.4585",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 05:30",
+                "symbol": "XPLUSDT"
             }
         ],
         "master_section_index": 0
