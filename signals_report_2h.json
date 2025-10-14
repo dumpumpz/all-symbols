@@ -11766,7 +11766,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.5990",
                 "resistance": "0.6040",
                 "stoploss": "0.6140",
@@ -19712,6 +19712,48 @@
                 "candle_num": "",
                 "entry_date": "2025-10-14 04:00",
                 "symbol": "USDCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1212.6800",
+                "resistance": "1272.1100",
+                "stoploss": "1319.8000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 06:00",
+                "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1834",
+                "resistance": "0.1873",
+                "stoploss": "0.1956",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 06:00",
+                "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 06:00",
+                "symbol": "BONKUSDT"
             }
         ],
         "master_section_index": 0
