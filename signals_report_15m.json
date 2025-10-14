@@ -56924,6 +56924,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-14 11:15",
                 "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "421.7000",
+                "resistance": "434.2000",
+                "stoploss": "455.1000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 12:30",
+                "symbol": "TAOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.2640",
+                "resistance": "3.3790",
+                "stoploss": "3.4870",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 12:45",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
