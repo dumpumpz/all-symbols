@@ -52968,7 +52968,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.6900",
                 "resistance": "3.7300",
                 "stoploss": "3.7860",
@@ -52976,6 +52976,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 01:30",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "1249.4500",
+                "resistance": "1252.0000",
+                "stoploss": "1268.9700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 01:45",
+                "symbol": "BNBUSDT"
             },
             {
                 "type": "section",
@@ -53984,6 +53998,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-10 14:45",
                 "symbol": "BELUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "120493.1700",
+                "resistance": "121496.3300",
+                "stoploss": "121661.6200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 14:45",
+                "symbol": "BTCUSDT"
             },
             {
                 "type": "section",
@@ -57462,7 +57490,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0242",
                 "resistance": "0.0245",
                 "stoploss": "0.0248",
@@ -57476,7 +57504,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.4040",
                 "resistance": "3.4420",
                 "stoploss": "3.5170",
