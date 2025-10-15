@@ -57512,6 +57512,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-15 03:45",
                 "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "463.2000",
+                "resistance": "453.7000",
+                "stoploss": "438.5000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 05:15",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
