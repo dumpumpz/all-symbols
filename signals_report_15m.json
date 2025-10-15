@@ -52968,6 +52968,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "3.6900",
+                "resistance": "3.7300",
+                "stoploss": "3.7860",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-10 01:30",
+                "symbol": "CAKEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "121220.9500",
                 "resistance": "121504.2600",
@@ -57442,6 +57456,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-15 02:15",
                 "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0242",
+                "resistance": "0.0245",
+                "stoploss": "0.0248",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 03:30",
+                "symbol": "PENGUUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.4040",
+                "resistance": "3.4420",
+                "stoploss": "3.5170",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 03:45",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
