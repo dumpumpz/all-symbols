@@ -25228,6 +25228,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-15 02:00",
                 "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4503",
+                "resistance": "0.4355",
+                "stoploss": "0.4108",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 07:00",
+                "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.6166",
+                "resistance": "0.5840",
+                "stoploss": "0.5430",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 07:00",
+                "symbol": "CRVUSDT"
             }
         ],
         "master_section_index": 0
