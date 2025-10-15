@@ -29589,6 +29589,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "1169.2100",
+                "resistance": "1162.5000",
+                "stoploss": "1148.2500",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 00:00",
+                "symbol": "BNBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.5659",
                 "resistance": "0.5778",
                 "stoploss": "0.6479",
@@ -30268,6 +30282,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 12:00",
                 "symbol": "FILUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.7445",
+                "resistance": "0.7365",
+                "stoploss": "0.7213",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 12:00",
+                "symbol": "OPUSDT"
             },
             {
                 "type": "section",
@@ -34888,6 +34916,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-15 01:00",
                 "symbol": "2ZUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3.3860",
+                "resistance": "3.4360",
+                "stoploss": "3.5950",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 04:00",
+                "symbol": "CAKEUSDT"
             }
         ],
         "master_section_index": 0
