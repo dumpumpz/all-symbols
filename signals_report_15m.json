@@ -58212,6 +58212,62 @@
                 "candle_num": "",
                 "entry_date": "2025-10-15 12:15",
                 "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2004",
+                "resistance": "0.2018",
+                "stoploss": "0.2051",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 13:00",
+                "symbol": "DOGEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "12.3310",
+                "resistance": "12.7150",
+                "stoploss": "13.2530",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 13:00",
+                "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.1842",
+                "resistance": "0.1864",
+                "stoploss": "0.1890",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 13:15",
+                "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5667",
+                "resistance": "0.5827",
+                "stoploss": "0.5975",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 13:15",
+                "symbol": "CRVUSDT"
             }
         ],
         "master_section_index": 0
