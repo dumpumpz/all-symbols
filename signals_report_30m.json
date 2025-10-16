@@ -29659,6 +29659,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "123465.2800",
+                "resistance": "123220.3000",
+                "stoploss": "122613.8900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-05 23:00",
+                "symbol": "BTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "123869.3900",
                 "resistance": "123464.0000",
                 "stoploss": "122301.6300",
@@ -30394,6 +30408,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 10:00",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "10.0170",
+                "resistance": "9.9500",
+                "stoploss": "9.5570",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 10:00",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
