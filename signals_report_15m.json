@@ -55208,6 +55208,20 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 18:45",
+                "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "300.3000",
                 "resistance": "310.2000",
@@ -55496,6 +55510,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-11 21:00",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "1.1469",
+                "resistance": "1.1438",
+                "stoploss": "1.1408",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-11 21:00",
+                "symbol": "EURUSDT"
             },
             {
                 "type": "section",
@@ -58982,6 +59010,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 10:15",
                 "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 12:00",
+                "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1688",
+                "resistance": "0.1681",
+                "stoploss": "0.1575",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 12:00",
+                "symbol": "YGGUSDT"
             }
         ],
         "master_section_index": 0
