@@ -35287,6 +35287,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "1.1578",
+                "resistance": "1.1552",
+                "stoploss": "1.1380",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-14 14:30",
+                "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "472.3000",
                 "resistance": "419.8000",
                 "stoploss": "381.2000",
@@ -36022,6 +36036,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 01:30",
                 "symbol": "XPLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "398.8000",
+                "resistance": "405.0000",
+                "stoploss": "455.1000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 03:30",
+                "symbol": "TAOUSDT"
             }
         ],
         "master_section_index": 0
