@@ -58680,7 +58680,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.4739",
                 "resistance": "0.4830",
                 "stoploss": "0.4919",
