@@ -58428,7 +58428,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "3.1790",
                 "resistance": "3.2010",
                 "stoploss": "3.2760",
@@ -58736,7 +58736,7 @@
                 "timeframe_name": "15min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.9708",
                 "resistance": "0.9890",
                 "stoploss": "1.0100",
@@ -58758,6 +58758,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 06:15",
                 "symbol": "DASHUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.5623",
+                "resistance": "0.5555",
+                "stoploss": "0.5491",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 06:45",
+                "symbol": "CRVUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "3.1710",
+                "resistance": "3.1510",
+                "stoploss": "3.1160",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 06:45",
+                "symbol": "DOTUSDT"
             }
         ],
         "master_section_index": 0
