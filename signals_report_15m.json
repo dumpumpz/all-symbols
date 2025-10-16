@@ -58632,6 +58632,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 02:30",
                 "symbol": "FFUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "94.5200",
+                "resistance": "95.0700",
+                "stoploss": "96.3800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 04:45",
+                "symbol": "LTCUSDT"
             }
         ],
         "master_section_index": 0

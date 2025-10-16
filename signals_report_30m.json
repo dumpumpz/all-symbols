@@ -29910,7 +29910,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "156.4900",
                 "resistance": "160.0000",
                 "stoploss": "168.6500",
@@ -30086,6 +30086,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 06:00",
                 "symbol": "UNIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.4404",
+                "resistance": "0.4347",
+                "stoploss": "0.4296",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 06:00",
+                "symbol": "ARBUSDT"
             },
             {
                 "type": "section",
@@ -30408,6 +30422,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-06 09:30",
                 "symbol": "PIVXUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "34.9000",
+                "resistance": "34.5100",
+                "stoploss": "34.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-06 09:30",
+                "symbol": "DASHUSDT"
             },
             {
                 "type": "section",
@@ -31142,7 +31170,7 @@
                 "timeframe_name": "30min",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "148.5000",
                 "resistance": "154.5800",
                 "stoploss": "167.4300",
