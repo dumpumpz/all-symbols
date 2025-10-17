@@ -5298,6 +5298,20 @@
                 "timeframe_name": "4hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2698",
+                "resistance": "0.2764",
+                "stoploss": "0.3050",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-28 16:00",
+                "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "3.2070",
                 "resistance": "3.2710",
@@ -5348,6 +5362,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-28 20:00",
                 "symbol": "BATUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-28 20:00",
+                "symbol": "BONKUSDT"
             },
             {
                 "type": "section",
@@ -5474,6 +5502,20 @@
                 "candle_num": "",
                 "entry_date": "2025-07-29 12:00",
                 "symbol": "ORDIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "10.1560",
+                "resistance": "10.3270",
+                "stoploss": "10.7790",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-07-29 12:00",
+                "symbol": "UNIUSDT"
             },
             {
                 "type": "section",
