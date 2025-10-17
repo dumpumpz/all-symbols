@@ -18752,7 +18752,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.4182",
                 "resistance": "0.4231",
                 "stoploss": "0.4324",
@@ -26144,7 +26144,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
                 "stoploss": "0.0000",
@@ -26158,7 +26158,7 @@
                 "timeframe_name": "1hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "5.7890",
                 "resistance": "6.1100",
                 "stoploss": "6.2900",
@@ -26166,6 +26166,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-17 06:00",
                 "symbol": "TRUMPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.3101",
+                "resistance": "0.3136",
+                "stoploss": "0.3222",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-17 07:00",
+                "symbol": "TRXUSDT"
             }
         ],
         "master_section_index": 0
