@@ -12158,7 +12158,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.8158",
                 "resistance": "0.8204",
                 "stoploss": "0.8389",
@@ -20810,7 +20810,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.5270",
                 "resistance": "0.5822",
                 "stoploss": "0.6362",
@@ -20824,7 +20824,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "0.7090",
                 "resistance": "0.7904",
                 "stoploss": "0.8386",
@@ -20832,6 +20832,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-17 06:00",
                 "symbol": "ONDOUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "3824.1800",
+                "resistance": "4042.2900",
+                "stoploss": "4198.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-17 06:00",
+                "symbol": "ETHUSDT"
             }
         ],
         "master_section_index": 0
