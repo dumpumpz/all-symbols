@@ -12158,6 +12158,20 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
+                "direction": "Short",
+                "entry": "0.8158",
+                "resistance": "0.8204",
+                "stoploss": "0.8389",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-06 18:00",
+                "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
                 "direction": "Long",
                 "entry": "0.0251",
                 "resistance": "0.0245",
@@ -12922,6 +12936,34 @@
                 "candle_num": "",
                 "entry_date": "2025-09-08 08:00",
                 "symbol": "HBARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "210.8700",
+                "resistance": "204.6800",
+                "stoploss": "202.0700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-08 08:00",
+                "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "4.3680",
+                "resistance": "4.2680",
+                "stoploss": "4.2140",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-08 08:00",
+                "symbol": "APTUSDT"
             },
             {
                 "type": "section",
@@ -20762,6 +20804,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 22:00",
                 "symbol": "ZENUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5270",
+                "resistance": "0.5822",
+                "stoploss": "0.6362",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-17 06:00",
+                "symbol": "CRVUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.7090",
+                "resistance": "0.7904",
+                "stoploss": "0.8386",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-17 06:00",
+                "symbol": "ONDOUSDT"
             }
         ],
         "master_section_index": 0
