@@ -12102,7 +12102,7 @@
                 "timeframe_name": "2hour",
                 "color_state_index": 3,
                 "is_closed": false,
-                "direction": "Short",
+                "direction": "Long",
                 "entry": "2.7997",
                 "resistance": "2.8037",
                 "stoploss": "2.8650",
@@ -12110,6 +12110,20 @@
                 "candle_num": "",
                 "entry_date": "2025-09-06 16:00",
                 "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.2835",
+                "resistance": "0.2874",
+                "stoploss": "0.3000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-09-06 18:00",
+                "symbol": "SEIUSDT"
             },
             {
                 "type": "section",
@@ -20468,6 +20482,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-16 12:00",
                 "symbol": "SOLUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "232.5400",
+                "resistance": "238.1200",
+                "stoploss": "262.6900",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-16 18:00",
+                "symbol": "AAVEUSDT"
             }
         ],
         "master_section_index": 0
