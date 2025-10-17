@@ -60844,6 +60844,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-17 03:30",
                 "symbol": "FFUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.5250",
+                "resistance": "0.5280",
+                "stoploss": "0.5390",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-17 05:00",
+                "symbol": "WIFUSDT"
             }
         ],
         "master_section_index": 0
