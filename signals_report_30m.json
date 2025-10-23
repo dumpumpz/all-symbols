@@ -35357,6 +35357,34 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "0.3115",
+                "resistance": "0.3073",
+                "stoploss": "0.2917",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 06:00",
+                "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0000",
+                "resistance": "0.0000",
+                "stoploss": "0.0000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 06:00",
+                "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.0000",
                 "resistance": "0.0000",
                 "stoploss": "0.0000",
@@ -35406,6 +35434,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 06:30",
                 "symbol": "ARBUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "14.1980",
+                "resistance": "13.0080",
+                "stoploss": "11.7380",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 07:00",
+                "symbol": "ZENUSDT"
             },
             {
                 "type": "section",
@@ -35490,6 +35532,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 14:30",
                 "symbol": "BONKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.5110",
+                "resistance": "0.4830",
+                "stoploss": "0.4580",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 14:30",
+                "symbol": "WIFUSDT"
             },
             {
                 "type": "section",
@@ -35679,6 +35735,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "2.4953",
+                "resistance": "2.4242",
+                "stoploss": "2.3228",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 15:00",
+                "symbol": "XRPUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "367.6000",
                 "resistance": "353.0000",
                 "stoploss": "140.0000",
@@ -35756,6 +35826,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-12 16:00",
                 "symbol": "MLNUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "22.6500",
+                "resistance": "22.2400",
+                "stoploss": "20.9200",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-12 16:00",
+                "symbol": "AVAXUSDT"
             },
             {
                 "type": "section",
