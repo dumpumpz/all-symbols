@@ -68754,6 +68754,48 @@
                 "candle_num": "",
                 "entry_date": "2025-10-23 06:15",
                 "symbol": "ENAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "222.7000",
+                "resistance": "220.5000",
+                "stoploss": "215.7800",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-23 06:45",
+                "symbol": "AAVEUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.1273",
+                "resistance": "0.1266",
+                "stoploss": "0.1237",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-23 06:45",
+                "symbol": "WLFIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "15min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.2391",
+                "resistance": "0.2365",
+                "stoploss": "0.2333",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-23 06:45",
+                "symbol": "FETUSDT"
             }
         ],
         "master_section_index": 0
