@@ -16800,6 +16800,48 @@
                 "candle_num": "",
                 "entry_date": "2025-10-20 08:00",
                 "symbol": "AUCTIONUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "17.4100",
+                "resistance": "17.6600",
+                "stoploss": "18.9700",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-22 08:00",
+                "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "0.0001",
+                "resistance": "0.0001",
+                "stoploss": "0.0001",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-22 08:00",
+                "symbol": "FLOKIUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "4hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Short",
+                "entry": "10.9690",
+                "resistance": "11.4110",
+                "stoploss": "13.7230",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-22 20:00",
+                "symbol": "ZENUSDT"
             }
         ],
         "master_section_index": 0
