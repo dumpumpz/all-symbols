@@ -41426,6 +41426,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-23 09:30",
                 "symbol": "LINKUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "189.0400",
+                "resistance": "187.4500",
+                "stoploss": "184.1400",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-23 10:00",
+                "symbol": "SOLUSDT"
             }
         ],
         "master_section_index": 0
