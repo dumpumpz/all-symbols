@@ -29414,6 +29414,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-23 21:00",
                 "symbol": "APTUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "1hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "95.0800",
+                "resistance": "93.4900",
+                "stoploss": "91.9600",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-24 02:00",
+                "symbol": "LTCUSDT"
             }
         ],
         "master_section_index": 0
