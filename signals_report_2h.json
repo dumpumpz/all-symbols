@@ -22372,6 +22372,20 @@
                 "candle_num": "",
                 "entry_date": "2025-10-24 06:00",
                 "symbol": "LTCUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "2hour",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "494.4000",
+                "resistance": "479.5000",
+                "stoploss": "462.2000",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-24 06:00",
+                "symbol": "BCHUSDT"
             }
         ],
         "master_section_index": 0

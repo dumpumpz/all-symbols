@@ -37625,6 +37625,20 @@
                 "color_state_index": 3,
                 "is_closed": false,
                 "direction": "Long",
+                "entry": "1.1610",
+                "resistance": "1.1580",
+                "stoploss": "1.1380",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-15 01:00",
+                "symbol": "EURUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
                 "entry": "0.1808",
                 "resistance": "0.1770",
                 "stoploss": "0.1718",
@@ -42700,6 +42714,34 @@
                 "candle_num": "",
                 "entry_date": "2025-10-24 06:30",
                 "symbol": "NEARUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.6543",
+                "resistance": "0.6468",
+                "stoploss": "0.6379",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-24 06:30",
+                "symbol": "ADAUSDT"
+            },
+            {
+                "type": "section",
+                "timeframe_name": "30min",
+                "color_state_index": 3,
+                "is_closed": false,
+                "direction": "Long",
+                "entry": "0.0040",
+                "resistance": "0.0039",
+                "stoploss": "0.0036",
+                "target": "",
+                "candle_num": "",
+                "entry_date": "2025-10-24 07:00",
+                "symbol": "PUMPUSDT"
             }
         ],
         "master_section_index": 0
