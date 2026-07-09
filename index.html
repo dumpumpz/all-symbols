@@ -388,7 +388,7 @@
 
         @media (max-width: 480px) {
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr); /* Maintains the 2x2 grid even on small viewport widths */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -443,14 +443,6 @@
                     <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--accent-red);font-weight:bold;">(17.5 Losses)</span></span></div>
                     <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--accent-red);font-weight:bold;">(20.0+ Losses)</span></span></div>
                     <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--accent-red);font-weight:bold;">(34.6+ Losses)</span></span></div>
-                </div>
-
-                <!-- Financial Totals Box -->
-                <div class="financial-summary">
-                    <div class="summary-title">Portfolio Cost & Yield Summary</div>
-                    <div class="summary-row"><span>Upfront Setup Cost:</span><span id="summary-cost">$0</span></div>
-                    <div class="summary-row"><span>Max Extraction Potential:</span><span id="summary-extracted">$0</span></div>
-                    <div class="summary-row total"><span>Est. Return on Capital (ROI):</span><span id="summary-roi">0x</span></div>
                 </div>
             </div>
 
@@ -536,6 +528,7 @@
     <script>
         const START_DATE = new Date(2026, 6, 6); // July 6, 2026
         let userOutcomes = {}; // Keyed by day index
+        let futureRowsExpanded = false; // Persistent UI state to keep custom expand settings on reload
         
         // Default Config States
         let config = {
@@ -614,22 +607,6 @@
             document.getElementById('tradeify-50-btn').className = config.tradeifySize === 50 ? 'pill-btn active' : 'pill-btn';
             document.getElementById('tradeify-150-btn').className = config.tradeifySize === 150 ? 'pill-btn active' : 'pill-btn';
 
-            // Calculate Upfront Costs and Yield Options dynamically
-            let lucidCost = (3 * 98) + (config.lucidSize === 50 ? (2 * 98) : (2 * 294));
-            let tradeifyCost = config.tradeifySize === 50 ? (4 * 99) : (4 * 221);
-            let alphaCost = 288;
-            let totalSetupCost = lucidCost + tradeifyCost + alphaCost;
-
-            let maxLucidPayout = (3 * 4 * 2000) + (config.lucidSize === 50 ? (2 * 4 * 2000) : (2 * 4 * 3000));
-            let maxTradeifyPayout = config.tradeifySize === 50 ? (4 * 2 * 3000) : (4 * 2 * 5000);
-            
-            let maxAlphaPayout = (2 * 15000) + (2 * 1 * 15000); 
-            let maxTotalYield = maxLucidPayout + maxTradeifyPayout + maxAlphaPayout;
-
-            document.getElementById('summary-cost').innerText = `$${totalSetupCost.toLocaleString()}`;
-            document.getElementById('summary-extracted').innerText = `$${maxTotalYield.toLocaleString()}`;
-            document.getElementById('summary-roi').innerText = `${(maxTotalYield / totalSetupCost).toFixed(1)}x`;
-
             // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
             document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
             if (config.lucidSize === 50) {
@@ -687,6 +664,9 @@
             let t14_payout_profit = config.tradeifySize === 50 ? 6000 : 10000;
             let t14_payout_amount = config.tradeifySize === 50 ? 3000 : 5000;
 
+            let firstPayoutOccurred = false;
+            let toggleRowInjected = false;
+
             // Complete simulation loop
             while (
                 !(L1_2.payouts >= 4 && L3.payouts >= 4 && L4_5.payouts >= 4 && T1_4.payouts >= 2 && A1.payouts >= 2 && A2.payouts >= 1 && A3.payouts >= 1) &&
@@ -722,7 +702,7 @@
                 let todayA3_active = A3.active;
                 let todayA3_phase = A3.phase;
 
-                // 1. Process L1-2 Trading (Using compact layout codes 'Ev' and 'Fd')
+                // 1. Process L1-2 Trading
                 if (todayL12_phase === 'eval') {
                     activeBadges += `<span class="badge badge-lucid">L1-2 Ev</span> `;
                     L1_2.profit += masterResult;
@@ -1016,7 +996,8 @@
 
                 // Compile payouts
                 let payoutText = '—';
-                if (payoutsRequested.length > 0) {
+                let hasPayoutToday = payoutsRequested.length > 0;
+                if (hasPayoutToday) {
                     payoutText = payoutsRequested.map(p => {
                         totalWithdrawn += p.amount;
                         if (p.firm === 'lucid') lucidWithdrawn += p.amount;
@@ -1041,9 +1022,17 @@
 
                 let displayVal = isProjection ? '' : masterResult;
 
+                // Configure collapsing rules for rows
+                let rowStyle = "";
+                let rowClass = "";
+                if (firstPayoutOccurred) {
+                    rowStyle = futureRowsExpanded ? 'style="display: table-row;"' : 'style="display: none;"';
+                    rowClass = 'class="future-row"';
+                }
+
                 // Render row with USD Running Total (using shorthanded columns for mobile ease)
                 rowsHtml += `
-                    <tr>
+                    <tr ${rowClass} ${rowStyle}>
                         <td><strong>${formatDate(currentDate)}</strong></td>
                         <td>
                             <input type="number" 
@@ -1059,6 +1048,20 @@
                         <td><strong>$${totalWithdrawn.toLocaleString()}</strong></td>
                     </tr>
                 `;
+
+                // Handle conditional toggle row injection right after the first payout day
+                if (hasPayoutToday && !toggleRowInjected) {
+                    let toggleLabel = futureRowsExpanded ? '📁 Click to Collapse Remaining Plan' : '📂 Click to Expand / Collapse Remaining Plan';
+                    rowsHtml += `
+                        <tr id="toggle-future-row">
+                            <td colspan="7" style="text-align: center; cursor: pointer; background: rgba(59, 130, 246, 0.15); font-weight: bold; color: var(--accent-blue); padding: 10px; font-size: 11px;" onclick="toggleFutureRows()">
+                                ${toggleLabel}
+                            </td>
+                        </tr>
+                    `;
+                    toggleRowInjected = true;
+                    firstPayoutOccurred = true; 
+                }
 
                 currentDate = getNextTradingDay(currentDate);
                 dayIndex++;
@@ -1079,6 +1082,25 @@
                 portfolioOutcomesRef.child(index).set(parseFloat(value));
             }
         }
+
+        // Global row uncollapsing function
+        window.toggleFutureRows = function() {
+            futureRowsExpanded = !futureRowsExpanded;
+            const rows = document.querySelectorAll('.future-row');
+            const toggleBtn = document.getElementById('toggle-future-row');
+            if (rows.length === 0) return;
+            
+            rows.forEach(row => {
+                row.style.display = futureRowsExpanded ? 'table-row' : 'none';
+            });
+            
+            if (toggleBtn) {
+                const td = toggleBtn.querySelector('td');
+                if (td) {
+                    td.innerText = futureRowsExpanded ? '📁 Click to Collapse Remaining Plan' : '📂 Click to Expand / Collapse Remaining Plan';
+                }
+            }
+        };
     </script>
 </body>
 </html>
