@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-Account $148,000 Master Portfolio Tracker</title>
+    
+    <!-- Firebase Core and Realtime Database SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
     <style>
         :root {
             --bg-dark: #0f172a;
@@ -594,48 +599,59 @@
         const START_DATE = new Date(2026, 6, 6); // July 6, 2026
         let userOutcomes = {}; // Keyed by day index
         
-        // Default Config States (Saved to localStorage)
+        // Default Config States
         let config = {
             lucidSize: 150,
             tradeifySize: 150
         };
 
-        if (localStorage.getItem('portfolioConfig')) {
-            try {
-                let loadedConfig = JSON.parse(localStorage.getItem('portfolioConfig'));
-                if (loadedConfig && typeof loadedConfig === 'object') {
-                    config = loadedConfig;
-                }
-            } catch (e) {
-                console.error("Failed to parse config:", e);
+        // --- FIREBASE CONFIGURATION ---
+        const CONFIG = {
+            FIREBASE: {
+                apiKey: "AIzaSyCQ4vHqGiv_yRkA0zZaaOU24gxhqBkxnv4",
+                authDomain: "journal-a003f.firebaseapp.com",
+                databaseURL: "https://journal-a003f-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "journal-a003f",
+                storageBucket: "journal-a003f.firebasestorage.app", 
+                messagingSenderId: "1038636626553",
+                appId: "1:1038636626553:web:7a91c321e39c146bdc9aa8"
             }
+        };
+
+        // Initialize Firebase
+        if (!firebase.apps.length) {
+            firebase.initializeApp(CONFIG.FIREBASE);
         }
-        
-        // Load data and sanitize string formats from older versions
-        if (localStorage.getItem('portfolioOutcomes')) {
-            try {
-                let loaded = JSON.parse(localStorage.getItem('portfolioOutcomes'));
-                if (loaded && typeof loaded === 'object') {
-                    for (let key in loaded) {
-                        if (loaded[key] === 'win') loaded[key] = 400;
-                        else if (loaded[key] === 'loss') loaded[key] = -100;
-                        else if (loaded[key] === 'no-trade') loaded[key] = 0;
-                        else if (typeof loaded[key] === 'string') loaded[key] = parseFloat(loaded[key]) || 0;
-                    }
-                    userOutcomes = loaded;
-                } else {
-                    userOutcomes = {};
-                }
-            } catch (e) {
-                userOutcomes = {};
+        const database = firebase.database();
+        const portfolioConfigRef = database.ref('portfolio_config');
+        const portfolioOutcomesRef = database.ref('portfolio_outcomes');
+
+        // --- FIREBASE LIVE SYNC LISTENERS ---
+        portfolioConfigRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            if (data && typeof data === 'object') {
+                config = data;
+                calculateRoadmap();
             }
-        }
+        });
+
+        portfolioOutcomesRef.on('value', (snapshot) => {
+            const data = snapshot.val() || {};
+            // Sanitize older versions/strings
+            for (let key in data) {
+                if (data[key] === 'win') data[key] = 400;
+                else if (data[key] === 'loss') data[key] = -100;
+                else if (data[key] === 'no-trade') data[key] = 0;
+                else if (typeof data[key] === 'string') data[key] = parseFloat(data[key]) || 0;
+            }
+            userOutcomes = data;
+            calculateRoadmap();
+        });
 
         function updateConfig(firm, size) {
             if (firm === 'lucid') config.lucidSize = size;
             if (firm === 'tradeify') config.tradeifySize = size;
-            localStorage.setItem('portfolioConfig', JSON.stringify(config));
-            calculateRoadmap();
+            portfolioConfigRef.set(config);
         }
 
         function getNextTradingDay(date) {
@@ -660,7 +676,7 @@
             document.getElementById('tradeify-50-btn').className = config.tradeifySize === 50 ? 'pill-btn active' : 'pill-btn';
             document.getElementById('tradeify-150-btn').className = config.tradeifySize === 150 ? 'pill-btn active' : 'pill-btn';
 
-            // Calculate Upfront Costs and Yield Options dynamically (3 * 50K accounts + 2 * L4_5 custom size)
+            // Calculate Upfront Costs and Yield Options dynamically
             let lucidCost = (3 * 98) + (config.lucidSize === 50 ? (2 * 98) : (2 * 294));
             let tradeifyCost = config.tradeifySize === 50 ? (4 * 99) : (4 * 221);
             let alphaCost = 288;
@@ -669,7 +685,6 @@
             let maxLucidPayout = (3 * 4 * 2000) + (config.lucidSize === 50 ? (2 * 4 * 2000) : (2 * 4 * 3000));
             let maxTradeifyPayout = config.tradeifySize === 50 ? (4 * 2 * 3000) : (4 * 2 * 5000);
             
-            // Capped at 2 payouts on Alpha 1 and 1 payout on Alpha 2 & 3 for current phase
             let maxAlphaPayout = (2 * 15000) + (2 * 1 * 15000); 
             let maxTotalYield = maxLucidPayout + maxTradeifyPayout + maxAlphaPayout;
 
@@ -711,31 +726,30 @@
             let tradeifyWithdrawn = 0;
             let alphaWithdrawn = 0;
 
-            // Restructured Account States for Accelerated 2-Account Start
-            let L1_2 = { phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Starts active on Day 1
-            let L3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Activates with L4-5 on Day 9
-            let L4_5 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Activates with L3 on Day 9
+            // Restructured Account States
+            let L1_2 = { phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+            let L3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+            let L4_5 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
             let T1_4 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
             
-            // 3 Alpha Accounts Active Portfolio State
             let A1 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
             let A2 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
             let A3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
 
             // Dynamic Config Rules
             let l45_eval_target = config.lucidSize === 50 ? 3200 : 9000;
-            let l45_eval_mult = config.lucidSize === 50 ? 1.0 : 2.0; // 50K is 1.0x ($100 risk), 150K is 2.0x ($200 risk / 8 MNQ)
+            let l45_eval_mult = config.lucidSize === 50 ? 1.0 : 2.0;
             let l45_funded_mult = config.lucidSize === 50 ? 1.0 : 2.0;
             let l45_payout_profit = config.lucidSize === 50 ? 4000 : 6000;
             let l45_payout_amount = config.lucidSize === 50 ? 2000 : 3000;
 
             let t14_eval_target = config.tradeifySize === 50 ? 3000 : 9000;
-            let t14_eval_mult = config.tradeifySize === 50 ? 1.5 : 2.0; // 50K uses 1.5x, 150K uses 2.0x
+            let t14_eval_mult = config.tradeifySize === 50 ? 1.5 : 2.0;
             let t14_funded_mult = config.tradeifySize === 50 ? 1.5 : 2.0;
             let t14_payout_profit = config.tradeifySize === 50 ? 6000 : 10000;
             let t14_payout_amount = config.tradeifySize === 50 ? 3000 : 5000;
 
-            // Complete simulation loop (extended to 250 safety breaker)
+            // Complete simulation loop
             while (
                 !(L1_2.payouts >= 4 && L3.payouts >= 4 && L4_5.payouts >= 4 && T1_4.payouts >= 2 && A1.payouts >= 2 && A2.payouts >= 1 && A3.payouts >= 1) &&
                 dayIndex < 250
@@ -755,7 +769,7 @@
                 let milestone = '';
                 let payoutsRequested = [];
 
-                // Store state *before* today's trading to prevent double-trading on transition days
+                // Store state before today's trading
                 let todayL12_phase = L1_2.phase;
                 let todayL3_active = L3.active;
                 let todayL3_phase = L3.phase;
@@ -770,7 +784,7 @@
                 let todayA3_active = A3.active;
                 let todayA3_phase = A3.phase;
 
-                // 1. Process L1-2 Trading (2 accounts)
+                // 1. Process L1-2 Trading
                 if (todayL12_phase === 'eval') {
                     activeBadges += `<span class="badge badge-lucid">L1-2 Eval</span> `;
                     L1_2.profit += masterResult;
@@ -784,7 +798,7 @@
                     milestone += `L1-2 Funded: Day ${L1_2.fundedDays} `;
                 }
 
-                // 2. Process L3 Trading (1 account)
+                // 2. Process L3 Trading
                 if (todayL3_active) {
                     if (todayL3_phase === 'eval') {
                         activeBadges += `<span class="badge badge-lucid">L3 Eval</span> `;
@@ -800,7 +814,7 @@
                     }
                 }
 
-                // 3. Process L4-5 Trading (2 accounts)
+                // 3. Process L4-5 Trading
                 if (todayL45_active) {
                     if (todayL45_phase === 'eval') {
                         activeBadges += `<span class="badge badge-lucid">L4-5 Eval</span> `;
@@ -818,7 +832,7 @@
                     }
                 }
 
-                // 4. Process T1-4 Trading (4 accounts)
+                // 4. Process T1-4 Trading
                 if (todayT14_active) {
                     if (todayT14_phase === 'eval') {
                         activeBadges += `<span class="badge badge-tradeify">T1-4 Eval</span> `;
@@ -901,9 +915,9 @@
 
                 // --- Evaluate Payout Triggers ---
                 
-                // L1 & L2 Payout (2 accounts tracked together)
+                // L1 & L2 Payout
                 let l12_req_days = L1_2.payouts === 0 ? 10 : 5;
-                let l12_req_profit = L1_2.payouts === 0 ? 8000 : 4000; // Combined target
+                let l12_req_profit = L1_2.payouts === 0 ? 8000 : 4000;
                 if (todayL12_phase === 'funded' && L1_2.fundedDays >= l12_req_days && L1_2.profit >= l12_req_profit) {
                     payoutsRequested.push({ firm: 'lucid', amount: 4000, label: 'L1 & L2' });
                     L1_2.profit -= 4000; 
@@ -912,7 +926,7 @@
                     if (L1_2.payouts === 4) milestone += `• L1-2 Retired! `;
                 }
 
-                // L3 Payout (Single account)
+                // L3 Payout
                 let l3_req_days = L3.payouts === 0 ? 10 : 5;
                 let l3_req_profit = L3.payouts === 0 ? 4000 : 2000;
                 if (todayL3_phase === 'funded' && L3.fundedDays >= l3_req_days && L3.profit >= l3_req_profit) {
@@ -923,7 +937,7 @@
                     if (L3.payouts === 4) milestone += `• L3 Retired! `;
                 }
 
-                // L4 & L5 Payout (2 accounts tracked together)
+                // L4 & L5 Payout
                 let l45_req_days = L4_5.payouts === 0 ? (config.lucidSize === 50 ? 10 : 8) : 5;
                 let l45_req_profit = L4_5.payouts === 0 ? (l45_payout_profit * 2) : (config.lucidSize === 50 ? 4000 : 5200);
                 if (todayL45_phase === 'funded' && L4_5.fundedDays >= l45_req_days && L4_5.profit >= l45_req_profit) {
@@ -1013,7 +1027,6 @@
                     L1_2.phase = 'funded';
                     L1_2.profit = 0;
                     L1_2.fundedDays = 0;
-                    // Trigger subsequent fleet simultaneously on Day 9
                     L3.active = true;
                     L4_5.active = true;
                     milestone += `• **L1-2 PASSED! (Transition tomorrow: Launching L3, L4, L5)** `;
@@ -1123,12 +1136,10 @@
 
         function changeOutcome(index, value) {
             if (value === "" || value === null || value === undefined) {
-                delete userOutcomes[index]; 
+                portfolioOutcomesRef.child(index).remove();
             } else {
-                userOutcomes[index] = parseFloat(value);
+                portfolioOutcomesRef.child(index).set(parseFloat(value));
             }
-            localStorage.setItem('portfolioOutcomes', JSON.stringify(userOutcomes));
-            calculateRoadmap();
         }
 
         function exportBackup() {
@@ -1154,10 +1165,15 @@
                 try {
                     const parsed = JSON.parse(e.target.result);
                     if (parsed && typeof parsed === 'object') {
-                        userOutcomes = parsed;
-                        localStorage.setItem('portfolioOutcomes', JSON.stringify(userOutcomes));
-                        calculateRoadmap();
-                        alert("Backup loaded successfully.");
+                        // Validate and sanitize data
+                        for (let key in parsed) {
+                            if (parsed[key] === 'win') parsed[key] = 400;
+                            else if (parsed[key] === 'loss') parsed[key] = -100;
+                            else if (parsed[key] === 'no-trade') parsed[key] = 0;
+                            else if (typeof parsed[key] === 'string') parsed[key] = parseFloat(parsed[key]) || 0;
+                        }
+                        portfolioOutcomesRef.set(parsed);
+                        alert("Backup loaded and synced to Firebase successfully.");
                     } else {
                         alert("Invalid file format. Backup file could not be parsed.");
                     }
@@ -1171,16 +1187,8 @@
 
         function resetTracker() {
             if (confirm("Are you sure you want to clear your trading data and reset back to the baseline plan?")) {
-                userOutcomes = {};
-                localStorage.removeItem('portfolioOutcomes');
-                calculateRoadmap();
+                portfolioOutcomesRef.set({});
             }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', calculateRoadmap);
-        } else {
-            calculateRoadmap();
         }
     </script>
 </body>
