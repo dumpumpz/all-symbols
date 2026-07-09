@@ -262,6 +262,7 @@
             background-color: var(--card-dark);
             border-radius: 12px;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
@@ -325,6 +326,121 @@
         .text-win { color: var(--accent-emerald); font-weight: bold; }
         .text-loss { color: var(--accent-red); font-weight: bold; }
         .text-neutral { color: var(--text-gray); }
+
+        /* --- MOBILE OPTIMIZATION MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p.subtitle {
+                font-size: 12px;
+            }
+
+            .config-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .config-title {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .config-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .pill-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .financial-summary {
+                padding: 12px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid on mobile */
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .stat-card {
+                padding: 12px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+            .stat-value {
+                font-size: 18px; /* High-density clean value sizing */
+            }
+
+            .actions-row {
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+
+            .btn-action, .btn-reset {
+                padding: 8px 12px;
+                font-size: 12px;
+                flex: 1 1 calc(50% - 8px); /* Neatly splits actions into rows of two */
+                text-align: center;
+            }
+
+            /* Prevents squishing, forces horizontal swipe for table on small screens */
+            table {
+                min-width: 800px;
+            }
+
+            th, td {
+                padding: 10px 8px;
+                font-size: 12px;
+            }
+
+            .outcome-input {
+                width: 75px;
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+            .badge {
+                font-size: 9px;
+                padding: 1px 4px;
+                margin-bottom: 2px;
+            }
+
+            .guide-box {
+                padding: 10px 12px;
+                font-size: 11px;
+            }
+
+            .guide-box h3 {
+                font-size: 12px;
+                margin: 15px 0 6px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr; /* Stack stats on extremely narrow screens */
+            }
+
+            .btn-action, .btn-reset {
+                flex: 1 1 100%; /* Fully stacked buttons on small mobile */
+            }
+        }
     </style>
 </head>
 <body>
