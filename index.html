@@ -3,92 +3,1069 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Tools</title>
-    <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <title>10-Account $148,000 Master Portfolio Tracker</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-emerald: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            color: var(--accent-emerald);
+        }
+
+        p.subtitle {
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* Config Card Styling */
+        .config-card {
+            background-color: var(--card-dark);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #334155;
+        }
+
+        .config-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .config-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .config-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .pill-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pill-btn {
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            border: 1px solid #475569;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .pill-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-light);
+        }
+
+        .pill-btn.active {
+            background-color: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+        }
+
+        .financial-summary {
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .summary-title {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 4px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: var(--text-gray);
+        }
+
+        .summary-row.total {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--accent-emerald);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #334155;
+        }
+
+        /* Educational Guide Section */
+        .guide-box {
+            background-color: rgba(15, 23, 42, 0.3);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+
+        .guide-box h3 {
+            margin: 20px 0 8px 0;
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 4px;
+        }
+
+        .guide-box h3:first-child {
+            margin-top: 0;
+        }
+
+        .guide-box ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .guide-box li {
+            margin-bottom: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background-color: var(--card-dark);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-emerald);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card.blue { border-left-color: var(--accent-blue); }
+        .stat-card.red { border-left-color: var(--accent-red); }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .actions-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .btn-action {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+        }
+
+        .btn-action.secondary {
+            background-color: #475569;
+        }
+
+        .btn-reset {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-reset:hover {
+            opacity: 0.9;
+        }
+
+        .table-container {
+            background-color: var(--card-dark);
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #334155;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1e293b;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #334155;
+        }
+
+        .outcome-input {
+            background-color: var(--bg-dark);
+            border: 1px solid #475569;
+            border-radius: 6px;
+            padding: 6px 10px;
+            width: 110px;
+            text-align: right;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .outcome-input::placeholder {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .val-win { color: var(--accent-emerald); font-weight: bold; }
+        .val-loss { color: var(--accent-red); font-weight: bold; }
+        .val-zero { color: var(--text-gray); }
+        .val-proj { color: #60a5fa; opacity: 0.8; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        .badge-lucid { background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .badge-tradeify { background-color: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .badge-alpha { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+        .text-win { color: var(--accent-emerald); font-weight: bold; }
+        .text-loss { color: var(--accent-red); font-weight: bold; }
+        .text-neutral { color: var(--text-gray); }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Crypto Market Tools</h1>
-        <p>Last updated: <span id="last-updated">Loading...</span></p>
-    </header>
-    <main>
-        <div class="tab-nav">
-            <button id="show-signals-btn" class="tab-button active">Signals</button>
-            <button id="show-calc-1-btn" class="tab-button">Compound Challenge 1%</button>
-            <button id="show-calc-2-btn" class="tab-button">Compound Challenge 2%</button>
+    <div class="container">
+        <header>
+            <h1>10-Account Portfolio Tracker</h1>
+            <p class="subtitle">Unified Symmetrical Sizing with Accelerated 2-Account Start (July 6th Start)</p>
+        </header>
+
+        <!-- Dynamic Configuration Panel -->
+        <div class="config-card">
+            <div class="config-title">Portfolio Configuration</div>
+            <div class="config-grid">
+                <div class="config-group">
+                    <div class="config-label">Lucid L4 & L5 Account Size</div>
+                    <div class="pill-container">
+                        <button id="lucid-50-btn" class="pill-btn" onclick="updateConfig('lucid', 50)">50K Account</button>
+                        <button id="lucid-150-btn" class="pill-btn" onclick="updateConfig('lucid', 150)">150K Account</button>
+                    </div>
+                </div>
+                <div class="config-group">
+                    <div class="config-label">Tradeify T1-T4 Account Size</div>
+                    <div class="pill-container">
+                        <button id="tradeify-50-btn" class="pill-btn" onclick="updateConfig('tradeify', 50)">50K Account</button>
+                        <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
+                    </div>
+                </div>
+                
+                <!-- Daily Targets Box (Updated for MNQ at 12.5-Point Stop) -->
+                <div class="financial-summary">
+                    <div class="summary-title">Daily Targets per Account (MNQ)</div>
+                    <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span class="val-win">$400/day (4 MNQ)</span></div>
+                    <div class="summary-row"><span>Lucid 4, 5 (<span id="target-l-size">150K</span>):</span><span class="val-win" id="target-l-val">$800/day (8 MNQ)</span></div>
+                    <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span><span class="val-win" id="target-t-val">$800/day (8 MNQ)</span></div>
+                    
+                    <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K Scaling</div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Days 1-10):</span><span class="val-win">$400/day (4 MNQ)</span></div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Days 11-18):</span><span class="val-win">$800/day (8 MNQ)</span></div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Days 19-35):</span><span class="val-win">$1,200/day (12 MNQ)</span></div>
+                </div>
+
+                <!-- Maximum Loss & Safety Runways Summary Box -->
+                <div class="financial-summary">
+                    <div class="summary-title">Max Loss & Safety Runways</div>
+                    <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(20.0 Losses)</span></span></div>
+                    <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
+                    <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
+                    
+                    <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K MLL</div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--accent-red);font-weight:bold;">(17.5 Losses)</span></span></div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--accent-red);font-weight:bold;">(20.0+ Losses)</span></span></div>
+                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--accent-red);font-weight:bold;">(34.6+ Losses)</span></span></div>
+                </div>
+
+                <!-- Financial Totals Box -->
+                <div class="financial-summary">
+                    <div class="summary-title">Portfolio Cost & Yield Summary</div>
+                    <div class="summary-row"><span>Upfront Setup Cost:</span><span id="summary-cost">$0</span></div>
+                    <div class="summary-row"><span>Max Extraction Potential:</span><span id="summary-extracted">$0</span></div>
+                    <div class="summary-row total"><span>Est. Return on Capital (ROI):</span><span id="summary-roi">0x</span></div>
+                </div>
+            </div>
+
+            <!-- Strategy Guide & Explanation Box -->
+            <div class="guide-box">
+                <h3>Strategy Guide & Risk Parameters</h3>
+                <ul>
+                    <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline [1]. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap [1].</li>
+                    <li><strong>The 1-Win-Per-Day Rule:</strong> This strategy is designed around making exactly 1 successful winning day (achieving your daily targets via a 1:4 Risk-to-Reward ratio) and immediately stopping. This dramatically reduces market exposure and keeps your emotions locked in.</li>
+                    <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts, and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
+                    <li><strong>Why the Payout Cycles Differ in Length:</strong>
+                        <ul>
+                            <li><strong>Lucid 150K (L4 & L5) takes 8 days:</strong> You need $6,000 of profit to request the maximum $3,000 payout. At your safe $800/day daily profit target, this takes exactly 8 trading days ($800 × 8 = $6,400).</li>
+                            <li><strong>Tradeify 150K (T1–T4) takes 13 days:</strong> Tradeify has a much larger maximum payout cap of $5,000, requiring $10,000 of profit. At your safe $800/day target, this takes exactly 13 trading days ($800 × 13 = $10,400) to safely unlock the full payout without increasing your trade size.</li>
+                        </ul>
+                    </li>
+                    <li><strong>22.5-Loss Safety Net:</strong> On both Lucid 150K and Tradeify 150K, your maximum trailing drawdown is $4,500. Risking $200 per trade gives you exactly **22.5 consecutive losing trades of safety room**—the absolute sweet spot for professional capital extraction.</li>
+                </ul>
+
+                <h3>Exact Multi-Firm Portfolio Blueprint</h3>
+                <ul>
+                    <li><strong>Lucid Symmetrical Plan (5 Accounts):</strong>
+                        <ul>
+                            <li><strong>Objective:</strong> Take exactly **4 payouts** per account, then pause them.</li>
+                            <li><strong>The Rule:</strong> Do not request a 5th payout on any account. Lucid's rules state: <em>"Traders may take up to 5 payouts from each LucidFlex account after which they will be moved live."</em> To remain in simulated funded status, stop trading each account immediately after its 4th payout. </li>
+                        </ul>
+                    </li>
+                    <li><strong>Tradeify Symmetrical Plan (4 Accounts - 150K Select Flex):</strong>
+                        <ul>
+                            <li><strong>Objective:</strong> Take exactly **2 payouts** per account, then pause them.</li>
+                            <li><strong>The Rule:</strong> Tradeify triggers live review at: <strong>3 payouts on a single account</strong> OR <strong>10 total payouts across all accounts</strong>. By stopping each of your 4 accounts after exactly 2 payouts, your portfolio totals **8 payouts**, keeping you safely under both limits.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alpha Advanced Symmetrical Plan (3 Accounts - 50K Advanced - Temporary Cap):</strong>
+                        <ul>
+                            <li><strong>Objective:</strong> Run a symmetrical fleet of exactly 3 active funded Alpha Advanced accounts (A1, A2, and A3).</li>
+                            <li><strong>The Rule (Current Stage):</strong> Alpha Futures triggers a live review after 5 payouts on a single account. To establish your fleet while protecting simulated status, the current plan targets exactly **2 payouts on Alpha 1 ($30,000 total)** and **1 payout on Alpha 2 & 3 ($30,000 total)**, yielding a combined **$60,000 extraction** from Alpha.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Section 1: The 1% Calculator -->
-        <div id="compound-container-1" class="compound-container">
-            <div class="calculator-controls">
-                <div class="control-group">
-                    <label for="start-bankroll-1">Start Bankroll ($):</label>
-                    <input type="number" id="start-bankroll-1" value="5500">
-                </div>
-                <div class="control-group">
-                    <label for="target-bankroll-1">Target Bankroll ($):</label>
-                    <input type="number" id="target-bankroll-1" value="20000">
-                </div>
+        <div class="actions-row">
+            <button class="btn-action" onclick="exportBackup()">Export Backup (JSON)</button>
+            <button class="btn-action secondary" onclick="document.getElementById('import-file').click()">Import Backup (JSON)</button>
+            <input type="file" id="import-file" style="display: none;" accept=".json" onchange="importBackup(event)">
+            <button class="btn-reset" onclick="resetTracker()">Reset Tracker Data</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Cash Extracted</div>
+                <div class="stat-value" id="total-cash">$0</div>
             </div>
-            <!-- NEW: Legend will be populated here by JavaScript -->
-            <div id="legend-1" class="compound-legend"></div>
-            <div class="table-wrapper">
-                <table id="compound-table-1" class="compound-table">
-                    <thead>
-                        <tr>
-                            <th>Level</th>
-                            <th>Start Bankroll</th>
-                            <th>Risk (1%)</th>
-                            <th>Target Profit (1:1RR)</th>
-                            <th>Actual P/L ($)</th>
-                            <th>End Bankroll</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+            <div class="stat-card blue">
+                <div class="stat-label">Lucid Earnings (50K & 150K)</div>
+                <div class="stat-value" id="lucid-cash">$0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tradeify Earnings (150K)</div>
+                <div class="stat-value" id="tradeify-cash">$0</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="stat-label">Alpha Advanced Earnings</div>
+                <div class="stat-value" id="alpha-cash">$0</div>
             </div>
         </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day Outcome (Master)</th>
+                        <th>Active Accounts</th>
+                        <th>Daily Result (Combined)</th>
+                        <th>Account Status & Progress Milestone</th>
+                        <th>Payouts</th>
+                        <th>Total Cash Extracted (USD)</th>
+                    </tr>
+                </thead>
+                <tbody id="roadmap-table-body">
+                    <!-- Javascript generates table here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const START_DATE = new Date(2026, 6, 6); // July 6, 2026
+        let userOutcomes = {}; // Keyed by day index
         
-        <!-- Section 2: The 2% Calculator -->
-        <div id="compound-container-2" class="compound-container">
-            <div class="calculator-controls">
-                <div class="control-group">
-                    <label for="start-bankroll-2">Start Bankroll ($):</label>
-                    <input type="number" id="start-bankroll-2" value="5500">
-                </div>
-                <div class="control-group">
-                    <label for="target-bankroll-2">Target Bankroll ($):</label>
-                    <input type="number" id="target-bankroll-2" value="20000">
-                </div>
-            </div>
-            <!-- NEW: Legend will be populated here by JavaScript -->
-            <div id="legend-2" class="compound-legend"></div>
-            <div class="table-wrapper">
-                <table id="compound-table-2" class="compound-table">
-                    <thead>
-                        <tr>
-                            <th>Level</th>
-                            <th>Start Bankroll</th>
-                            <th>Risk (2%)</th>
-                            <th>Target Profit (1:1RR)</th>
-                            <th>Actual P/L ($)</th>
-                            <th>End Bankroll</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
+        // Default Config States (Saved to localStorage)
+        let config = {
+            lucidSize: 150,
+            tradeifySize: 150
+        };
 
-        <!-- Section 3: The Signals Grid -->
-        <div id="signals-container"></div>
-    </main>
+        if (localStorage.getItem('portfolioConfig')) {
+            try {
+                let loadedConfig = JSON.parse(localStorage.getItem('portfolioConfig'));
+                if (loadedConfig && typeof loadedConfig === 'object') {
+                    config = loadedConfig;
+                }
+            } catch (e) {
+                console.error("Failed to parse config:", e);
+            }
+        }
+        
+        // Load data and sanitize string formats from older versions
+        if (localStorage.getItem('portfolioOutcomes')) {
+            try {
+                let loaded = JSON.parse(localStorage.getItem('portfolioOutcomes'));
+                if (loaded && typeof loaded === 'object') {
+                    for (let key in loaded) {
+                        if (loaded[key] === 'win') loaded[key] = 400;
+                        else if (loaded[key] === 'loss') loaded[key] = -100;
+                        else if (loaded[key] === 'no-trade') loaded[key] = 0;
+                        else if (typeof loaded[key] === 'string') loaded[key] = parseFloat(loaded[key]) || 0;
+                    }
+                    userOutcomes = loaded;
+                } else {
+                    userOutcomes = {};
+                }
+            } catch (e) {
+                userOutcomes = {};
+            }
+        }
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    
-    <!-- CRITICAL CHANGE: Added version number to force browsers to get the new file -->
-    <script src="script.js?v=1.2"></script>
+        function updateConfig(firm, size) {
+            if (firm === 'lucid') config.lucidSize = size;
+            if (firm === 'tradeify') config.tradeifySize = size;
+            localStorage.setItem('portfolioConfig', JSON.stringify(config));
+            calculateRoadmap();
+        }
+
+        function getNextTradingDay(date) {
+            let next = new Date(date);
+            next.setDate(next.getDate() + 1);
+            while (next.getDay() === 0 || next.getDay() === 6) { // Skip weekends
+                next.setDate(next.getDate() + 1);
+            }
+            return next;
+        }
+
+        function formatDate(date) {
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            return `${months[date.getMonth()]} ${date.getDate()} (${days[date.getDay()]})`;
+        }
+
+        function calculateRoadmap() {
+            // Update Configuration Buttons UI
+            document.getElementById('lucid-50-btn').className = config.lucidSize === 50 ? 'pill-btn active' : 'pill-btn';
+            document.getElementById('lucid-150-btn').className = config.lucidSize === 150 ? 'pill-btn active' : 'pill-btn';
+            document.getElementById('tradeify-50-btn').className = config.tradeifySize === 50 ? 'pill-btn active' : 'pill-btn';
+            document.getElementById('tradeify-150-btn').className = config.tradeifySize === 150 ? 'pill-btn active' : 'pill-btn';
+
+            // Calculate Upfront Costs and Yield Options dynamically (3 * 50K accounts + 2 * L4_5 custom size)
+            let lucidCost = (3 * 98) + (config.lucidSize === 50 ? (2 * 98) : (2 * 294));
+            let tradeifyCost = config.tradeifySize === 50 ? (4 * 99) : (4 * 221);
+            let alphaCost = 288;
+            let totalSetupCost = lucidCost + tradeifyCost + alphaCost;
+
+            let maxLucidPayout = (3 * 4 * 2000) + (config.lucidSize === 50 ? (2 * 4 * 2000) : (2 * 4 * 3000));
+            let maxTradeifyPayout = config.tradeifySize === 50 ? (4 * 2 * 3000) : (4 * 2 * 5000);
+            
+            // Capped at 2 payouts on Alpha 1 and 1 payout on Alpha 2 & 3 for current phase
+            let maxAlphaPayout = (2 * 15000) + (2 * 1 * 15000); 
+            let maxTotalYield = maxLucidPayout + maxTradeifyPayout + maxAlphaPayout;
+
+            document.getElementById('summary-cost').innerText = `$${totalSetupCost.toLocaleString()}`;
+            document.getElementById('summary-extracted').innerText = `$${maxTotalYield.toLocaleString()}`;
+            document.getElementById('summary-roi').innerText = `${(maxTotalYield / totalSetupCost).toFixed(1)}x`;
+
+            // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
+            document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
+            if (config.lucidSize === 50) {
+                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(4 MNQ)</span>';
+            } else {
+                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
+            }
+
+            document.getElementById('target-t-size').innerText = config.tradeifySize + 'K';
+            if (config.tradeifySize === 50) {
+                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(6 MNQ)</span>';
+            } else {
+                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
+            }
+
+            // Update Dynamic Max Loss Summary Box Display
+            document.getElementById('drawdown-l-size').innerText = config.lucidSize + 'K';
+            document.getElementById('drawdown-l-mll').innerText = config.lucidSize === 50 ? '$2,000' : '$4,500';
+            document.getElementById('drawdown-l-runway').innerText = config.lucidSize === 50 ? '20.0' : '22.5';
+            
+            document.getElementById('drawdown-t-size').innerText = config.tradeifySize + 'K';
+            document.getElementById('drawdown-t-mll').innerText = config.tradeifySize === 50 ? '$2,000' : '$4,500';
+            document.getElementById('drawdown-t-runway').innerText = config.tradeifySize === 50 ? '20.0' : '22.5';
+
+            // Setup state variables
+            let currentDate = new Date(START_DATE);
+            let dayIndex = 0;
+            let rowsHtml = '';
+
+            let totalWithdrawn = 0;
+            let lucidWithdrawn = 0;
+            let tradeifyWithdrawn = 0;
+            let alphaWithdrawn = 0;
+
+            // Restructured Account States for Accelerated 2-Account Start
+            let L1_2 = { phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Starts active on Day 1
+            let L3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Activates with L4-5 on Day 9
+            let L4_5 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 }; // Activates with L3 on Day 9
+            let T1_4 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+            
+            // 3 Alpha Accounts Active Portfolio State
+            let A1 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
+            let A2 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+            let A3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+
+            // Dynamic Config Rules
+            let l45_eval_target = config.lucidSize === 50 ? 3200 : 9000;
+            let l45_eval_mult = config.lucidSize === 50 ? 1.0 : 2.0; // 50K is 1.0x ($100 risk), 150K is 2.0x ($200 risk / 8 MNQ)
+            let l45_funded_mult = config.lucidSize === 50 ? 1.0 : 2.0;
+            let l45_payout_profit = config.lucidSize === 50 ? 4000 : 6000;
+            let l45_payout_amount = config.lucidSize === 50 ? 2000 : 3000;
+
+            let t14_eval_target = config.tradeifySize === 50 ? 3000 : 9000;
+            let t14_eval_mult = config.tradeifySize === 50 ? 1.5 : 2.0; // 50K uses 1.5x, 150K uses 2.0x
+            let t14_funded_mult = config.tradeifySize === 50 ? 1.5 : 2.0;
+            let t14_payout_profit = config.tradeifySize === 50 ? 6000 : 10000;
+            let t14_payout_amount = config.tradeifySize === 50 ? 3000 : 5000;
+
+            // Complete simulation loop (extended to 250 safety breaker)
+            while (
+                !(L1_2.payouts >= 4 && L3.payouts >= 4 && L4_5.payouts >= 4 && T1_4.payouts >= 2 && A1.payouts >= 2 && A2.payouts >= 1 && A3.payouts >= 1) &&
+                dayIndex < 250
+            ) {
+                // Skip weekends dynamically
+                while (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                // Determine day's outcome
+                let storedOutcome = userOutcomes[dayIndex];
+                let isProjection = (storedOutcome === undefined || storedOutcome === null || storedOutcome === "");
+                let masterResult = isProjection ? 400 : parseFloat(storedOutcome);
+
+                let activeBadges = '';
+                let dailyProfit = 0;
+                let milestone = '';
+                let payoutsRequested = [];
+
+                // Store state *before* today's trading to prevent double-trading on transition days
+                let todayL12_phase = L1_2.phase;
+                let todayL3_active = L3.active;
+                let todayL3_phase = L3.phase;
+                let todayL45_active = L4_5.active;
+                let todayL45_phase = L4_5.phase;
+                let todayT14_active = T1_4.active;
+                let todayT14_phase = T1_4.phase;
+                let todayA1_active = A1.active;
+                let todayA1_phase = A1.phase;
+                let todayA2_active = A2.active;
+                let todayA2_phase = A2.phase;
+                let todayA3_active = A3.active;
+                let todayA3_phase = A3.phase;
+
+                // 1. Process L1-2 Trading (2 accounts)
+                if (todayL12_phase === 'eval') {
+                    activeBadges += `<span class="badge badge-lucid">L1-2 Eval</span> `;
+                    L1_2.profit += masterResult;
+                    dailyProfit += masterResult * 2;
+                    milestone += `L1-2 Eval: Day $${L1_2.profit.toLocaleString()} `;
+                } else if (todayL12_phase === 'funded' && L1_2.payouts < 4) {
+                    activeBadges += `<span class="badge badge-lucid">L1-2 Funded</span> `;
+                    L1_2.profit += masterResult * 2;
+                    dailyProfit += masterResult * 2;
+                    L1_2.fundedDays++;
+                    milestone += `L1-2 Funded: Day ${L1_2.fundedDays} `;
+                }
+
+                // 2. Process L3 Trading (1 account)
+                if (todayL3_active) {
+                    if (todayL3_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-lucid">L3 Eval</span> `;
+                        L3.profit += masterResult;
+                        dailyProfit += masterResult;
+                        milestone += `• L3 Eval: $${L3.profit.toLocaleString()} `;
+                    } else if (todayL3_phase === 'funded' && L3.payouts < 4) {
+                        activeBadges += `<span class="badge badge-lucid">L3 Funded</span> `;
+                        L3.profit += masterResult;
+                        dailyProfit += masterResult;
+                        L3.fundedDays++;
+                        milestone += `• L3: Day ${L3.fundedDays} `;
+                    }
+                }
+
+                // 3. Process L4-5 Trading (2 accounts)
+                if (todayL45_active) {
+                    if (todayL45_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-lucid">L4-5 Eval</span> `;
+                        let evalResult = masterResult * l45_eval_mult;
+                        L4_5.profit += evalResult;
+                        dailyProfit += evalResult * 2;
+                        milestone += `• L4-5 Eval: $${L4_5.profit.toLocaleString()} `;
+                    } else if (todayL45_phase === 'funded' && L4_5.payouts < 4) {
+                        activeBadges += `<span class="badge badge-lucid">L4-5 Funded</span> `;
+                        let fundedResult = masterResult * l45_funded_mult;
+                        L4_5.profit += fundedResult * 2;
+                        dailyProfit += fundedResult * 2;
+                        L4_5.fundedDays++;
+                        milestone += `• L4-5: Day ${L4_5.fundedDays} `;
+                    }
+                }
+
+                // 4. Process T1-4 Trading (4 accounts)
+                if (todayT14_active) {
+                    if (todayT14_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-tradeify">T1-4 Eval</span> `;
+                        let evalResult = masterResult * t14_eval_mult;
+                        T1_4.profit += evalResult;
+                        dailyProfit += evalResult * 4;
+                        milestone += `• T1-4 Eval: $${T1_4.profit.toLocaleString()} `;
+                    } else if (todayT14_phase === 'funded' && T1_4.payouts < 2) {
+                        activeBadges += `<span class="badge badge-tradeify">T1-4 Funded</span> `;
+                        let fundedResult = masterResult * t14_funded_mult;
+                        T1_4.profit += fundedResult * 4;
+                        dailyProfit += fundedResult * 4;
+                        T1_4.fundedDays++;
+                        milestone += `• Tradeify: Day ${T1_4.fundedDays} `;
+                    }
+                }
+
+                // 5. Process A1 Trading
+                if (todayA1_active) {
+                    if (todayA1_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-alpha">A1 Eval</span> `;
+                        A1.profit += masterResult;
+                        dailyProfit += masterResult;
+                        milestone += `• A1 Eval: $${A1.profit.toLocaleString()} `;
+                    } else if (todayA1_phase === 'funded' && A1.payouts < 2) {
+                        activeBadges += `<span class="badge badge-alpha">A1 Funded</span> `;
+                        
+                        let multiplier = 1.0;
+                        if (A1.payouts > 0) {
+                            multiplier = 2.0; 
+                        } else {
+                            if (A1.phaseLevel === 2) multiplier = 2.0;
+                            if (A1.phaseLevel === 3) multiplier = 3.0; 
+                        }
+
+                        let fundedResult = masterResult * multiplier;
+                        A1.profit += fundedResult;
+                        dailyProfit += fundedResult;
+                        A1.fundedDays++;
+
+                        milestone += `• A1 P${A1.payouts > 0 ? 'Max' : A1.phaseLevel}: Day ${A1.fundedDays} `;
+                    }
+                }
+
+                // 6. Process A2 Trading
+                if (todayA2_active) {
+                    if (todayA2_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-alpha">A2 Eval</span> `;
+                        let evalResult = masterResult * 2.0; 
+                        A2.profit += evalResult;
+                        dailyProfit += evalResult;
+                        milestone += `• A2 Eval: $${A2.profit.toLocaleString()} `;
+                    } else if (todayA2_phase === 'funded' && A2.payouts < 1) {
+                        activeBadges += `<span class="badge badge-alpha">A2 Funded</span> `;
+                        let fundedResult = masterResult * 2.0; 
+                        A2.profit += fundedResult;
+                        dailyProfit += fundedResult;
+                        A2.fundedDays++;
+                        milestone += `• A2 Funded: Day ${A2.fundedDays} `;
+                    }
+                }
+
+                // 7. Process A3 Trading
+                if (todayA3_active) {
+                    if (todayA3_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-alpha">A3 Eval</span> `;
+                        let evalResult = masterResult * 2.0; 
+                        A3.profit += evalResult;
+                        dailyProfit += evalResult;
+                        milestone += `• A3 Eval: $${A3.profit.toLocaleString()} `;
+                    } else if (todayA3_phase === 'funded' && A3.payouts < 1) {
+                        activeBadges += `<span class="badge badge-alpha">A3 Funded</span> `;
+                        let fundedResult = masterResult * 2.0; 
+                        A3.profit += fundedResult;
+                        dailyProfit += fundedResult;
+                        A3.fundedDays++;
+                        milestone += `• A3 Funded: Day ${A3.fundedDays} `;
+                    }
+                }
+
+                // --- Evaluate Payout Triggers ---
+                
+                // L1 & L2 Payout (2 accounts tracked together)
+                let l12_req_days = L1_2.payouts === 0 ? 10 : 5;
+                let l12_req_profit = L1_2.payouts === 0 ? 8000 : 4000; // Combined target
+                if (todayL12_phase === 'funded' && L1_2.fundedDays >= l12_req_days && L1_2.profit >= l12_req_profit) {
+                    payoutsRequested.push({ firm: 'lucid', amount: 4000, label: 'L1 & L2' });
+                    L1_2.profit -= 4000; 
+                    L1_2.fundedDays = 0;
+                    L1_2.payouts++;
+                    if (L1_2.payouts === 4) milestone += `• L1-2 Retired! `;
+                }
+
+                // L3 Payout (Single account)
+                let l3_req_days = L3.payouts === 0 ? 10 : 5;
+                let l3_req_profit = L3.payouts === 0 ? 4000 : 2000;
+                if (todayL3_phase === 'funded' && L3.fundedDays >= l3_req_days && L3.profit >= l3_req_profit) {
+                    payoutsRequested.push({ firm: 'lucid', amount: 2000, label: 'L3' });
+                    L3.profit -= 2000;
+                    L3.fundedDays = 0;
+                    L3.payouts++;
+                    if (L3.payouts === 4) milestone += `• L3 Retired! `;
+                }
+
+                // L4 & L5 Payout (2 accounts tracked together)
+                let l45_req_days = L4_5.payouts === 0 ? (config.lucidSize === 50 ? 10 : 8) : 5;
+                let l45_req_profit = L4_5.payouts === 0 ? (l45_payout_profit * 2) : (config.lucidSize === 50 ? 4000 : 5200);
+                if (todayL45_phase === 'funded' && L4_5.fundedDays >= l45_req_days && L4_5.profit >= l45_req_profit) {
+                    payoutsRequested.push({ firm: 'lucid', amount: l45_payout_amount * 2, label: 'L4 & L5' });
+                    L4_5.profit -= (l45_payout_amount * 2); 
+                    L4_5.fundedDays = 0;
+                    L4_5.payouts++;
+                    if (L4_5.payouts === 1 && !A1.active) {
+                        milestone += `• Buy Alpha 1 Eval! `;
+                        A1.active = true;
+                    }
+                    if (L4_5.payouts === 4) milestone += `• L4-5 Retired! `;
+                }
+
+                // Tradeify Payout
+                let t14_req_days = T1_4.payouts === 0 ? (config.tradeifySize === 50 ? 10 : 13) : (config.tradeifySize === 50 ? 10 : 6);
+                let t14_req_profit = T1_4.payouts === 0 ? (t14_payout_profit * 4) : (config.tradeifySize === 50 ? 12000 : 18400); 
+                if (todayT14_phase === 'funded' && T1_4.fundedDays >= t14_req_days && T1_4.profit >= t14_req_profit) {
+                    payoutsRequested.push({ firm: 'tradeify', amount: t14_payout_amount * 4, label: 'T1-T4' });
+                    T1_4.profit -= (t14_payout_amount * 4); 
+                    T1_4.fundedDays = 0;
+                    T1_4.payouts++;
+                    if (T1_4.payouts === 2) milestone += `• T1-4 Retired! `;
+                }
+
+                // Alpha 1 Payout Trigger
+                if (todayA1_phase === 'funded' && A1.payouts < 2) {
+                    if (A1.payouts === 0) {
+                        if (A1.phaseLevel === 1 && A1.fundedDays >= 10 && A1.profit >= 4000) {
+                            A1.phaseLevel = 2;
+                            A1.fundedDays = 0;
+                            milestone += `• Scale to Phase 2! `;
+                        } else if (A1.phaseLevel === 2 && A1.fundedDays >= 8 && A1.profit >= 10400) {
+                            A1.phaseLevel = 3;
+                            A1.fundedDays = 0;
+                            milestone += `• Scale to Phase 3! `;
+                        } else if (A1.phaseLevel === 3 && A1.fundedDays >= 17 && A1.profit >= 30000) {
+                            payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'Alpha 1' });
+                            A1.profit -= 15000;
+                            A1.fundedDays = 0;
+                            A1.payouts++;
+                            if (!A2.active) {
+                                A2.active = true;
+                                A3.active = true;
+                                milestone += "• **Reinvest: Buy A2 & A3 Evals** ";
+                            }
+                        }
+                    } else { 
+                        if (A1.fundedDays >= 19 && A1.profit >= 15000) {
+                            payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'Alpha 1' });
+                            A1.profit -= 15000;
+                            A1.fundedDays = 0;
+                            A1.payouts++;
+                            milestone += `• A1 Capped & Retired! `;
+                        }
+                    }
+                }
+
+                // Alpha 2 Payout Trigger
+                if (todayA2_phase === 'funded' && A2.payouts < 1) {
+                    let a2_req_funded_days = A2.payouts === 0 ? 38 : 19;
+                    let a2_req_profit_barrier = A2.payouts === 0 ? 30000 : 15000;
+                    if (A2.fundedDays >= a2_req_funded_days && A2.profit >= a2_req_profit_barrier) {
+                        payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'Alpha 2' });
+                        A2.profit -= 15000;
+                        A2.fundedDays = 0;
+                        A2.payouts++;
+                        milestone += `• A2 Capped & Retired! `;
+                    }
+                }
+
+                // Alpha 3 Payout Trigger
+                if (todayA3_phase === 'funded' && A3.payouts < 1) {
+                    let a3_req_funded_days = A3.payouts === 0 ? 38 : 19;
+                    let a3_req_profit = A3.payouts === 0 ? 30000 : 15000;
+                    if (A3.fundedDays >= a3_req_funded_days && A3.profit >= a3_req_profit) {
+                        payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'Alpha 3' });
+                        A3.profit -= 15000;
+                        A3.fundedDays = 0;
+                        A3.payouts++;
+                        milestone += `• A3 Capped & Retired! `;
+                    }
+                }
+
+                // --- Evaluate Evaluation Phase Passes for NEXT Day ---
+                if (todayL12_phase === 'eval' && L1_2.profit >= 3200) {
+                    L1_2.phase = 'funded';
+                    L1_2.profit = 0;
+                    L1_2.fundedDays = 0;
+                    // Trigger subsequent fleet simultaneously on Day 9
+                    L3.active = true;
+                    L4_5.active = true;
+                    milestone += `• **L1-2 PASSED! (Transition tomorrow: Launching L3, L4, L5)** `;
+                }
+
+                if (todayL3_phase === 'eval' && L3.profit >= 3200) {
+                    L3.phase = 'funded';
+                    L3.profit = 0;
+                    L3.fundedDays = 0;
+                    milestone += `• **L3 PASSED! (Transition tomorrow)** `;
+                }
+
+                if (todayL45_phase === 'eval' && L4_5.profit >= l45_eval_target) {
+                    L4_5.phase = 'funded';
+                    L4_5.profit = 0;
+                    L4_5.fundedDays = 0;
+                    T1_4.active = true;
+                    milestone += `• **L4-5 PASSED! (Transition tomorrow: Launching T1-4)** `;
+                }
+
+                if (todayT14_phase === 'eval' && T1_4.profit >= t14_eval_target) {
+                    T1_4.phase = 'funded';
+                    T1_4.profit = 0;
+                    T1_4.fundedDays = 0;
+                    milestone += `• **T1-4 PASSED! (Transition tomorrow)** `;
+                }
+
+                if (todayA1_phase === 'eval' && A1.profit >= 4000) {
+                    A1.phase = 'funded';
+                    A1.profit = 0;
+                    A1.fundedDays = 0;
+                    A1.phaseLevel = 1;
+                    milestone += `• **A1 PASSED! (Transition tomorrow)** `;
+                }
+
+                if (todayA2_phase === 'eval' && A2.profit >= 4000) {
+                    A2.phase = 'funded';
+                    A2.profit = 0;
+                    A2.fundedDays = 0;
+                    milestone += `• **A2 PASSED! (Transition tomorrow)** `;
+                }
+
+                if (todayA3_phase === 'eval' && A3.profit >= 4000) {
+                    A3.phase = 'funded';
+                    A3.profit = 0;
+                    A3.fundedDays = 0;
+                    milestone += `• **A3 PASSED! (Transition tomorrow)** `;
+                }
+
+                // Compile payouts
+                let payoutText = '—';
+                if (payoutsRequested.length > 0) {
+                    payoutText = payoutsRequested.map(p => {
+                        totalWithdrawn += p.amount;
+                        if (p.firm === 'lucid') lucidWithdrawn += p.amount;
+                        if (p.firm === 'tradeify') tradeifyWithdrawn += p.amount;
+                        if (p.firm === 'alpha') alphaWithdrawn += p.amount;
+                        return `${p.label} $${(p.amount / 1000).toFixed(0)}k`;
+                    }).join(' • ');
+                }
+
+                // Styles for custom vs projected inputs
+                let inputColorClass = 'val-proj';
+                if (!isProjection) {
+                    if (masterResult > 0) inputColorClass = 'val-win';
+                    else if (masterResult < 0) inputColorClass = 'val-loss';
+                    else inputColorClass = 'val-zero';
+                }
+
+                // Styles for calculated outputs
+                let outcomeClass = 'text-win';
+                if (masterResult < 0) outcomeClass = 'text-loss';
+                else if (masterResult === 0) outcomeClass = 'text-neutral';
+
+                let displayVal = isProjection ? '' : masterResult;
+
+                // Render row with USD Running Total
+                rowsHtml += `
+                    <tr>
+                        <td><strong>${formatDate(currentDate)}</strong></td>
+                        <td>
+                            <input type="number" 
+                                   class="outcome-input ${inputColorClass}" 
+                                   value="${displayVal}" 
+                                   placeholder="— (+400)" 
+                                   onchange="changeOutcome(${dayIndex}, this.value)" />
+                        </td>
+                        <td>${activeBadges}</td>
+                        <td class="${outcomeClass}">${(dailyProfit >= 0 ? '+$' + dailyProfit.toLocaleString() : '-$' + Math.abs(dailyProfit).toLocaleString())}</td>
+                        <td>${milestone}</td>
+                        <td class="text-win">${payoutText !== '—' ? payoutText : '—'}</td>
+                        <td><strong>$${totalWithdrawn.toLocaleString()}</strong></td>
+                    </tr>
+                `;
+
+                currentDate = getNextTradingDay(currentDate);
+                dayIndex++;
+            }
+
+            // Update stats
+            document.getElementById('total-cash').innerText = `$${totalWithdrawn.toLocaleString()}`;
+            document.getElementById('lucid-cash').innerText = `$${lucidWithdrawn.toLocaleString()}`;
+            document.getElementById('tradeify-cash').innerText = `$${tradeifyWithdrawn.toLocaleString()}`;
+            document.getElementById('alpha-cash').innerText = `$${alphaWithdrawn.toLocaleString()}`;
+            document.getElementById('roadmap-table-body').innerHTML = rowsHtml;
+        }
+
+        function changeOutcome(index, value) {
+            if (value === "" || value === null || value === undefined) {
+                delete userOutcomes[index]; 
+            } else {
+                userOutcomes[index] = parseFloat(value);
+            }
+            localStorage.setItem('portfolioOutcomes', JSON.stringify(userOutcomes));
+            calculateRoadmap();
+        }
+
+        function exportBackup() {
+            try {
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userOutcomes, null, 2));
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.setAttribute("href", dataStr);
+                downloadAnchor.setAttribute("download", `portfolio_tracker_backup_${new Date().toISOString().slice(0, 10)}.json`);
+                document.body.appendChild(downloadAnchor);
+                downloadAnchor.click();
+                downloadAnchor.remove();
+            } catch (err) {
+                alert("Failed to export backup data.");
+            }
+        }
+
+        function importBackup(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (parsed && typeof parsed === 'object') {
+                        userOutcomes = parsed;
+                        localStorage.setItem('portfolioOutcomes', JSON.stringify(userOutcomes));
+                        calculateRoadmap();
+                        alert("Backup loaded successfully.");
+                    } else {
+                        alert("Invalid file format. Backup file could not be parsed.");
+                    }
+                } catch (err) {
+                    alert("Error parsing file. Please check if the selected file is valid.");
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; 
+        }
+
+        function resetTracker() {
+            if (confirm("Are you sure you want to clear your trading data and reset back to the baseline plan?")) {
+                userOutcomes = {};
+                localStorage.removeItem('portfolioOutcomes');
+                calculateRoadmap();
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', calculateRoadmap);
+        } else {
+            calculateRoadmap();
+        }
+    </script>
 </body>
 </html>
