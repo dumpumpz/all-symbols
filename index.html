@@ -418,6 +418,15 @@
                         <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
                     </div>
                 </div>
+
+                <!-- Alpha 1 Launch Timing Selector -->
+                <div class="config-group">
+                    <div class="config-label">Alpha 1 Buy Timing</div>
+                    <div class="pill-container">
+                        <button id="alpha-last-btn" class="pill-btn" onclick="updateAlphaTiming('last')">Buy A1 Last</button>
+                        <button id="alpha-with-t14-btn" class="pill-btn" onclick="updateAlphaTiming('with_t14')">Buy A1 with T1-4</button>
+                    </div>
+                </div>
                 
                 <!-- Daily Targets Box (Updated for MNQ at 12.5-Point Stop) -->
                 <div class="financial-summary">
@@ -533,7 +542,8 @@
         // Default Config States
         let config = {
             lucidSize: 150,
-            tradeifySize: 150
+            tradeifySize: 150,
+            alphaBuyTiming: 'last'
         };
 
         // --- FIREBASE CONFIGURATION ---
@@ -562,6 +572,7 @@
             const data = snapshot.val();
             if (data && typeof data === 'object') {
                 config = data;
+                if (!config.alphaBuyTiming) config.alphaBuyTiming = 'last';
                 calculateRoadmap();
             }
         });
@@ -582,6 +593,12 @@
         function updateConfig(firm, size) {
             if (firm === 'lucid') config.lucidSize = size;
             if (firm === 'tradeify') config.tradeifySize = size;
+            portfolioConfigRef.set(config);
+        }
+
+        // Write selection to Firebase
+        function updateAlphaTiming(timing) {
+            config.alphaBuyTiming = timing;
             portfolioConfigRef.set(config);
         }
 
@@ -606,6 +623,11 @@
             document.getElementById('lucid-150-btn').className = config.lucidSize === 150 ? 'pill-btn active' : 'pill-btn';
             document.getElementById('tradeify-50-btn').className = config.tradeifySize === 50 ? 'pill-btn active' : 'pill-btn';
             document.getElementById('tradeify-150-btn').className = config.tradeifySize === 150 ? 'pill-btn active' : 'pill-btn';
+
+            // Update Alpha 1 Timing Buttons UI
+            const timing = config.alphaBuyTiming || 'last';
+            document.getElementById('alpha-last-btn').className = timing === 'last' ? 'pill-btn active' : 'pill-btn';
+            document.getElementById('alpha-with-t14-btn').className = timing === 'with_t14' ? 'pill-btn active' : 'pill-btn';
 
             // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
             document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
@@ -863,10 +885,13 @@
                     L4_5.profit -= (l45_payout_amount * 2); 
                     L4_5.fundedDays = 0;
                     L4_5.payouts++;
-                    if (L4_5.payouts === 1 && !A1.active) {
+                    
+                    // Activate A1 if 'last' is selected
+                    if (L4_5.payouts === 1 && !A1.active && config.alphaBuyTiming === 'last') {
                         milestone += `• Buy Alpha 1 `;
                         A1.active = true;
                     }
+                    
                     if (L4_5.payouts === 4) milestone += `• L4-5 Retired `;
                 }
 
@@ -962,7 +987,14 @@
                     L4_5.profit = 0;
                     L4_5.fundedDays = 0;
                     T1_4.active = true;
-                    milestone += `• L4-5 PASSED `;
+                    
+                    // Activate A1 if 'with_t14' is selected
+                    if (config.alphaBuyTiming === 'with_t14') {
+                        A1.active = true;
+                        milestone += `• L4-5 PASSED + Buy A1 `;
+                    } else {
+                        milestone += `• L4-5 PASSED `;
+                    }
                 }
 
                 if (todayT14_phase === 'eval' && T1_4.profit >= t14_eval_target) {
