@@ -418,12 +418,6 @@
                         <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
                     </div>
                 </div>
-
-                <!-- NEW: Alpha 1 User Start Date Input -->
-                <div class="config-group">
-                    <div class="config-label">Alpha 1 Start Date</div>
-                    <input type="date" id="alpha1-start-input" style="background-color: var(--bg-dark); border: 1px solid #475569; border-radius: 4px; padding: 6px 10px; color: var(--text-light); font-family: inherit; font-size: 11px;" onchange="updateAlpha1StartDate(this.value)">
-                </div>
                 
                 <!-- Daily Targets Box (Updated for MNQ at 12.5-Point Stop) -->
                 <div class="financial-summary">
@@ -539,8 +533,7 @@
         // Default Config States
         let config = {
             lucidSize: 150,
-            tradeifySize: 150,
-            alpha1StartDate: ""
+            tradeifySize: 150
         };
 
         // --- FIREBASE CONFIGURATION ---
@@ -569,13 +562,6 @@
             const data = snapshot.val();
             if (data && typeof data === 'object') {
                 config = data;
-                
-                // Update Date Picker input UI
-                const dateInput = document.getElementById('alpha1-start-input');
-                if (dateInput && data.alpha1StartDate) {
-                    dateInput.value = data.alpha1StartDate;
-                }
-                
                 calculateRoadmap();
             }
         });
@@ -596,11 +582,6 @@
         function updateConfig(firm, size) {
             if (firm === 'lucid') config.lucidSize = size;
             if (firm === 'tradeify') config.tradeifySize = size;
-            portfolioConfigRef.set(config);
-        }
-
-        function updateAlpha1StartDate(val) {
-            config.alpha1StartDate = val;
             portfolioConfigRef.set(config);
         }
 
@@ -714,17 +695,6 @@
                 let todayL45_phase = L4_5.phase;
                 let todayT14_active = T1_4.active;
                 let todayT14_phase = T1_4.phase;
-
-                // Evaluate user specified start date for Alpha 1 Activation
-                if (config.alpha1StartDate) {
-                    const [y, m, d] = config.alpha1StartDate.split('-').map(Number);
-                    const a1Start = new Date(y, m - 1, d);
-                    const compDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-                    if (compDate >= a1Start) {
-                        A1.active = true;
-                    }
-                }
-
                 let todayA1_active = A1.active;
                 let todayA1_phase = A1.phase;
                 let todayA2_active = A2.active;
@@ -893,6 +863,10 @@
                     L4_5.profit -= (l45_payout_amount * 2); 
                     L4_5.fundedDays = 0;
                     L4_5.payouts++;
+                    if (L4_5.payouts === 1 && !A1.active) {
+                        milestone += `• Buy Alpha 1 `;
+                        A1.active = true;
+                    }
                     if (L4_5.payouts === 4) milestone += `• L4-5 Retired `;
                 }
 
