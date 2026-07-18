@@ -14,155 +14,195 @@
         /* Force dark background immediately to prevent loading flashes */
         :root {
             color-scheme: dark;
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-emerald: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --accent-amber: #f59e0b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --border-color: #334155;
         }
+
         html, body {
-            background-color: #121212 !important;
+            background-color: var(--bg-dark) !important;
         }
 
-        :root {
-            --bg-color: #121212;
-            --container-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --border-color: #444;
-            --header-bg: #2c2c2c;
-            --link-color: #58a6ff;
-            --subtle-text: #888;
-            --card-bg: #2a2a2a;
-            --shadow-color: rgba(0,0,0,0.4);
-            --green-bg: #1c3b23;
-            --red-bg: #4d1f24;
-            --purple-bg: #3c2a4d;
-            --green-border: #285732;
-            --red-border: #6b282e;
-            --green-text: #a7d7b2;
-            --red-text: #f5b7bd;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-light);
+            margin: 0;
+            padding: 12px;
         }
 
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 15px; 
-            background-color: var(--bg-color); 
-            color: var(--text-color);
-        }
-
-        .container { 
-            max-width: 98%; 
-            margin: auto; 
-            background: var(--container-bg); 
-            padding: 20px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px var(--shadow-color); 
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h1 { 
-            text-align: center; 
-            color: var(--text-color); 
-            margin-bottom: 5px; 
-            font-size: 24px;
-        }
-
-        p.subtitle { 
-            text-align: center; 
-            font-style: italic; 
-            margin-top: 0; 
-            color: var(--subtle-text); 
-            font-size: 13px;
-        }
-
-        /* Config Card Styling matched to Reference Style */
-        .config-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px var(--shadow-color);
-        }
-
-        .config-title {
-            font-size: 14px;
-            font-weight: bold;
             margin-bottom: 15px;
-            color: var(--link-color);
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0 0 5px 0;
+            color: var(--accent-emerald);
+        }
+
+        p.subtitle {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* Sleek Collapsible Section (Slate Styled) */
+        .collapsible-section { 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            background-color: var(--card-dark); 
+            overflow: hidden; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 12px 20px; 
+            cursor: pointer; 
+            background-color: var(--card-dark); 
+            transition: background-color 0.2s ease; 
+        }
+
+        .collapsible-header h2 { 
+            margin: 0; 
+            font-size: 13px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-blue);
+        }
+
+        .collapsible-toggle-btn { 
+            background: none; 
+            border: 1px solid var(--border-color); 
+            color: var(--text-gray); 
+            width: 28px; 
+            height: 28px; 
+            border-radius: 50%; 
+            font-size: 16px; 
+            line-height: 24px; 
+            font-weight: bold; 
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .collapsible-header:hover .collapsible-toggle-btn { 
+            border-color: var(--accent-blue); 
+            color: var(--text-light); 
+        }
+
+        .collapsible-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            will-change: max-height; 
+            transition: max-height 0.3s ease-out; 
+        }
+
+        .collapsible-content-inner { 
+            padding: 15px; 
+            border-top: 1px solid var(--border-color); 
+            padding-bottom: 20px; 
+        }
+
+        .collapsible-section.is-open .collapsible-content {
+            max-height: none !important;
+            overflow: visible !important;
+        }
+
+        /* Configuration Grid Details */
+        .config-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--accent-blue);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
+            padding-bottom: 4px;
         }
 
         .config-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
             align-items: stretch;
         }
 
         .config-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            justify-content: flex-start;
+            gap: 6px;
+            justify-content: center;
         }
 
         .config-label {
-            font-size: 12px;
-            color: var(--subtle-text);
-            font-weight: bold;
+            font-size: 11px;
+            color: var(--text-gray);
+            font-weight: 600;
         }
 
         .pill-container {
             display: flex;
-            gap: 8px;
+            gap: 6px;
         }
 
         .pill-btn {
-            background-color: var(--container-bg);
-            color: var(--subtle-text);
-            border: 1px solid var(--border-color);
-            padding: 8px 14px;
-            border-radius: 6px;
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            border: 1px solid #475569;
+            padding: 6px 12px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 11px;
             transition: all 0.2s ease;
-            width: auto;
         }
 
         .pill-btn:hover {
-            border-color: var(--link-color);
-            color: var(--text-color);
+            border-color: var(--accent-blue);
+            color: var(--text-light);
         }
 
         .pill-btn.active {
-            background-color: var(--link-color);
+            background-color: var(--accent-blue);
             color: white;
-            border-color: var(--link-color);
-            box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
         }
 
+        /* Financial Targets Cards */
         .financial-summary {
-            background-color: var(--bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px dashed var(--border-color);
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            box-sizing: border-box;
         }
 
         .summary-title {
-            font-size: 12px;
-            color: var(--link-color);
+            font-size: 11px;
+            color: var(--text-gray);
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 4px;
@@ -171,39 +211,41 @@
         .summary-row {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 6px;
-            color: var(--subtle-text);
+            font-size: 11px;
+            margin-bottom: 4px;
+            color: var(--text-gray);
         }
 
-        .summary-row span:last-child {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-
-        /* Educational Guide Section */
-        .guide-box {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-top: 20px;
+        .summary-row.total {
             font-size: 13px;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-weight: bold;
+            color: var(--accent-emerald);
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Guide Box */
+        .guide-box {
+            background-color: rgba(15, 23, 42, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-top: 15px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--text-gray);
         }
 
         .guide-box h3 {
-            margin: 20px 0 10px 0;
-            color: var(--link-color);
-            font-size: 14px;
+            margin: 12px 0 6px 0;
+            color: var(--text-light);
+            font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            text-align: left;
+            padding-bottom: 3px;
         }
 
         .guide-box h3:first-child {
@@ -212,246 +254,237 @@
 
         .guide-box ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 14px;
         }
 
         .guide-box li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .guide-box strong {
-            color: var(--link-color);
-        }
-
-        /* Stats Section */
+        /* High Visibility Glowing Stats Panel */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 10px;
         }
 
         .stat-card {
-            background-color: var(--card-bg);
-            padding: 15px;
+            background-color: var(--bg-dark);
+            padding: 12px;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 5px var(--shadow-color);
-            border-top: 3px solid var(--green-text);
+            border-left: 4px solid var(--accent-emerald);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .stat-card.blue { border-top-color: var(--link-color); }
-        .stat-card.red { border-top-color: var(--red-text); }
+        .stat-card.blue { border-left-color: var(--accent-blue); }
 
         .stat-label {
             font-size: 11px;
-            color: var(--subtle-text);
+            color: var(--text-gray);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .stat-value {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            margin-top: 5px;
-            color: var(--text-color);
+            margin-top: 3px;
+            color: var(--text-light);
             font-family: 'Courier New', monospace;
         }
 
-        /* Roadmap Table Container & Scrollbars styled exactly like Reference Style */
+        /* High Readability Table Layout */
         .table-container {
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+            background-color: var(--card-dark);
             border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background-color: var(--container-bg);
-            box-shadow: 0 4px 12px var(--shadow-color);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .table-container::-webkit-scrollbar { 
-            height: 16px !important; 
-            width: 16px !important; 
+        .table-container::-webkit-scrollbar {
+            height: 10px;
+            width: 10px;
         }
-        
-        .table-container::-webkit-scrollbar-track { 
-            background-color: #333333 !important; 
-            border-top: 1px solid #555 !important; 
-            border-radius: 0 !important; 
+
+        .table-container::-webkit-scrollbar-track {
+            background: var(--bg-dark);
         }
-        
-        .table-container::-webkit-scrollbar-thumb { 
-            background-color: #c0c0c0 !important; 
-            border-radius: 10px !important; 
-            border: 4px solid #333333 !important; 
-            min-height: 50px !important; 
-        }
-        
-        .table-container::-webkit-scrollbar-thumb:hover { 
-            background-color: #ffffff !important; 
-            border-color: #333333 !important; 
-        }
-        
-        .table-container::-webkit-scrollbar-button { 
-            display: none !important; 
-            width: 0 !important; 
-            height: 0 !important; 
-        }
-        
-        .table-container::-webkit-scrollbar-corner { 
-            background: #333333 !important; 
+
+        .table-container::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 5px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            text-align: left;
         }
 
         th, td {
-            border: 1px solid var(--border-color);
-            padding: 10px 12px;
-            text-align: left;
-            font-size: 13px;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 12px;
             white-space: nowrap;
-            vertical-align: middle;
         }
 
         th {
-            background-color: var(--header-bg);
-            font-weight: bold;
-            color: var(--text-color);
-            text-align: center;
+            background-color: #1e293b;
+            color: var(--text-gray);
+            font-weight: 600;
         }
 
         tr:hover {
-            background-color: var(--card-bg);
+            background-color: #334155;
         }
 
-        /* Table Inputs */
         .outcome-input {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
+            background-color: var(--bg-dark);
+            border: 1px solid #475569;
             border-radius: 4px;
-            padding: 6px 8px;
-            width: 90px;
+            padding: 4px 6px;
+            width: 80px;
             text-align: right;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            color: var(--text-color);
-            box-sizing: border-box;
-        }
-
-        .outcome-input:focus {
-            outline: 2px solid var(--link-color);
-            background-color: var(--header-bg);
+            font-family: inherit;
+            font-size: 12px;
+            color: var(--text-light);
         }
 
         .outcome-input::placeholder {
-            color: var(--subtle-text);
+            color: #64748b;
             font-style: italic;
         }
 
-        /* Value highlighting colors */
-        .outcome-input.val-win { color: var(--green-text) !important; font-weight: bold; }
-        .outcome-input.val-loss { color: var(--red-text) !important; font-weight: bold; }
-        .outcome-input.val-zero { color: var(--subtle-text) !important; }
-        .outcome-input.val-proj { color: var(--link-color) !important; opacity: 0.7; }
+        .val-win { color: var(--accent-emerald); font-weight: bold; }
+        .val-loss { color: var(--accent-red); font-weight: bold; }
+        .val-zero { color: var(--text-gray); }
+        .val-proj { color: #60a5fa; opacity: 0.8; }
 
-        .val-win { color: var(--green-text); }
-        .val-loss { color: var(--red-text); }
-        .val-zero { color: var(--subtle-text); }
-        .val-proj { color: var(--link-color); opacity: 0.8; }
+        .outcome-input.val-win { color: var(--accent-emerald) !important; font-weight: bold; }
+        .outcome-input.val-loss { color: var(--accent-red) !important; font-weight: bold; }
+        .outcome-input.val-zero { color: var(--text-gray) !important; }
+        .outcome-input.val-proj { color: #60a5fa !important; opacity: 0.8; }
 
-        /* Badges mapping to original but styled properly */
+        /* Original Colorful/Translucent High Readability Badges */
         .badge {
             display: inline-block;
-            padding: 2px 6px;
-            border-radius: 4px;
+            padding: 1px 4px;
+            border-radius: 3px;
             font-size: 10px;
             font-weight: bold;
-            margin-right: 5px;
-            border: 1px solid var(--border-color);
+            margin-right: 3px;
+            border: 1px solid transparent;
         }
 
-        .badge-lucid { background-color: var(--purple-bg); color: var(--text-color); }
-        .badge-tradeify { background-color: var(--green-bg); color: var(--green-text); border-color: var(--green-border); }
-        .badge-alpha { background-color: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
+        .badge-lucid { 
+            background-color: rgba(59, 130, 246, 0.2); 
+            color: #60a5fa; 
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .badge-tradeify { 
+            background-color: rgba(16, 185, 129, 0.2); 
+            color: #34d399; 
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .badge-alpha { 
+            background-color: rgba(245, 158, 11, 0.2); 
+            color: #fbbf24; 
+            border-color: rgba(245, 158, 11, 0.3);
+        }
 
-        .text-win { color: var(--green-text); font-weight: bold; }
-        .text-loss { color: var(--red-text); font-weight: bold; }
-        .text-neutral { color: var(--subtle-text); }
+        .text-win { color: var(--accent-emerald); font-weight: bold; }
+        .text-loss { color: var(--accent-red); font-weight: bold; }
+        .text-neutral { color: var(--text-gray); }
 
-        /* Responsive Optimization matching mobile targets */
+        /* --- MOBILE HIGH-DENSITY OPTIMIZATIONS --- */
         @media (max-width: 768px) {
             body {
-                padding: 8px;
+                padding: 6px;
             }
 
-            .container {
-                padding: 10px;
+            header {
+                margin-bottom: 10px;
             }
 
             h1 {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             p.subtitle {
-                font-size: 11px;
+                font-size: 10px;
             }
 
-            .config-card {
-                padding: 12px;
+            .collapsible-content-inner {
+                padding: 10px;
             }
 
             .config-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 10px;
             }
 
             .pill-btn {
-                padding: 6px 10px;
-                font-size: 11px;
+                padding: 4px 10px;
+                font-size: 10px;
+            }
+
+            .financial-summary {
+                padding: 8px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                gap: 8px;
+                margin-bottom: 12px;
             }
 
             .stat-card {
-                padding: 10px;
+                padding: 8px;
+                border-left-width: 3px;
+            }
+
+            .stat-label {
+                font-size: 9px;
             }
 
             .stat-value {
-                font-size: 16px;
+                font-size: 15px;
             }
 
-            table thead th, 
-            #roadmap-table-body td {
-                font-size: 10.5px !important;
-                padding: 8px 6px;
+            table {
+                min-width: 680px;
+            }
+
+            th, td {
+                padding: 6px 5px;
+                font-size: 10.5px;
             }
 
             .outcome-input {
-                width: 65px;
-                padding: 4px 6px;
+                width: 58px;
+                padding: 3px 4px;
                 font-size: 11px;
             }
 
             .badge {
-                font-size: 9px;
-                padding: 1px 4px;
+                font-size: 8px;
+                padding: 1px 3px;
+                margin-bottom: 1px;
             }
 
             .guide-box {
-                padding: 12px;
-                font-size: 11px;
+                padding: 8px 10px;
+                font-size: 10px;
             }
 
             .guide-box h3 {
-                font-size: 12px;
+                font-size: 11px;
+                margin: 10px 0 4px 0;
             }
         }
     </style>
@@ -463,120 +496,134 @@
             <p class="subtitle">Unified Symmetrical Sizing with Accelerated 2-Account Start (July 6th Start)</p>
         </header>
 
-        <!-- Dynamic Configuration Panel -->
-        <div class="config-card">
-            <div class="config-title">Portfolio Configuration</div>
-            <div class="config-grid">
-                <div class="config-group">
-                    <div class="config-label">Lucid L4 & L5 Account Size</div>
-                    <div class="pill-container">
-                        <button id="lucid-50-btn" class="pill-btn" onclick="updateConfig('lucid', 50)">50K Account</button>
-                        <button id="lucid-150-btn" class="pill-btn" onclick="updateConfig('lucid', 150)">150K Account</button>
-                    </div>
-                </div>
-                <div class="config-group">
-                    <div class="config-label">Tradeify T1-T4 Account Size</div>
-                    <div class="pill-container">
-                        <button id="tradeify-50-btn" class="pill-btn" onclick="updateConfig('tradeify', 50)">50K Account</button>
-                        <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
-                    </div>
-                </div>
-
-                <!-- Alpha 1 Launch Timing Selector -->
-                <div class="config-group">
-                    <div class="config-label">Alpha 1 Buy Timing</div>
-                    <div class="pill-container">
-                        <button id="alpha-last-btn" class="pill-btn" onclick="updateAlphaTiming('last')">Buy A1 Last</button>
-                        <button id="alpha-with-t14-btn" class="pill-btn" onclick="updateAlphaTiming('with_t14')">Buy A1 with T1-4</button>
-                    </div>
-                </div>
-                
-                <!-- Daily Targets Box -->
-                <div class="financial-summary">
-                    <div class="summary-title">Daily Targets per Account (MNQ)</div>
-                    <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span class="val-win">$400/day (4 MNQ)</span></div>
-                    <div class="summary-row"><span>Lucid 4, 5 (<span id="target-l-size">150K</span>):</span><span class="val-win" id="target-l-val">$800/day (8 MNQ)</span></div>
-                    <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span><span class="val-win" id="target-t-val">$800/day (8 MNQ)</span></div>
-                    
-                    <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K Scaling</div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Days 1-10):</span><span class="val-win">$400/day (4 MNQ)</span></div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Days 11-18):</span><span class="val-win">$800/day (8 MNQ)</span></div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Days 19-35):</span><span class="val-win">$1,200/day (12 MNQ)</span></div>
-                </div>
-
-                <!-- Maximum Loss & Safety Runways Summary Box -->
-                <div class="financial-summary">
-                    <div class="summary-title">Max Loss & Safety Runways</div>
-                    <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(20.0 Losses)</span></span></div>
-                    <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
-                    <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
-                    
-                    <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K MLL</div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--red-text);font-weight:bold;">(17.5 Losses)</span></span></div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--red-text);font-weight:bold;">(20.0+ Losses)</span></span></div>
-                    <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--red-text);font-weight:bold;">(34.6+ Losses)</span></span></div>
-                </div>
+        <!-- Collapsible Configuration and Stats Section (Slate-colored & start collapsed) -->
+        <div class="collapsible-section" id="config-section">
+            <div class="collapsible-header" onclick="toggleConfigSection()">
+                <h2>
+                    <span>Portfolio Configuration & Extraction Stats</span>
+                </h2>
+                <button class="collapsible-toggle-btn" id="config-toggle-btn">+</button>
             </div>
+            <div class="collapsible-content" id="config-content">
+                <div class="collapsible-content-inner">
+                    
+                    <!-- Symmetrical Stats Dashboard -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Extracted</div>
+                            <div class="stat-value" id="total-cash">$0</div>
+                        </div>
+                        <div class="stat-card blue">
+                            <div class="stat-label">Lucid Extracted</div>
+                            <div class="stat-value" id="lucid-cash">$0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Tradeify Extracted</div>
+                            <div class="stat-value" id="tradeify-cash">$0</div>
+                        </div>
+                        <div class="stat-card blue">
+                            <div class="stat-label">Alpha Extracted</div>
+                            <div class="stat-value" id="alpha-cash">$0</div>
+                        </div>
+                    </div>
 
-            <!-- Strategy Guide & Explanation Box -->
-            <div class="guide-box">
-                <h3>Strategy Guide & Risk Parameters</h3>
-                <ul>
-                    <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline [1]. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap [1].</li>
-                    <li><strong>The 1-Win-Per-Day Rule:</strong> This strategy is designed around making exactly 1 successful winning day (achieving your daily targets via a 1:4 Risk-to-Reward ratio) and immediately stopping. This dramatically reduces market exposure and keeps your emotions locked in.</li>
-                    <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts, and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
-                    <li><strong>Why the Payout Cycles Differ in Length:</strong>
-                        <ul>
-                            <li><strong>Lucid 150K (L4 & L5) takes 8 days:</strong> You need $6,000 of profit to request the maximum $3,000 payout. At your safe $800/day daily profit target, this takes exactly 8 trading days ($800 × 8 = $6,400).</li>
-                            <li><strong>Tradeify 150K (T1–T4) takes 13 days:</strong> Tradeify has a much larger maximum payout cap of $5,000, requiring $10,000 of profit. At your safe $800/day target, this takes exactly 13 trading days ($800 × 13 = $10,400) to safely unlock the full payout without increasing your trade size.</li>
-                        </ul>
-                    </li>
-                    <li><strong>22.5-Loss Safety Net:</strong> On both Lucid 150K and Tradeify 150K, your maximum trailing drawdown is $4,500. Risking $200 per trade gives you exactly **22.5 consecutive losing trades of safety room**—the absolute sweet spot for professional capital extraction.</li>
-                </ul>
+                    <!-- Config Card Panel -->
+                    <div class="config-title">Symmetrical Multipliers</div>
+                    <div class="config-grid">
+                        <div class="config-group">
+                            <div class="config-label">Lucid L4 & L5 Account Size</div>
+                            <div class="pill-container">
+                                <button id="lucid-50-btn" class="pill-btn" onclick="updateConfig('lucid', 50)">50K Account</button>
+                                <button id="lucid-150-btn" class="pill-btn" onclick="updateConfig('lucid', 150)">150K Account</button>
+                            </div>
+                        </div>
+                        <div class="config-group">
+                            <div class="config-label">Tradeify T1-T4 Account Size</div>
+                            <div class="pill-container">
+                                <button id="tradeify-50-btn" class="pill-btn" onclick="updateConfig('tradeify', 50)">50K Account</button>
+                                <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
+                            </div>
+                        </div>
 
-                <h3>Exact Multi-Firm Portfolio Blueprint</h3>
-                <ul>
-                    <li><strong>Lucid Symmetrical Plan (5 Accounts):</strong>
+                        <!-- Alpha 1 Launch Timing Selector -->
+                        <div class="config-group">
+                            <div class="config-label">Alpha 1 Buy Timing</div>
+                            <div class="pill-container">
+                                <button id="alpha-last-btn" class="pill-btn" onclick="updateAlphaTiming('last')">Buy A1 Last</button>
+                                <button id="alpha-with-t14-btn" class="pill-btn" onclick="updateAlphaTiming('with_t14')">Buy A1 with T1-4</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Daily Targets Box (Updated for MNQ at 12.5-Point Stop) -->
+                        <div class="financial-summary">
+                            <div class="summary-title">Daily Targets per Account (MNQ)</div>
+                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span class="val-win">$400/day (4 MNQ)</span></div>
+                            <div class="summary-row"><span>Lucid 4, 5 (<span id="target-l-size">150K</span>):</span><span class="val-win" id="target-l-val">$800/day (8 MNQ)</span></div>
+                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span><span class="val-win" id="target-t-val">$800/day (8 MNQ)</span></div>
+                            
+                            <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K Scaling</div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Days 1-10):</span><span class="val-win">$400/day (4 MNQ)</span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Days 11-18):</span><span class="val-win">$800/day (8 MNQ)</span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Days 19-35):</span><span class="val-win">$1,200/day (12 MNQ)</span></div>
+                        </div>
+
+                        <!-- Maximum Loss & Safety Runways Summary Box -->
+                        <div class="financial-summary">
+                            <div class="summary-title">Max Loss & Safety Runways</div>
+                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(20.0 Losses)</span></span></div>
+                            <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
+                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
+                            
+                            <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K MLL</div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--accent-red);font-weight:bold;">(17.5 Losses)</span></span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--accent-red);font-weight:bold;">(20.0+ Losses)</span></span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--accent-red);font-weight:bold;">(34.6+ Losses)</span></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Strategy Guide & Explanation Box -->
+                    <div class="guide-box">
+                        <h3>Strategy Guide & Risk Parameters</h3>
                         <ul>
-                            <li><strong>Objective:</strong> Take exactly **4 payouts** per account, then pause them.</li>
-                            <li><strong>The Rule:</strong> Do not request a 5th payout on any account. Lucid's rules state: <em>"Traders may take up to 5 payouts from each LucidFlex account after which they will be moved live."</em> To remain in simulated funded status, stop trading each account immediately after its 4th payout. </li>
+                            <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline [1]. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap [1].</li>
+                            <li><strong>The 1-Win-Per-Day Rule:</strong> This strategy is designed around making exactly 1 successful winning day (achieving your daily targets via a 1:4 Risk-to-Reward ratio) and immediately stopping. This dramatically reduces market exposure and keeps your emotions locked in.</li>
+                            <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts, and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
+                            <li><strong>Why the Payout Cycles Differ in Length:</strong>
+                                <ul>
+                                    <li><strong>Lucid 150K (L4 & L5) takes 8 days:</strong> You need $6,000 of profit to request the maximum $3,000 payout. At your safe $800/day daily profit target, this takes exactly 8 trading days ($800 × 8 = $6,400).</li>
+                                    <li><strong>Tradeify 150K (T1–T4) takes 13 days:</strong> Tradeify has a much larger maximum payout cap of $5,000, requiring $10,000 of profit. At your safe $800/day target, this takes exactly 13 trading days ($800 × 13 = $10,400) to safely unlock the full payout without increasing your trade size.</li>
+                                </ul>
+                            </li>
+                            <li><strong>22.5-Loss Safety Net:</strong> On both Lucid 150K and Tradeify 150K, your maximum trailing drawdown is $4,500. Risking $200 per trade gives you exactly **22.5 consecutive losing trades of safety room**—the absolute sweet spot for professional capital extraction.</li>
                         </ul>
-                    </li>
-                    <li><strong>Tradeify Symmetrical Plan (4 Accounts - 150K Select Flex):</strong>
+
+                        <h3>Exact Multi-Firm Portfolio Blueprint</h3>
                         <ul>
-                            <li><strong>Objective:</strong> Take exactly **2 payouts** per account, then pause them.</li>
-                            <li><strong>The Rule:</strong> Tradeify triggers live review at: <strong>3 payouts on a single account</strong> OR <strong>10 total payouts across all accounts</strong>. By stopping each of your 4 accounts after exactly 2 payouts, your portfolio totals **8 payouts**, keeping you safely under both limits.</li>
+                            <li><strong>Lucid Symmetrical Plan (5 Accounts):</strong>
+                                <ul>
+                                    <li><strong>Objective:</strong> Take exactly **4 payouts** per account, then pause them.</li>
+                                    <li><strong>The Rule:</strong> Do not request a 5th payout on any account. Lucid's rules state: <em>"Traders may take up to 5 payouts from each LucidFlex account after which they will be moved live."</em> To remain in simulated funded status, stop trading each account immediately after its 4th payout. </li>
+                                </ul>
+                            </li>
+                            <li><strong>Tradeify Symmetrical Plan (4 Accounts - 150K Select Flex):</strong>
+                                <ul>
+                                    <li><strong>Objective:</strong> Take exactly **2 payouts** per account, then pause them.</li>
+                                    <li><strong>The Rule:</strong> Tradeify triggers live review at: <strong>3 payouts on a single account</strong> OR <strong>10 total payouts across all accounts</strong>. By stopping each of your 4 accounts after exactly 2 payouts, your portfolio totals **8 payouts**, keeping you safely under both limits.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Alpha Advanced Symmetrical Plan (3 Accounts - 50K Advanced - Temporary Cap):</strong>
+                                <ul>
+                                    <li><strong>Objective:</strong> Run a symmetrical fleet of exactly 3 active funded Alpha Advanced accounts (A1, A2, and A3).</li>
+                                    <li><strong>The Rule (Current Stage):</strong> Alpha Futures triggers a live review after 5 payouts on a single account. To establish your fleet while protecting simulated status, the current plan targets exactly **2 payouts on Alpha 1 ($30,000 total)** and **1 payout on Alpha 2 & 3 ($30,000 total)**, yielding a combined **$60,000 extraction** from Alpha.</li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li><strong>Alpha Advanced Symmetrical Plan (3 Accounts - 50K Advanced - Temporary Cap):</strong>
-                        <ul>
-                            <li><strong>Objective:</strong> Run a symmetrical fleet of exactly 3 active funded Alpha Advanced accounts (A1, A2, and A3).</li>
-                            <li><strong>The Rule (Current Stage):</strong> Alpha Futures triggers a live review after 5 payouts on a single account. To establish your fleet while protecting simulated status, the current plan targets exactly **2 payouts on Alpha 1 ($30,000 total)** and **1 payout on Alpha 2 & 3 ($30,000 total)**, yielding a combined **$60,000 extraction** from Alpha.</li>
-                        </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-label">Total Extracted</div>
-                <div class="stat-value" id="total-cash">$0</div>
-            </div>
-            <div class="stat-card blue">
-                <div class="stat-label">Lucid Extracted</div>
-                <div class="stat-value" id="lucid-cash">$0</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Tradeify Extracted</div>
-                <div class="stat-value" id="tradeify-cash">$0</div>
-            </div>
-            <div class="stat-card blue">
-                <div class="stat-label">Alpha Extracted</div>
-                <div class="stat-value" id="alpha-cash">$0</div>
-            </div>
-        </div>
-
+        <!-- Unified Roadmap Table -->
         <div class="table-container">
             <table>
                 <thead>
@@ -608,6 +655,32 @@
             tradeifySize: 150,
             alphaBuyTiming: 'last'
         };
+
+        // --- COLLAPSIBLE CONTAINER CONTROLLER ---
+        function toggleConfigSection() {
+            const section = document.getElementById('config-section');
+            const btn = document.getElementById('config-toggle-btn');
+            const content = document.getElementById('config-content');
+            
+            const isOpen = section.classList.contains('is-open');
+            
+            if (isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.offsetHeight; // force repaint
+                content.style.maxHeight = '0px';
+                section.classList.remove('is-open');
+                btn.innerText = '+';
+            } else {
+                section.classList.add('is-open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                btn.innerText = '−';
+                setTimeout(() => {
+                    if (section.classList.contains('is-open')) {
+                        content.style.maxHeight = 'none';
+                    }
+                }, 300);
+            }
+        }
 
         // --- FIREBASE CONFIGURATION ---
         const CONFIG = {
@@ -695,16 +768,16 @@
             // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
             document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
             if (config.lucidSize === 50) {
-                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(4 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(4 MNQ)</span>';
             } else {
-                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
             }
 
             document.getElementById('target-t-size').innerText = config.tradeifySize + 'K';
             if (config.tradeifySize === 50) {
-                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(6 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(6 MNQ)</span>';
             } else {
-                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
             }
 
             // Update Dynamic Max Loss Summary Box Display
@@ -1149,7 +1222,7 @@
                     let toggleLabel = futureRowsExpanded ? '📁 Click to Collapse Remaining Plan' : '📂 Click to Expand / Collapse Remaining Plan';
                     rowsHtml += `
                         <tr id="toggle-future-row">
-                            <td colspan="7" style="text-align: center; cursor: pointer; background: rgba(59, 130, 246, 0.15); font-weight: bold; color: var(--link-color); padding: 10px; font-size: 11px;" onclick="toggleFutureRows()">
+                            <td colspan="7" style="text-align: center; cursor: pointer; background: rgba(59, 130, 246, 0.15); font-weight: bold; color: var(--accent-blue); padding: 10px; font-size: 11px;" onclick="toggleFutureRows()">
                                 ${toggleLabel}
                             </td>
                         </tr>
