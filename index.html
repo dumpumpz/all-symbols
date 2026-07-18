@@ -67,56 +67,43 @@
         h3 { text-align: center; color: var(--text-color); margin-top: 30px; margin-bottom: -5px; font-weight: 500;}
         p.subtitle { text-align: center; font-style: italic; margin-top: 0; color: var(--subtle-text); font-size: 11px; }
 
-        /* Configuration Panels & Alignment Grids */
-        .config-title {
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--link-color);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Structured controls area (3 Columns) */
+        /* Compact Controls Layout */
         .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .config-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            justify-content: flex-start;
+            gap: 4px;
         }
 
         .config-label {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--subtle-text);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
         }
 
         .pill-container {
             display: flex;
-            gap: 6px;
+            gap: 4px;
         }
 
         .pill-btn {
-            flex: 1;
             background-color: var(--bg-color);
             color: var(--subtle-text);
             border: 1px solid var(--border-color);
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 3px 8px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 11px;
+            font-weight: 600;
+            font-size: 10px;
             transition: all 0.2s ease;
-            text-align: center;
         }
 
         .pill-btn:hover {
@@ -128,49 +115,48 @@
             background-color: var(--link-color);
             color: white;
             border-color: var(--link-color);
-            box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+            box-shadow: 0 0 5px rgba(88, 166, 255, 0.3);
         }
 
-        /* Perfectly Symmetrical 2-Column Summary Grid */
+        /* Compact Keynotes Summaries */
         .summary-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
 
         .financial-summary {
-            background-color: rgba(18, 18, 18, 0.4);
-            padding: 15px;
-            border-radius: 8px;
+            background-color: rgba(18, 18, 18, 0.3);
+            padding: 8px 12px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
         }
 
         .summary-title {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--link-color);
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
+            padding-bottom: 3px;
         }
 
         .summary-title:not(:first-child) {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .summary-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 11.5px;
-            padding: 5px 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            font-size: 10.5px;
+            padding: 3px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
             color: var(--subtle-text);
         }
 
@@ -220,7 +206,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .stat-card {
@@ -455,30 +441,29 @@
             }
 
             .controls-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                margin-bottom: 15px;
+                gap: 8px;
+                margin-bottom: 12px;
             }
 
             .summary-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                margin-bottom: 15px;
+                gap: 10px;
+                margin-bottom: 12px;
             }
 
             .pill-btn {
-                padding: 6px 10px;
-                font-size: 10px;
+                padding: 3px 6px;
+                font-size: 9px;
             }
 
             .financial-summary {
-                padding: 10px;
+                padding: 8px 10px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
 
             .stat-card {
@@ -573,20 +558,20 @@
                         </div>
                     </div>
 
-                    <!-- Config Settings Row (Grid) -->
+                    <!-- Config Settings Row -->
                     <div class="controls-grid">
                         <div class="config-group">
-                            <div class="config-label">Lucid L4 & L5 Account Size</div>
+                            <div class="config-label">Lucid L4 & L5 Size</div>
                             <div class="pill-container">
-                                <button id="lucid-50-btn" class="pill-btn" onclick="updateConfig('lucid', 50)">50K Account</button>
-                                <button id="lucid-150-btn" class="pill-btn" onclick="updateConfig('lucid', 150)">150K Account</button>
+                                <button id="lucid-50-btn" class="pill-btn" onclick="updateConfig('lucid', 50)">50K</button>
+                                <button id="lucid-150-btn" class="pill-btn" onclick="updateConfig('lucid', 150)">150K</button>
                             </div>
                         </div>
                         <div class="config-group">
-                            <div class="config-label">Tradeify T1-T4 Account Size</div>
+                            <div class="config-label">Tradeify T1-T4 Size</div>
                             <div class="pill-container">
-                                <button id="tradeify-50-btn" class="pill-btn" onclick="updateConfig('tradeify', 50)">50K Account</button>
-                                <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
+                                <button id="tradeify-50-btn" class="pill-btn" onclick="updateConfig('tradeify', 50)">50K</button>
+                                <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K</button>
                             </div>
                         </div>
                         <div class="config-group">
@@ -598,9 +583,9 @@
                         </div>
                     </div>
 
-                    <!-- Symmetrical Parameters Grid -->
+                    <!-- Symmetrical Keynote Parameters Grid -->
                     <div class="summary-grid">
-                        <!-- Daily Targets Column -->
+                        <!-- Daily Targets Box -->
                         <div class="financial-summary">
                             <div class="summary-title">Daily Targets per Account (MNQ)</div>
                             <div class="summary-row">
@@ -631,7 +616,7 @@
                             </div>
                         </div>
 
-                        <!-- Maximum Loss & Safety Runways Column -->
+                        <!-- Maximum Loss & Safety Runways Box -->
                         <div class="financial-summary">
                             <div class="summary-title">Max Loss & Safety Runways</div>
                             <div class="summary-row">
@@ -839,16 +824,16 @@
             // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
             document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
             if (config.lucidSize === 50) {
-                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(4 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:10px;color:var(--subtle-text);font-weight:normal;">(4 MNQ)</span>';
             } else {
-                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:10px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
             }
 
             document.getElementById('target-t-size').innerText = config.tradeifySize + 'K';
             if (config.tradeifySize === 50) {
-                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(6 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:10px;color:var(--subtle-text);font-weight:normal;">(6 MNQ)</span>';
             } else {
-                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:10px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
             }
 
             // Update Dynamic Max Loss Summary Box Display
