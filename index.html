@@ -118,11 +118,12 @@
             box-shadow: 0 0 5px rgba(88, 166, 255, 0.3);
         }
 
-        /* Compact Keynotes Summaries */
+        /* Compact, Narrow Keynotes Summaries */
         .summary-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
+            max-width: 760px; /* Prevents stretching wide on desktop */
             margin-bottom: 15px;
         }
 
@@ -449,6 +450,7 @@
                 grid-template-columns: 1fr;
                 gap: 10px;
                 margin-bottom: 12px;
+                max-width: 100%;
             }
 
             .pill-btn {
