@@ -14,127 +14,64 @@
         /* Force dark background immediately to prevent loading flashes */
         :root {
             color-scheme: dark;
-            --bg-dark: #0f172a;
-            --card-dark: #1e293b;
-            --accent-emerald: #10b981;
-            --accent-blue: #3b82f6;
-            --accent-red: #ef4444;
-            --accent-amber: #f59e0b;
-            --text-light: #f8fafc;
-            --text-gray: #94a3b8;
-            --border-color: #334155;
         }
-
         html, body {
-            background-color: var(--bg-dark) !important;
+            background-color: #121212 !important;
+        }
+ 
+        :root {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --border-color: #444;
+            --header-bg: #2c2c2c;
+            --link-color: #58a6ff;
+            --subtle-text: #888;
+            --card-bg: #2a2a2a;
+            --shadow-color: rgba(0,0,0,0.4);
+            --green-bg: #1c3b23;
+            --red-bg: #4d1f24;
+            --purple-bg: #3c2a4d;
+            --green-border: #285732;
+            --red-border: #6b282e;
+            --green-text: #a7d7b2;
+            --red-text: #f5b7bd;
+            --green-bar: rgba(40, 167, 69, 0.4);
+            --red-bar: rgba(220, 53, 69, 0.4);
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--text-light);
-            margin: 0;
-            padding: 12px;
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 10px; 
+            background-color: var(--bg-color); 
+            color: var(--text-color);
         }
-
-        .container {
-            max-width: 1250px;
-            margin: 0 auto;
+        .container { 
+            max-width: 1250px; 
+            margin: auto; 
+            background: var(--container-bg); 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px var(--shadow-color); 
         }
-
         header {
             text-align: center;
             margin-bottom: 15px;
         }
+        h1 { text-align: center; color: var(--green-text); margin-bottom: 5px; font-size: 20px; }
+        h2 { margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        h3 { text-align: center; color: var(--text-color); margin-top: 30px; margin-bottom: -5px; font-weight: 500;}
+        p.subtitle { text-align: center; font-style: italic; margin-top: 0; color: var(--subtle-text); font-size: 11px; }
 
-        h1 {
-            font-size: 20px;
-            margin: 0 0 5px 0;
-            color: var(--accent-emerald);
-        }
-
-        p.subtitle {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin: 0;
-        }
-
-        /* Sleek Collapsible Section (Slate Styled) */
-        .collapsible-section { 
-            border: 1px solid var(--border-color); 
-            border-radius: 8px; 
-            margin-bottom: 20px; 
-            background-color: var(--card-dark); 
-            overflow: hidden; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .collapsible-header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 12px 20px; 
-            cursor: pointer; 
-            background-color: var(--card-dark); 
-            transition: background-color 0.2s ease; 
-        }
-
-        .collapsible-header h2 { 
-            margin: 0; 
-            font-size: 13px; 
-            font-weight: bold; 
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-blue);
-        }
-
-        .collapsible-toggle-btn { 
-            background: none; 
-            border: 1px solid var(--border-color); 
-            color: var(--text-gray); 
-            width: 28px; 
-            height: 28px; 
-            border-radius: 50%; 
-            font-size: 16px; 
-            line-height: 24px; 
-            font-weight: bold; 
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .collapsible-header:hover .collapsible-toggle-btn { 
-            border-color: var(--accent-blue); 
-            color: var(--text-light); 
-        }
-
-        .collapsible-content { 
-            max-height: 0; 
-            overflow: hidden; 
-            will-change: max-height; 
-            transition: max-height 0.3s ease-out; 
-        }
-
-        .collapsible-content-inner { 
-            padding: 15px; 
-            border-top: 1px solid var(--border-color); 
-            padding-bottom: 20px; 
-        }
-
-        .collapsible-section.is-open .collapsible-content {
-            max-height: none !important;
-            overflow: visible !important;
-        }
-
-        /* Configuration Grid Details */
+        /* Configuration Panel */
         .config-title {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 20px;
             margin-bottom: 10px;
-            color: var(--accent-blue);
+            color: var(--link-color);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 4px;
         }
 
         .config-grid {
@@ -142,6 +79,7 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 12px;
             align-items: stretch;
+            margin-top: 15px;
         }
 
         .config-group {
@@ -153,7 +91,7 @@
 
         .config-label {
             font-size: 11px;
-            color: var(--text-gray);
+            color: var(--subtle-text);
             font-weight: 600;
         }
 
@@ -163,32 +101,32 @@
         }
 
         .pill-btn {
-            background-color: var(--bg-dark);
-            color: var(--text-gray);
-            border: 1px solid #475569;
+            background-color: var(--bg-color);
+            color: var(--subtle-text);
+            border: 1px solid var(--border-color);
             padding: 6px 12px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
             font-size: 11px;
+            width: auto;
             transition: all 0.2s ease;
         }
 
         .pill-btn:hover {
-            border-color: var(--accent-blue);
-            color: var(--text-light);
+            border-color: var(--link-color);
+            color: var(--text-color);
         }
 
         .pill-btn.active {
-            background-color: var(--accent-blue);
+            background-color: var(--link-color);
             color: white;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+            border-color: var(--link-color);
+            box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
         }
 
-        /* Financial Targets Cards */
         .financial-summary {
-            background-color: rgba(15, 23, 42, 0.5);
+            background-color: rgba(18, 18, 18, 0.5);
             padding: 10px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
@@ -199,7 +137,7 @@
 
         .summary-title {
             font-size: 11px;
-            color: var(--text-gray);
+            color: var(--subtle-text);
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 6px;
@@ -213,39 +151,31 @@
             justify-content: space-between;
             font-size: 11px;
             margin-bottom: 4px;
-            color: var(--text-gray);
+            color: var(--subtle-text);
         }
 
-        .summary-row.total {
-            font-size: 13px;
-            font-weight: bold;
-            color: var(--accent-emerald);
-            margin-top: 6px;
-            padding-top: 6px;
-            border-top: 1px dashed var(--border-color);
-        }
-
-        /* Guide Box */
+        /* Guide Section styling inside configurations */
         .guide-box {
-            background-color: rgba(15, 23, 42, 0.3);
+            background-color: rgba(18, 18, 18, 0.3);
             border: 1px solid var(--border-color);
             border-radius: 6px;
             padding: 10px 14px;
             margin-top: 15px;
             font-size: 11px;
             line-height: 1.5;
-            color: var(--text-gray);
+            color: var(--subtle-text);
         }
 
         .guide-box h3 {
             margin: 12px 0 6px 0;
-            color: var(--text-light);
+            color: var(--text-color);
             font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 3px;
+            text-align: left;
         }
 
         .guide-box h3:first-child {
@@ -261,27 +191,27 @@
             margin-bottom: 6px;
         }
 
-        /* High Visibility Glowing Stats Panel */
+        /* Stats Grid - Placed Inside Config */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .stat-card {
-            background-color: var(--bg-dark);
+            background-color: var(--card-bg);
             padding: 12px;
             border-radius: 8px;
-            border-left: 4px solid var(--accent-emerald);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--green-text);
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
         }
 
-        .stat-card.blue { border-left-color: var(--accent-blue); }
+        .stat-card.blue { border-left-color: var(--link-color); }
 
         .stat-label {
             font-size: 11px;
-            color: var(--text-gray);
+            color: var(--subtle-text);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -290,32 +220,17 @@
             font-size: 20px;
             font-weight: bold;
             margin-top: 3px;
-            color: var(--text-light);
-            font-family: 'Courier New', monospace;
+            color: var(--text-color);
         }
 
-        /* High Readability Table Layout */
+        /* Tables & Wrapper */
         .table-container {
-            background-color: var(--card-dark);
+            background-color: var(--card-bg);
             border-radius: 8px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
             margin-bottom: 20px;
-        }
-
-        .table-container::-webkit-scrollbar {
-            height: 10px;
-            width: 10px;
-        }
-
-        .table-container::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        .table-container::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 5px;
         }
 
         table {
@@ -328,47 +243,40 @@
             padding: 8px 10px;
             border-bottom: 1px solid var(--border-color);
             font-size: 12px;
-            white-space: nowrap;
         }
 
         th {
-            background-color: #1e293b;
-            color: var(--text-gray);
+            background-color: var(--header-bg);
+            color: var(--subtle-text);
             font-weight: 600;
         }
 
         tr:hover {
-            background-color: #334155;
+            background-color: var(--header-bg);
         }
 
         .outcome-input {
-            background-color: var(--bg-dark);
-            border: 1px solid #475569;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             padding: 4px 6px;
             width: 80px;
             text-align: right;
             font-family: inherit;
             font-size: 12px;
-            color: var(--text-light);
+            color: var(--text-color);
         }
 
         .outcome-input::placeholder {
-            color: #64748b;
+            color: var(--subtle-text);
             font-style: italic;
         }
 
-        .val-win { color: var(--accent-emerald); font-weight: bold; }
-        .val-loss { color: var(--accent-red); font-weight: bold; }
-        .val-zero { color: var(--text-gray); }
+        .val-win { color: var(--green-text); font-weight: bold; }
+        .val-loss { color: var(--red-text); font-weight: bold; }
+        .val-zero { color: var(--subtle-text); }
         .val-proj { color: #60a5fa; opacity: 0.8; }
 
-        .outcome-input.val-win { color: var(--accent-emerald) !important; font-weight: bold; }
-        .outcome-input.val-loss { color: var(--accent-red) !important; font-weight: bold; }
-        .outcome-input.val-zero { color: var(--text-gray) !important; }
-        .outcome-input.val-proj { color: #60a5fa !important; opacity: 0.8; }
-
-        /* Original Colorful/Translucent High Readability Badges */
         .badge {
             display: inline-block;
             padding: 1px 4px;
@@ -376,30 +284,82 @@
             font-size: 10px;
             font-weight: bold;
             margin-right: 3px;
-            border: 1px solid transparent;
         }
 
-        .badge-lucid { 
-            background-color: rgba(59, 130, 246, 0.2); 
-            color: #60a5fa; 
-            border-color: rgba(59, 130, 246, 0.3);
+        .badge-lucid { background-color: rgba(88, 166, 255, 0.2); color: #60a5fa; }
+        .badge-tradeify { background-color: rgba(40, 167, 69, 0.2); color: #34d399; }
+        .badge-alpha { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+        .text-win { color: var(--green-text); font-weight: bold; }
+        .text-loss { color: var(--red-text); font-weight: bold; }
+        .text-neutral { color: var(--subtle-text); }
+
+        /* Reference Collapsible Section Rules */
+        .collapsible-section { 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            background-color: var(--card-bg); 
+            overflow: hidden; 
+        }
+        .collapsible-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 12px 20px; 
+            cursor: pointer; 
+            background-color: var(--header-bg); 
+            transition: background-color 0.2s ease; 
+        }
+        .collapsible-header h2 { 
+            margin: 0; 
+            padding: 0; 
+            border: none; 
+            font-size: 1.1em; 
+            font-weight: 600; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            color: var(--text-color);
+        }
+        .collapsible-toggle-btn { 
+            background: none; 
+            border: 1px solid var(--border-color); 
+            color: var(--subtle-text); 
+            width: 28px; 
+            height: 28px; 
+            border-radius: 50%; 
+            font-size: 22px; 
+            line-height: 26px; 
+            font-weight: bold; 
+            padding: 0; 
+            margin: 0; 
+            text-align: center; 
+            transition: transform 0.3s ease, background-color 0.2s, border-color 0.2s, color 0.2s; 
+            flex-shrink: 0; 
+            cursor: pointer;
+        }
+        .collapsible-header:hover .collapsible-toggle-btn { 
+            border-color: var(--link-color); 
+            color: var(--link-color); 
         }
         
-        .badge-tradeify { 
-            background-color: rgba(16, 185, 129, 0.2); 
-            color: #34d399; 
-            border-color: rgba(16, 185, 129, 0.3);
+        .collapsible-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            will-change: max-height; 
+            transition: max-height 0.3s ease-out; 
         }
-        
-        .badge-alpha { 
-            background-color: rgba(245, 158, 11, 0.2); 
-            color: #fbbf24; 
-            border-color: rgba(245, 158, 11, 0.3);
+        .collapsible-content-inner { 
+            padding: 20px; 
+            border-top: 1px solid var(--border-color); 
+            padding-bottom: 25px; 
         }
 
-        .text-win { color: var(--accent-emerald); font-weight: bold; }
-        .text-loss { color: var(--accent-red); font-weight: bold; }
-        .text-neutral { color: var(--text-gray); }
+        .collapsible-section.is-open .collapsible-content {
+            max-height: none !important;
+            overflow: visible !important;
+        }
 
         /* --- MOBILE HIGH-DENSITY OPTIMIZATIONS --- */
         @media (max-width: 768px) {
@@ -417,10 +377,6 @@
 
             p.subtitle {
                 font-size: 10px;
-            }
-
-            .collapsible-content-inner {
-                padding: 10px;
             }
 
             .config-grid {
@@ -456,6 +412,7 @@
                 font-size: 15px;
             }
 
+            /* Table compression and scrolling */
             table {
                 min-width: 680px;
             }
@@ -486,6 +443,16 @@
                 font-size: 11px;
                 margin: 10px 0 4px 0;
             }
+
+            .collapsible-content-inner {
+                padding: 15px 10px;
+            }
+            .collapsible-header {
+                padding: 10px 15px;
+            }
+            .collapsible-header h2 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -496,18 +463,16 @@
             <p class="subtitle">Unified Symmetrical Sizing with Accelerated 2-Account Start (July 6th Start)</p>
         </header>
 
-        <!-- Collapsible Configuration and Stats Section (Slate-colored & start collapsed) -->
-        <div class="collapsible-section" id="config-section">
-            <div class="collapsible-header" onclick="toggleConfigSection()">
-                <h2>
-                    <span>Portfolio Configuration & Extraction Stats</span>
-                </h2>
-                <button class="collapsible-toggle-btn" id="config-toggle-btn">+</button>
+        <!-- Collapsible Configuration Section -->
+        <div class="collapsible-section" id="portfolio-config-section">
+            <div class="collapsible-header" onclick="toggleSection('portfolio-config-section')">
+                <h2>⚙️ Portfolio Configuration & Summary</h2>
+                <button class="collapsible-toggle-btn" id="portfolio-config-section-btn">+</button>
             </div>
-            <div class="collapsible-content" id="config-content">
+            
+            <div class="collapsible-content">
                 <div class="collapsible-content-inner">
-                    
-                    <!-- Symmetrical Stats Dashboard -->
+                    <!-- Embedded Extracted Capital Stats Grid -->
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-label">Total Extracted</div>
@@ -527,8 +492,7 @@
                         </div>
                     </div>
 
-                    <!-- Config Card Panel -->
-                    <div class="config-title">Symmetrical Multipliers</div>
+                    <!-- Config Grid Settings -->
                     <div class="config-grid">
                         <div class="config-group">
                             <div class="config-label">Lucid L4 & L5 Account Size</div>
@@ -570,14 +534,14 @@
                         <!-- Maximum Loss & Safety Runways Summary Box -->
                         <div class="financial-summary">
                             <div class="summary-title">Max Loss & Safety Runways</div>
-                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(20.0 Losses)</span></span></div>
-                            <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
-                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--accent-red);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
+                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(20.0 Losses)</span></span></div>
+                            <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
+                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
                             
                             <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K MLL</div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--accent-red);font-weight:bold;">(17.5 Losses)</span></span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--accent-red);font-weight:bold;">(20.0+ Losses)</span></span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--accent-red);font-weight:bold;">(34.6+ Losses)</span></span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--red-text);font-weight:bold;">(17.5 Losses)</span></span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--red-text);font-weight:bold;">(20.0+ Losses)</span></span></div>
+                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--red-text);font-weight:bold;">(34.6+ Losses)</span></span></div>
                         </div>
                     </div>
 
@@ -623,7 +587,7 @@
             </div>
         </div>
 
-        <!-- Unified Roadmap Table -->
+        <!-- Roadmap Timeline Table -->
         <div class="table-container">
             <table>
                 <thead>
@@ -638,7 +602,7 @@
                     </tr>
                 </thead>
                 <tbody id="roadmap-table-body">
-                    <!-- Javascript generates table here -->
+                    <!-- Dynamic Rows Rendered by Javascript -->
                 </tbody>
             </table>
         </div>
@@ -655,32 +619,6 @@
             tradeifySize: 150,
             alphaBuyTiming: 'last'
         };
-
-        // --- COLLAPSIBLE CONTAINER CONTROLLER ---
-        function toggleConfigSection() {
-            const section = document.getElementById('config-section');
-            const btn = document.getElementById('config-toggle-btn');
-            const content = document.getElementById('config-content');
-            
-            const isOpen = section.classList.contains('is-open');
-            
-            if (isOpen) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.offsetHeight; // force repaint
-                content.style.maxHeight = '0px';
-                section.classList.remove('is-open');
-                btn.innerText = '+';
-            } else {
-                section.classList.add('is-open');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                btn.innerText = '−';
-                setTimeout(() => {
-                    if (section.classList.contains('is-open')) {
-                        content.style.maxHeight = 'none';
-                    }
-                }, 300);
-            }
-        }
 
         // --- FIREBASE CONFIGURATION ---
         const CONFIG = {
@@ -702,6 +640,22 @@
         const database = firebase.database();
         const portfolioConfigRef = database.ref('portfolio_config');
         const portfolioOutcomesRef = database.ref('portfolio_outcomes');
+
+        // Toggle collapsible sections
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const btn = document.getElementById(id + '-btn');
+            const isOpen = section.classList.toggle('is-open');
+            
+            const content = section.querySelector('.collapsible-content');
+            if (isOpen) {
+                content.style.maxHeight = 'none';
+                btn.innerText = '−';
+            } else {
+                content.style.maxHeight = '0px';
+                btn.innerText = '+';
+            }
+        }
 
         // --- FIREBASE LIVE SYNC LISTENERS ---
         portfolioConfigRef.on('value', (snapshot) => {
@@ -732,7 +686,6 @@
             portfolioConfigRef.set(config);
         }
 
-        // Write selection to Firebase
         function updateAlphaTiming(timing) {
             config.alphaBuyTiming = timing;
             portfolioConfigRef.set(config);
@@ -768,16 +721,16 @@
             // Update Dynamic Daily Targets Display for 12.5 Pt Stop on MNQ
             document.getElementById('target-l-size').innerText = config.lucidSize + 'K';
             if (config.lucidSize === 50) {
-                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(4 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$400/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(4 MNQ)</span>';
             } else {
-                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-l-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
             }
 
             document.getElementById('target-t-size').innerText = config.tradeifySize + 'K';
             if (config.tradeifySize === 50) {
-                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(6 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$600/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(6 MNQ)</span>';
             } else {
-                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--text-gray);font-weight:normal;">(8 MNQ)</span>';
+                document.getElementById('target-t-val').innerHTML = '$800/day <span style="font-size:11px;color:var(--subtle-text);font-weight:normal;">(8 MNQ)</span>';
             }
 
             // Update Dynamic Max Loss Summary Box Display
@@ -1198,7 +1151,7 @@
                     rowClass = 'class="future-row"';
                 }
 
-                // Render row with USD Running Total
+                // Render row with USD Running Total (using shorthanded columns for mobile ease)
                 rowsHtml += `
                     <tr ${rowClass} ${rowStyle}>
                         <td><strong>${formatDate(currentDate)}</strong></td>
@@ -1222,7 +1175,7 @@
                     let toggleLabel = futureRowsExpanded ? '📁 Click to Collapse Remaining Plan' : '📂 Click to Expand / Collapse Remaining Plan';
                     rowsHtml += `
                         <tr id="toggle-future-row">
-                            <td colspan="7" style="text-align: center; cursor: pointer; background: rgba(59, 130, 246, 0.15); font-weight: bold; color: var(--accent-blue); padding: 10px; font-size: 11px;" onclick="toggleFutureRows()">
+                            <td colspan="7" style="text-align: center; cursor: pointer; background: rgba(59, 130, 246, 0.15); font-weight: bold; color: var(--link-color); padding: 10px; font-size: 11px;" onclick="toggleFutureRows()">
                                 ${toggleLabel}
                             </td>
                         </tr>
