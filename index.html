@@ -62,7 +62,7 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        h1 { text-align: center; color: var(--green-text); margin-bottom: 5px; font-size: 20px; }
+        h1 { text-align: center; color: var(--white-text); margin-bottom: 5px; font-size: 20px; }
         h2 { margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 20px; }
         h3 { text-align: center; color: var(--text-color); margin-top: 30px; margin-bottom: -5px; font-weight: 500;}
         p.subtitle { text-align: center; font-style: italic; margin-top: 0; color: var(--subtle-text); font-size: 11px; }
@@ -280,18 +280,66 @@
         .val-zero { color: var(--subtle-text); }
         .val-proj { color: #60a5fa; opacity: 0.8; }
 
+        /* Dynamic High-Legibility Badge Classes */
         .badge {
             display: inline-block;
-            padding: 1px 4px;
-            border-radius: 3px;
+            padding: 2px 6px;
+            border-radius: 4px;
             font-size: 10px;
             font-weight: bold;
-            margin-right: 3px;
+            margin-right: 4px;
+            margin-bottom: 2px;
+            border: 1px solid transparent;
         }
 
-        .badge-lucid { background-color: rgba(88, 166, 255, 0.2); color: #60a5fa; }
-        .badge-tradeify { background-color: rgba(0, 230, 118, 0.15); color: var(--green-text); }
-        .badge-alpha { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        /* Lucid L1-2: Bright Cyan */
+        .badge-l12 {
+            background-color: rgba(0, 191, 255, 0.15);
+            color: #00e5ff;
+            border-color: rgba(0, 191, 255, 0.3);
+        }
+
+        /* Lucid L3: Violet/Purple */
+        .badge-l3 {
+            background-color: rgba(186, 85, 211, 0.15);
+            color: #df73ff;
+            border-color: rgba(186, 85, 211, 0.3);
+        }
+
+        /* Lucid L4-5: Sky Blue */
+        .badge-l45 {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        /* Tradeify T1-4: Emerald/Green */
+        .badge-t14 {
+            background-color: rgba(0, 230, 118, 0.12);
+            color: #00e676;
+            border-color: rgba(0, 230, 118, 0.25);
+        }
+
+        /* Alpha A1: Warm Gold */
+        .badge-a1 {
+            background-color: rgba(255, 215, 0, 0.12);
+            color: #ffd700;
+            border-color: rgba(255, 215, 0, 0.25);
+        }
+
+        /* Alpha A2: Amber Orange */
+        .badge-a2 {
+            background-color: rgba(255, 127, 80, 0.15);
+            color: #ff7f50;
+            border-color: rgba(255, 127, 80, 0.3);
+        }
+
+        /* Alpha A3: Rose Pink */
+        .badge-a3 {
+            background-color: rgba(255, 20, 147, 0.15);
+            color: #ff69b4;
+            border-color: rgba(255, 20, 147, 0.3);
+        }
 
         .text-win { color: var(--green-text); font-weight: bold; }
         .text-loss { color: var(--red-text); font-weight: bold; }
@@ -464,13 +512,13 @@
     <div class="container">
         <header>
             <h1>10-Account Portfolio Tracker</h1>
-    
+           
         </header>
 
         <!-- Collapsible Configuration Section -->
         <div class="collapsible-section" id="portfolio-config-section">
             <div class="collapsible-header" onclick="toggleSection('portfolio-config-section')">
-                <h2>Summary</h2>
+                <h2></h2>
                 <button class="collapsible-toggle-btn" id="portfolio-config-section-btn">+</button>
             </div>
             
@@ -819,12 +867,12 @@
 
                 // 1. Process L1-2 Trading
                 if (todayL12_phase === 'eval') {
-                    activeBadges += `<span class="badge badge-lucid">L1-2 Ev</span> `;
+                    activeBadges += `<span class="badge badge-l12">L1-2 Ev</span> `;
                     L1_2.profit += masterResult;
                     dailyProfit += masterResult * 2;
                     milestone += `L1-2 Ev: $${L1_2.profit.toLocaleString()} `;
                 } else if (todayL12_phase === 'funded' && L1_2.payouts < 4) {
-                    activeBadges += `<span class="badge badge-lucid">L1-2 Fd</span> `;
+                    activeBadges += `<span class="badge badge-l12">L1-2 Fd</span> `;
                     L1_2.profit += masterResult * 2;
                     dailyProfit += masterResult * 2;
                     L1_2.fundedDays++;
@@ -834,12 +882,12 @@
                 // 2. Process L3 Trading
                 if (todayL3_active) {
                     if (todayL3_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-lucid">L3 Ev</span> `;
+                        activeBadges += `<span class="badge badge-l3">L3 Ev</span> `;
                         L3.profit += masterResult;
                         dailyProfit += masterResult;
                         milestone += `• L3 Ev: $${L3.profit.toLocaleString()} `;
                     } else if (todayL3_phase === 'funded' && L3.payouts < 4) {
-                        activeBadges += `<span class="badge badge-lucid">L3 Fd</span> `;
+                        activeBadges += `<span class="badge badge-l3">L3 Fd</span> `;
                         L3.profit += masterResult;
                         dailyProfit += masterResult;
                         L3.fundedDays++;
@@ -850,13 +898,13 @@
                 // 3. Process L4-5 Trading
                 if (todayL45_active) {
                     if (todayL45_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-lucid">L4-5 Ev</span> `;
+                        activeBadges += `<span class="badge badge-l45">L4-5 Ev</span> `;
                         let evalResult = masterResult * l45_eval_mult;
                         L4_5.profit += evalResult;
                         dailyProfit += evalResult * 2;
                         milestone += `• L4-5 Ev: $${L4_5.profit.toLocaleString()} `;
                     } else if (todayL45_phase === 'funded' && L4_5.payouts < 4) {
-                        activeBadges += `<span class="badge badge-lucid">L4-5 Fd</span> `;
+                        activeBadges += `<span class="badge badge-l45">L4-5 Fd</span> `;
                         let fundedResult = masterResult * l45_funded_mult;
                         L4_5.profit += fundedResult * 2;
                         dailyProfit += fundedResult * 2;
@@ -868,13 +916,13 @@
                 // 4. Process T1-4 Trading
                 if (todayT14_active) {
                     if (todayT14_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-tradeify">T1-4 Ev</span> `;
+                        activeBadges += `<span class="badge badge-t14">T1-4 Ev</span> `;
                         let evalResult = masterResult * t14_eval_mult;
                         T1_4.profit += evalResult;
                         dailyProfit += evalResult * 4;
                         milestone += `• T1-4 Ev: $${T1_4.profit.toLocaleString()} `;
                     } else if (todayT14_phase === 'funded' && T1_4.payouts < 2) {
-                        activeBadges += `<span class="badge badge-tradeify">T1-4 Fd</span> `;
+                        activeBadges += `<span class="badge badge-t14">T1-4 Fd</span> `;
                         let fundedResult = masterResult * t14_funded_mult;
                         T1_4.profit += fundedResult * 4;
                         dailyProfit += fundedResult * 4;
@@ -886,12 +934,12 @@
                 // 5. Process A1 Trading
                 if (todayA1_active) {
                     if (todayA1_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-alpha">A1 Ev</span> `;
+                        activeBadges += `<span class="badge badge-a1">A1 Ev</span> `;
                         A1.profit += masterResult;
                         dailyProfit += masterResult;
                         milestone += `• A1 Ev: $${A1.profit.toLocaleString()} `;
                     } else if (todayA1_phase === 'funded' && A1.payouts < 2) {
-                        activeBadges += `<span class="badge badge-alpha">A1 Fd</span> `;
+                        activeBadges += `<span class="badge badge-a1">A1 Fd</span> `;
                         
                         let multiplier = 1.0;
                         if (A1.payouts > 0) {
@@ -913,13 +961,13 @@
                 // 6. Process A2 Trading
                 if (todayA2_active) {
                     if (todayA2_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-alpha">A2 Ev</span> `;
+                        activeBadges += `<span class="badge badge-a2">A2 Ev</span> `;
                         let evalResult = masterResult * 2.0; 
                         A2.profit += evalResult;
                         dailyProfit += evalResult;
                         milestone += `• A2 Ev: $${A2.profit.toLocaleString()} `;
                     } else if (todayA2_phase === 'funded' && A2.payouts < 1) {
-                        activeBadges += `<span class="badge badge-alpha">A2 Fd</span> `;
+                        activeBadges += `<span class="badge badge-a2">A2 Fd</span> `;
                         let fundedResult = masterResult * 2.0; 
                         A2.profit += fundedResult;
                         dailyProfit += fundedResult;
@@ -931,13 +979,13 @@
                 // 7. Process A3 Trading
                 if (todayA3_active) {
                     if (todayA3_phase === 'eval') {
-                        activeBadges += `<span class="badge badge-alpha">A3 Ev</span> `;
+                        activeBadges += `<span class="badge badge-a3">A3 Ev</span> `;
                         let evalResult = masterResult * 2.0; 
                         A3.profit += evalResult;
                         dailyProfit += evalResult;
                         milestone += `• A3 Ev: $${A3.profit.toLocaleString()} `;
                     } else if (todayA3_phase === 'funded' && A3.payouts < 1) {
-                        activeBadges += `<span class="badge badge-alpha">A3 Fd</span> `;
+                        activeBadges += `<span class="badge badge-a3">A3 Fd</span> `;
                         let fundedResult = masterResult * 2.0; 
                         A3.profit += fundedResult;
                         dailyProfit += fundedResult;
