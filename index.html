@@ -67,7 +67,7 @@
         h3 { text-align: center; color: var(--text-color); margin-top: 30px; margin-bottom: -5px; font-weight: 500;}
         p.subtitle { text-align: center; font-style: italic; margin-top: 0; color: var(--subtle-text); font-size: 11px; }
 
-        /* Configuration Panel */
+        /* Configuration Panels & Alignment Grids */
         .config-title {
             font-size: 13px;
             font-weight: bold;
@@ -77,25 +77,27 @@
             letter-spacing: 0.05em;
         }
 
-        .config-grid {
+        /* Structured controls area (3 Columns) */
+        .controls-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-            align-items: stretch;
-            margin-top: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .config-group {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            justify-content: center;
+            gap: 8px;
+            justify-content: flex-start;
         }
 
         .config-label {
             font-size: 11px;
             color: var(--subtle-text);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         .pill-container {
@@ -104,16 +106,17 @@
         }
 
         .pill-btn {
+            flex: 1;
             background-color: var(--bg-color);
             color: var(--subtle-text);
             border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 8px 12px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             font-size: 11px;
-            width: auto;
             transition: all 0.2s ease;
+            text-align: center;
         }
 
         .pill-btn:hover {
@@ -128,33 +131,51 @@
             box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
         }
 
+        /* Perfectly Symmetrical 2-Column Summary Grid */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
         .financial-summary {
-            background-color: rgba(18, 18, 18, 0.5);
-            padding: 10px;
-            border-radius: 6px;
+            background-color: rgba(18, 18, 18, 0.4);
+            padding: 15px;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .summary-title {
             font-size: 11px;
-            color: var(--subtle-text);
+            color: var(--link-color);
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 4px;
+            padding-bottom: 6px;
+        }
+
+        .summary-title:not(:first-child) {
+            margin-top: 15px;
         }
 
         .summary-row {
             display: flex;
             justify-content: space-between;
-            font-size: 11px;
-            margin-bottom: 4px;
+            align-items: center;
+            font-size: 11.5px;
+            padding: 5px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
             color: var(--subtle-text);
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
         }
 
         /* Guide Section styling inside configurations */
@@ -199,7 +220,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .stat-card {
@@ -367,8 +388,10 @@
             margin: 0; 
             padding: 0; 
             border: none; 
-            font-size: 1.1em; 
+            font-size: 13px; 
             font-weight: 600; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             display: flex; 
             align-items: center; 
             gap: 15px; 
@@ -431,24 +454,31 @@
                 font-size: 10px;
             }
 
-            .config-grid {
+            .controls-grid {
                 grid-template-columns: 1fr;
-                gap: 10px;
+                gap: 12px;
+                margin-bottom: 15px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 15px;
             }
 
             .pill-btn {
-                padding: 4px 10px;
+                padding: 6px 10px;
                 font-size: 10px;
             }
 
             .financial-summary {
-                padding: 8px;
+                padding: 10px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
-                margin-bottom: 12px;
+                margin-bottom: 15px;
             }
 
             .stat-card {
@@ -503,7 +533,7 @@
                 padding: 10px 15px;
             }
             .collapsible-header h2 {
-                font-size: 1em;
+                font-size: 11px;
             }
         }
     </style>
@@ -512,13 +542,12 @@
     <div class="container">
         <header>
             <h1>10-Account Portfolio Tracker</h1>
-           
         </header>
 
         <!-- Collapsible Configuration Section -->
         <div class="collapsible-section" id="portfolio-config-section">
             <div class="collapsible-header" onclick="toggleSection('portfolio-config-section')">
-                <h2></h2>
+                <h2>Portfolio Controls & Key Parameters</h2>
                 <button class="collapsible-toggle-btn" id="portfolio-config-section-btn">+</button>
             </div>
             
@@ -544,8 +573,8 @@
                         </div>
                     </div>
 
-                    <!-- Config Grid Settings -->
-                    <div class="config-grid">
+                    <!-- Config Settings Row (Grid) -->
+                    <div class="controls-grid">
                         <div class="config-group">
                             <div class="config-label">Lucid L4 & L5 Account Size</div>
                             <div class="pill-container">
@@ -560,8 +589,6 @@
                                 <button id="tradeify-150-btn" class="pill-btn" onclick="updateConfig('tradeify', 150)">150K Account</button>
                             </div>
                         </div>
-
-                        <!-- Alpha 1 Launch Timing Selector -->
                         <div class="config-group">
                             <div class="config-label">Alpha 1 Buy Timing</div>
                             <div class="pill-container">
@@ -569,31 +596,70 @@
                                 <button id="alpha-with-t14-btn" class="pill-btn" onclick="updateAlphaTiming('with_t14')">Buy A1 with T1-4</button>
                             </div>
                         </div>
-                        
-                        <!-- Daily Targets Box (Updated for MNQ at 12.5-Point Stop) -->
+                    </div>
+
+                    <!-- Symmetrical Parameters Grid -->
+                    <div class="summary-grid">
+                        <!-- Daily Targets Column -->
                         <div class="financial-summary">
                             <div class="summary-title">Daily Targets per Account (MNQ)</div>
-                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span class="val-win">$400/day (4 MNQ)</span></div>
-                            <div class="summary-row"><span>Lucid 4, 5 (<span id="target-l-size">150K</span>):</span><span class="val-win" id="target-l-val">$800/day (8 MNQ)</span></div>
-                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span><span class="val-win" id="target-t-val">$800/day (8 MNQ)</span></div>
+                            <div class="summary-row">
+                                <span>Lucid 1, 2, 3 (50K):</span>
+                                <span class="val-win">$400/day (4 MNQ)</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Lucid 4, 5 (<span id="target-l-size">150K</span>):</span>
+                                <span class="val-win" id="target-l-val">$800/day (8 MNQ)</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span>
+                                <span class="val-win" id="target-t-val">$800/day (8 MNQ)</span>
+                            </div>
                             
-                            <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K Scaling</div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Days 1-10):</span><span class="val-win">$400/day (4 MNQ)</span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Days 11-18):</span><span class="val-win">$800/day (8 MNQ)</span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Days 19-35):</span><span class="val-win">$1,200/day (12 MNQ)</span></div>
+                            <div class="summary-title">Alpha Advanced 50K Scaling</div>
+                            <div class="summary-row">
+                                <span>Phase 1 (Days 1-10):</span>
+                                <span class="val-win">$400/day (4 MNQ)</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Phase 2 (Days 11-18):</span>
+                                <span class="val-win">$800/day (8 MNQ)</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Phase 3 (Days 19-35):</span>
+                                <span class="val-win">$1,200/day (12 MNQ)</span>
+                            </div>
                         </div>
 
-                        <!-- Maximum Loss & Safety Runways Summary Box -->
+                        <!-- Maximum Loss & Safety Runways Column -->
                         <div class="financial-summary">
                             <div class="summary-title">Max Loss & Safety Runways</div>
-                            <div class="summary-row"><span>Lucid 1, 2, 3 (50K):</span><span>MLL: $2,000 <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(20.0 Losses)</span></span></div>
-                            <div class="summary-row"><span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span><span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span></div>
-                            <div class="summary-row" style="margin-bottom: 8px;"><span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span><span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="font-size:11px;color:var(--red-text);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span></div>
+                            <div class="summary-row">
+                                <span>Lucid 1, 2, 3 (50K):</span>
+                                <span>MLL: $2,000 <span style="color:var(--red-text);font-weight:bold;">(20.0 Losses)</span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Lucid 4, 5 (<span id="drawdown-l-size">150K</span>):</span>
+                                <span>MLL: <span id="drawdown-l-mll">$4,500</span> <span style="color:var(--red-text);font-weight:bold;">(<span id="drawdown-l-runway">22.5</span> Losses)</span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span>
+                                <span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="color:var(--red-text);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span>
+                            </div>
                             
-                            <div class="summary-title" style="margin-top: 5px;">Alpha Advanced 50K MLL</div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 1 (Risk $100):</span><span>MLL: $1,750 <span style="color:var(--red-text);font-weight:bold;">(17.5 Losses)</span></span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 2 (Risk $200):</span><span>Buffer: $4k+ <span style="color:var(--red-text);font-weight:bold;">(20.0+ Losses)</span></span></div>
-                            <div class="summary-row" style="font-size: 11px;"><span>• Phase 3 (Risk $300):</span><span>Buffer: $10k+ <span style="color:var(--red-text);font-weight:bold;">(34.6+ Losses)</span></span></div>
+                            <div class="summary-title">Alpha Advanced 50K MLL</div>
+                            <div class="summary-row">
+                                <span>Phase 1 (Risk $100):</span>
+                                <span>MLL: $1,750 <span style="color:var(--red-text);font-weight:bold;">(17.5 Losses)</span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Phase 2 (Risk $200):</span>
+                                <span>Buffer: $4k+ <span style="color:var(--red-text);font-weight:bold;">(20.0+ Losses)</span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Phase 3 (Risk $300):</span>
+                                <span>Buffer: $10k+ <span style="color:var(--red-text);font-weight:bold;">(34.6+ Losses)</span></span>
+                            </div>
                         </div>
                     </div>
 
