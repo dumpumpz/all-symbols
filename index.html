@@ -37,6 +37,7 @@
             /* High-contrast bright color updates */
             --green-text: #00e676; /* Vivid high-contrast neon green */
             --red-text: #ff1744;   /* Vivid high-contrast neon red */
+            --purple-text: #ff3399; /* Vibrant magenta for MFFU */
             
             --green-bar: rgba(0, 230, 118, 0.4);
             --red-bar: rgba(255, 23, 68, 0.4);
@@ -204,7 +205,7 @@
         /* Stats Grid - Placed Inside Config */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 12px;
             margin-bottom: 15px;
         }
@@ -218,6 +219,7 @@
         }
 
         .stat-card.blue { border-left-color: var(--link-color); }
+        .stat-card.purple { border-left-color: var(--purple-text); }
 
         .stat-label {
             font-size: 11px;
@@ -346,6 +348,13 @@
             background-color: rgba(255, 20, 147, 0.15);
             color: #ff69b4;
             border-color: rgba(255, 20, 147, 0.3);
+        }
+
+        /* MyFundedFutures M1-3: Magenta Pink */
+        .badge-mff {
+            background-color: rgba(255, 0, 128, 0.15);
+            color: var(--purple-text);
+            border-color: rgba(255, 0, 128, 0.3);
         }
 
         .text-win { color: var(--green-text); font-weight: bold; }
@@ -533,7 +542,7 @@
         <!-- Collapsible Configuration Section -->
         <div class="collapsible-section" id="portfolio-config-section">
             <div class="collapsible-header" onclick="toggleSection('portfolio-config-section')">
-                <h2></h2>
+                <h2>Configuration & Strategy Parameters</h2>
                 <button class="collapsible-toggle-btn" id="portfolio-config-section-btn">+</button>
             </div>
             
@@ -556,6 +565,10 @@
                         <div class="stat-card blue">
                             <div class="stat-label">Alpha Extracted</div>
                             <div class="stat-value" id="alpha-cash">$0</div>
+                        </div>
+                        <div class="stat-card purple">
+                            <div class="stat-label">MFFU Extracted</div>
+                            <div class="stat-value" id="mffu-cash">$0</div>
                         </div>
                     </div>
 
@@ -601,6 +614,10 @@
                                 <span>Tradeify 1-4 (<span id="target-t-size">150K</span>):</span>
                                 <span class="val-win" id="target-t-val">$800/day (8 MNQ)</span>
                             </div>
+                            <div class="summary-row">
+                                <span>MFFU 1, 2, 3 (50K):</span>
+                                <span class="val-win" id="target-mffu-val">$400/day (4 MNQ)</span>
+                            </div>
                             
                             <div class="summary-title">Alpha Advanced 50K Scaling</div>
                             <div class="summary-row">
@@ -632,6 +649,10 @@
                                 <span>Tradeify 1-4 (<span id="drawdown-t-size">150K</span>):</span>
                                 <span>MLL: <span id="drawdown-t-mll">$4,500</span> <span style="color:var(--red-text);font-weight:bold;">(<span id="drawdown-t-runway">22.5</span> Losses)</span></span>
                             </div>
+                            <div class="summary-row">
+                                <span>MFFU 1, 2, 3 (50K):</span>
+                                <span>Buffer Lock: $100 <span style="color:var(--green-text);font-weight:bold;">(23.0 Losses Cushion)</span></span>
+                            </div>
                             
                             <div class="summary-title">Alpha Advanced 50K MLL</div>
                             <div class="summary-row">
@@ -654,8 +675,9 @@
                         <h3>Strategy Guide & Risk Parameters</h3>
                         <ul>
                             <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap.</li>
+                            <li><strong>MFFU 1-3 Purchase Timing:</strong> Buy your 3 MFFU accounts on Day 53 (approx September 17), directly replacing the retired Lucid L4 & L5. This perfectly offsets the drop-off in active account leverage.</li>
                             <li><strong>The 1-Win-Per-Day Rule:</strong> This strategy is designed around making exactly 1 successful winning day (achieving your daily targets via a 1:4 Risk-to-Reward ratio) and immediately stopping. This dramatically reduces market exposure and keeps your emotions locked in.</li>
-                            <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts, and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
+                            <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts (Lucid 50K, Alpha, and MFFU), and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
                             <li><strong>Why the Payout Cycles Differ in Length:</strong>
                                 <ul>
                                     <li><strong>Lucid 150K (L4 & L5) takes 8 days:</strong> You need $6,000 of profit to request the maximum $3,000 payout. At your safe $800/day daily profit target, this takes exactly 8 trading days ($800 × 8 = $6,400).</li>
@@ -683,6 +705,14 @@
                                 <ul>
                                     <li><strong>Objective:</strong> Run a symmetrical fleet of exactly 3 active funded Alpha Advanced accounts (A1, A2, and A3).</li>
                                     <li><strong>The Rule (Current Stage):</strong> Alpha Futures triggers a live review after 5 payouts on a single account. To establish your fleet while protecting simulated status, the current plan targets exactly **2 payouts on Alpha 1 ($30,000 total)** and **1 payout on Alpha 2 & 3 ($30,000 total)**, yielding a combined **$60,000 extraction** from Alpha.</li>
+                                </ul>
+                            </li>
+                            <li><strong>MyFundedFutures Symmetrical Plan (3 Accounts - 50K Rapid):</strong>
+                                <ul>
+                                    <li><strong>Objective:</strong> Run a symmetrical fleet of 3 active funded MFFU accounts (M1, M2, and M3). Take a constant payout of **$4,000 per account** ($12,000 total across the fleet) every 10–11 trading days.</li>
+                                    <li><strong>The Safety Rule (Stay in Sim):</strong> Never make more than <strong>$10,000 in a single trading session</strong> on any single account. This prevents being forced to a live account. At your conservative $400/day daily profit target, you are completely safe.</li>
+                                    <li><strong>Loss safety Runway:</strong> Since the MFFU Max Loss trails and locks permanently at $100, we maintain a balance of at least **$2,400** on each account (which is a **23.0 consecutive loss safety runway** at our $100 target risk per trade).</li>
+                                    <li><strong>Payout Cap:</strong> Stop all MFFU payouts at the last cycle before December 31, 2026. The plan will be updated thereafter.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -855,6 +885,7 @@
             let lucidWithdrawn = 0;
             let tradeifyWithdrawn = 0;
             let alphaWithdrawn = 0;
+            let mffuWithdrawn = 0;
 
             // Restructured Account States
             let L1_2 = { phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
@@ -865,6 +896,9 @@
             let A1 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
             let A2 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
             let A3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
+
+            // MyFundedFutures Fleet (M1, M2, M3)
+            let M1_3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
 
             // Dynamic Config Rules
             let l45_eval_target = config.lucidSize === 50 ? 3200 : 9000;
@@ -916,6 +950,8 @@
                 let todayA2_phase = A2.phase;
                 let todayA3_active = A3.active;
                 let todayA3_phase = A3.phase;
+                let todayM13_active = M1_3.active;
+                let todayM13_phase = M1_3.phase;
 
                 // 1. Process L1-2 Trading
                 if (todayL12_phase === 'eval') {
@@ -1064,6 +1100,22 @@
                     }
                 }
 
+                // 8. Process MFFU 1-3 Trading
+                if (todayM13_active) {
+                    if (todayM13_phase === 'eval') {
+                        activeBadges += `<span class="badge badge-mff">M1-3 Ev</span> `;
+                        M1_3.profit += masterResult;
+                        dailyProfit += masterResult * 3;
+                        milestone += `• M1-3 Ev: $${M1_3.profit.toLocaleString()} `;
+                    } else if (todayM13_phase === 'funded') {
+                        activeBadges += `<span class="badge badge-mff">M1-3 Fd</span> `;
+                        M1_3.profit += masterResult;
+                        dailyProfit += masterResult * 3;
+                        M1_3.fundedDays++;
+                        milestone += `• M1-3 Fd: D${M1_3.fundedDays} `;
+                    }
+                }
+
                 // --- Evaluate Payout Triggers ---
                 
                 // L1 & L2 Payout
@@ -1103,7 +1155,13 @@
                         A1.active = true;
                     }
                     
-                    if (L4_5.payouts === 4) milestone += `• L4-5 Retired `;
+                    if (L4_5.payouts === 4) {
+                        milestone += `• L4-5 Retired • Buy MFFU 1-3 ($240) `;
+                        M1_3.active = true;
+                        M1_3.phase = 'eval';
+                        M1_3.profit = 0;
+                        M1_3.fundedDays = 0;
+                    }
                 }
 
                 // Tradeify Payout
@@ -1192,6 +1250,28 @@
                     }
                 }
 
+                // MFFU 1-3 Constant Extraction Payout Trigger
+                if (todayM13_phase === 'funded') {
+                    // Safe guard to halt MFFU payout triggers on or after December 31, 2026
+                    let isBeforeDec31 = currentDate < new Date(2026, 11, 31);
+                    if (isBeforeDec31) {
+                        // First payout: Drawdown lock active. Withdraw $2,000 to keep a $2,400 balance (23 Losses Cushion)
+                        if (M1_3.payouts === 0 && M1_3.fundedDays >= 11 && M1_3.profit >= 4400) {
+                            payoutsRequested.push({ firm: 'mffu', amount: 2000 * 3, label: 'M1-3' });
+                            M1_3.profit -= 2000;
+                            M1_3.fundedDays = 0;
+                            M1_3.payouts++;
+                        } 
+                        // Subsequent payouts: Constant cycle of $4,000 every 10 days, maintaining the $2,400 balance base
+                        else if (M1_3.payouts > 0 && M1_3.fundedDays >= 10 && M1_3.profit >= 6400) {
+                            payoutsRequested.push({ firm: 'mffu', amount: 4000 * 3, label: 'M1-3' });
+                            M1_3.profit -= 4000;
+                            M1_3.fundedDays = 0;
+                            M1_3.payouts++;
+                        }
+                    }
+                }
+
                 // --- Evaluate Evaluation Phase Passes for NEXT Day ---
                 if (todayL12_phase === 'eval' && L1_2.profit >= 3200) {
                     L1_2.phase = 'funded';
@@ -1255,6 +1335,13 @@
                     milestone += `• A3 PASSED `;
                 }
 
+                if (todayM13_phase === 'eval' && M1_3.profit >= 3000) {
+                    M1_3.phase = 'funded';
+                    M1_3.profit = 0;
+                    M1_3.fundedDays = 0;
+                    milestone += `• M1-3 PASSED `;
+                }
+
                 // Compile payouts
                 let payoutText = '—';
                 let hasPayoutToday = payoutsRequested.length > 0;
@@ -1264,6 +1351,7 @@
                         if (p.firm === 'lucid') lucidWithdrawn += p.amount;
                         if (p.firm === 'tradeify') tradeifyWithdrawn += p.amount;
                         if (p.firm === 'alpha') alphaWithdrawn += p.amount;
+                        if (p.firm === 'mffu') mffuWithdrawn += p.amount;
                         return `${p.label} $${(p.amount / 1000).toFixed(0)}k`;
                     }).join(' • ');
                 }
@@ -1333,6 +1421,7 @@
             document.getElementById('lucid-cash').innerText = `$${lucidWithdrawn.toLocaleString()}`;
             document.getElementById('tradeify-cash').innerText = `$${tradeifyWithdrawn.toLocaleString()}`;
             document.getElementById('alpha-cash').innerText = `$${alphaWithdrawn.toLocaleString()}`;
+            document.getElementById('mffu-cash').innerText = `$${mffuWithdrawn.toLocaleString()}`;
             document.getElementById('roadmap-table-body').innerHTML = rowsHtml;
         }
 
