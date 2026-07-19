@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -654,7 +653,7 @@
                     <div class="guide-box">
                         <h3>Strategy Guide & Risk Parameters</h3>
                         <ul>
-                            <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline [1]. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap [1].</li>
+                            <li><strong>Accelerated 2-Account Start:</strong> Starting with 2 Lucid evaluations on Day 1 drastically collapses your timeline. Once Lucid 1 & 2 pass, the remaining Lucid fleet (L3, L4, L5) can be activated simultaneously on Day 9, cutting weeks off your roadmap.</li>
                             <li><strong>The 1-Win-Per-Day Rule:</strong> This strategy is designed around making exactly 1 successful winning day (achieving your daily targets via a 1:4 Risk-to-Reward ratio) and immediately stopping. This dramatically reduces market exposure and keeps your emotions locked in.</li>
                             <li><strong>Symmetrical Copier Multipliers:</strong> By scaling the Tradeify 150K and Lucid 150K accounts to exactly **$200 risk (8 MNQ contracts)**, your trade copier has only two simple settings: **1.0x** for your 50K accounts, and **2.0x** for all 150K accounts. This eliminates manual sizing mistakes.</li>
                             <li><strong>Why the Payout Cycles Differ in Length:</strong>
@@ -864,8 +863,8 @@
             let T1_4 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
             
             let A1 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
-            let A2 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
-            let A3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0 };
+            let A2 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
+            let A3 = { active: false, phase: 'eval', profit: 0, payouts: 0, fundedDays: 0, phaseLevel: 1 };
 
             // Dynamic Config Rules
             let l45_eval_target = config.lucidSize === 50 ? 3200 : 9000;
@@ -929,7 +928,7 @@
                     L1_2.profit += masterResult * 2;
                     dailyProfit += masterResult * 2;
                     L1_2.fundedDays++;
-                    milestone += `L1-2 Fd: D${L1_2.fundedDays} `;
+                    milestone += `• L1-2 Fd: D${L1_2.fundedDays} `;
                 }
 
                 // 2. Process L3 Trading
@@ -1015,17 +1014,26 @@
                 if (todayA2_active) {
                     if (todayA2_phase === 'eval') {
                         activeBadges += `<span class="badge badge-a2">A2 Ev</span> `;
-                        let evalResult = masterResult * 2.0; 
-                        A2.profit += evalResult;
-                        dailyProfit += evalResult;
+                        A2.profit += masterResult;
+                        dailyProfit += masterResult;
                         milestone += `• A2 Ev: $${A2.profit.toLocaleString()} `;
                     } else if (todayA2_phase === 'funded' && A2.payouts < 1) {
                         activeBadges += `<span class="badge badge-a2">A2 Fd</span> `;
-                        let fundedResult = masterResult * 2.0; 
+                        
+                        let multiplier = 1.0;
+                        if (A2.payouts > 0) {
+                            multiplier = 2.0; 
+                        } else {
+                            if (A2.phaseLevel === 2) multiplier = 2.0;
+                            if (A2.phaseLevel === 3) multiplier = 3.0; 
+                        }
+
+                        let fundedResult = masterResult * multiplier;
                         A2.profit += fundedResult;
                         dailyProfit += fundedResult;
                         A2.fundedDays++;
-                        milestone += `• A2 Fd: D${A2.fundedDays} `;
+
+                        milestone += `• A2 P${A2.payouts > 0 ? 'Max' : A2.phaseLevel}: D${A2.fundedDays} `;
                     }
                 }
 
@@ -1033,17 +1041,26 @@
                 if (todayA3_active) {
                     if (todayA3_phase === 'eval') {
                         activeBadges += `<span class="badge badge-a3">A3 Ev</span> `;
-                        let evalResult = masterResult * 2.0; 
-                        A3.profit += evalResult;
-                        dailyProfit += evalResult;
+                        A3.profit += masterResult;
+                        dailyProfit += masterResult;
                         milestone += `• A3 Ev: $${A3.profit.toLocaleString()} `;
                     } else if (todayA3_phase === 'funded' && A3.payouts < 1) {
                         activeBadges += `<span class="badge badge-a3">A3 Fd</span> `;
-                        let fundedResult = masterResult * 2.0; 
+                        
+                        let multiplier = 1.0;
+                        if (A3.payouts > 0) {
+                            multiplier = 2.0; 
+                        } else {
+                            if (A3.phaseLevel === 2) multiplier = 2.0;
+                            if (A3.phaseLevel === 3) multiplier = 3.0; 
+                        }
+
+                        let fundedResult = masterResult * multiplier;
                         A3.profit += fundedResult;
                         dailyProfit += fundedResult;
                         A3.fundedDays++;
-                        milestone += `• A3 Fd: D${A3.fundedDays} `;
+
+                        milestone += `• A3 P${A3.payouts > 0 ? 'Max' : A3.phaseLevel}: D${A3.fundedDays} `;
                     }
                 }
 
@@ -1135,27 +1152,43 @@
 
                 // Alpha 2 Payout Trigger
                 if (todayA2_phase === 'funded' && A2.payouts < 1) {
-                    let a2_req_funded_days = A2.payouts === 0 ? 38 : 19;
-                    let a2_req_profit_barrier = A2.payouts === 0 ? 30000 : 15000;
-                    if (A2.fundedDays >= a2_req_funded_days && A2.profit >= a2_req_profit_barrier) {
-                        payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'A2' });
-                        A2.profit -= 15000;
-                        A2.fundedDays = 0;
-                        A2.payouts++;
-                        milestone += `• A2 Capped `;
+                    if (A2.payouts === 0) {
+                        if (A2.phaseLevel === 1 && A2.fundedDays >= 10 && A2.profit >= 4000) {
+                            A2.phaseLevel = 2;
+                            A2.fundedDays = 0;
+                            milestone += `• A2 Scale Phase 2 `;
+                        } else if (A2.phaseLevel === 2 && A2.fundedDays >= 8 && A2.profit >= 10400) {
+                            A2.phaseLevel = 3;
+                            A2.fundedDays = 0;
+                            milestone += `• A2 Scale Phase 3 `;
+                        } else if (A2.phaseLevel === 3 && A2.fundedDays >= 17 && A2.profit >= 30000) {
+                            payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'A2' });
+                            A2.profit -= 15000;
+                            A2.fundedDays = 0;
+                            A2.payouts++;
+                            milestone += `• A2 Capped `;
+                        }
                     }
                 }
 
                 // Alpha 3 Payout Trigger
                 if (todayA3_phase === 'funded' && A3.payouts < 1) {
-                    let a3_req_funded_days = A3.payouts === 0 ? 38 : 19;
-                    let a3_req_profit = A3.payouts === 0 ? 30000 : 15000;
-                    if (A3.fundedDays >= a3_req_funded_days && A3.profit >= a3_req_profit) {
-                        payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'A3' });
-                        A3.profit -= 15000;
-                        A3.fundedDays = 0;
-                        A3.payouts++;
-                        milestone += `• A3 Capped `;
+                    if (A3.payouts === 0) {
+                        if (A3.phaseLevel === 1 && A3.fundedDays >= 10 && A3.profit >= 4000) {
+                            A3.phaseLevel = 2;
+                            A3.fundedDays = 0;
+                            milestone += `• A3 Scale Phase 2 `;
+                        } else if (A3.phaseLevel === 2 && A3.fundedDays >= 8 && A3.profit >= 10400) {
+                            A3.phaseLevel = 3;
+                            A3.fundedDays = 0;
+                            milestone += `• A3 Scale Phase 3 `;
+                        } else if (A3.phaseLevel === 3 && A3.fundedDays >= 17 && A3.profit >= 30000) {
+                            payoutsRequested.push({ firm: 'alpha', amount: 15000, label: 'A3' });
+                            A3.profit -= 15000;
+                            A3.fundedDays = 0;
+                            A3.payouts++;
+                            milestone += `• A3 Capped `;
+                        }
                     }
                 }
 
@@ -1210,6 +1243,7 @@
                     A2.phase = 'funded';
                     A2.profit = 0;
                     A2.fundedDays = 0;
+                    A2.phaseLevel = 1;
                     milestone += `• A2 PASSED `;
                 }
 
@@ -1217,6 +1251,7 @@
                     A3.phase = 'funded';
                     A3.profit = 0;
                     A3.fundedDays = 0;
+                    A3.phaseLevel = 1;
                     milestone += `• A3 PASSED `;
                 }
 
